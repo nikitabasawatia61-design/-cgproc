@@ -570,8 +570,17 @@
             return allTenders.filter(isTenderOpen);
         }
 
+        function sortNewestFirst(tenders) {
+            return [...tenders].sort((a, b) => {
+                const aNo = Number(a.tender_no) || 0;
+                const bNo = Number(b.tender_no) || 0;
+                if (bNo !== aNo) return bNo - aNo;
+                return (b.first_seen_at || "").localeCompare(a.first_seen_at || "");
+            });
+        }
+
         function getFilteredTenders() {
-            return getActiveTenders().filter((t) => {
+            const filtered = getActiveTenders().filter((t) => {
                 const matchesSearch = !searchTerm || [
                     t.tender_no,
                     t.name,
@@ -583,6 +592,8 @@
                 const matchesShortlist = filterMode !== "shortlist" || isShortlisted(t.tender_no);
                 return matchesSearch && matchesNew && matchesShortlist;
             });
+
+            return sortNewestFirst(filtered);
         }
 
         function renderTable() {
