@@ -97,6 +97,20 @@
 
         .stat-card.highlight .value { color: var(--new); }
 
+        .stat-card.shortlist {
+            border-color: rgba(251, 191, 36, 0.35);
+            background: linear-gradient(180deg, rgba(251, 191, 36, 0.08), var(--surface));
+        }
+
+        .stat-card.shortlist .value { color: var(--warn); }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
         .toolbar {
             display: flex;
             flex-wrap: wrap;
@@ -152,6 +166,50 @@
             background: var(--accent);
             border-color: var(--accent);
             color: white;
+        }
+
+        .btn-shortlist-tab.active {
+            background: #d97706;
+            border-color: #d97706;
+            color: white;
+        }
+
+        .tab-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 1.35rem;
+            height: 1.35rem;
+            margin-left: 0.4rem;
+            padding: 0 0.35rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .btn-star {
+            padding: 0.4rem 0.7rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1;
+            transition: color 0.15s, border-color 0.15s, background 0.15s;
+        }
+
+        .btn-star:hover {
+            color: var(--warn);
+            border-color: rgba(251, 191, 36, 0.5);
+            background: rgba(251, 191, 36, 0.08);
+        }
+
+        .btn-star.active {
+            color: var(--warn);
+            border-color: rgba(251, 191, 36, 0.6);
+            background: rgba(251, 191, 36, 0.15);
         }
 
         .btn-run {
@@ -250,7 +308,7 @@
 
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
-            table { min-width: 860px; }
+            table { min-width: 920px; }
         }
     </style>
 </head>
@@ -278,6 +336,19 @@
                 <div class="label">Last Updated</div>
                 <div class="value" id="stat-updated" style="font-size:1rem;margin-top:0.55rem;">—</div>
             </div>
+            <div class="stat-card shortlist">
+                <div class="label">Shortlisted</div>
+                <div class="value" id="stat-shortlist">0</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="btn active" id="btn-all">All Tenders</button>
+            <button class="btn" id="btn-new">New Today</button>
+            <button class="btn btn-shortlist-tab" id="btn-shortlist">
+                Shortlist
+                <span class="tab-count" id="shortlist-count">0</span>
+            </button>
         </div>
 
         <div class="toolbar">
@@ -285,8 +356,6 @@
                 <input type="text" id="search" placeholder="Search tender no, city, description, department...">
             </div>
             <button class="btn" id="btn-search">Search</button>
-            <button class="btn" id="btn-new">New Today</button>
-            <button class="btn active" id="btn-all">All</button>
             <a
                 class="btn btn-run"
                 href="https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml"
@@ -317,33 +386,75 @@
     </div>
 
     <script>
+        const SHORTLIST_KEY = "cgproc_shortlist";
+
         let allTenders = [];
         let stats = {};
         let filterMode = "all";
         let searchTerm = "";
+        let shortlisted = new Set();
         const today = new Date().toISOString().slice(0, 10);
 
         const els = {
             total: document.getElementById("stat-total"),
             newToday: document.getElementById("stat-new"),
             updated: document.getElementById("stat-updated"),
+            shortlistStat: document.getElementById("stat-shortlist"),
+            shortlistCount: document.getElementById("shortlist-count"),
             search: document.getElementById("search"),
             meta: document.getElementById("result-meta"),
             table: document.getElementById("table-container"),
             btnSearch: document.getElementById("btn-search"),
             btnNew: document.getElementById("btn-new"),
             btnAll: document.getElementById("btn-all"),
+            btnShortlist: document.getElementById("btn-shortlist"),
         };
+
+        function loadShortlist() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(SHORTLIST_KEY) || "[]");
+                shortlisted = new Set(Array.isArray(saved) ? saved : []);
+            } catch {
+                shortlisted = new Set();
+            }
+        }
+
+        function saveShortlist() {
+            localStorage.setItem(SHORTLIST_KEY, JSON.stringify([...shortlisted]));
+            updateShortlistStats();
+        }
+
+        function isShortlisted(tenderNo) {
+            return shortlisted.has(String(tenderNo));
+        }
+
+        function toggleShortlist(tenderNo) {
+            const id = String(tenderNo);
+            if (shortlisted.has(id)) {
+                shortlisted.delete(id);
+            } else {
+                shortlisted.add(id);
+            }
+            saveShortlist();
+            renderTable();
+        }
+
+        function updateShortlistStats() {
+            const count = shortlisted.size;
+            els.shortlistStat.textContent = count;
+            els.shortlistCount.textContent = count;
+        }
 
         function formatDateTime(value) {
             if (!value) return "Never";
             return value.replace("T", " ").slice(0, 16);
         }
 
-        function setActiveButton(mode) {
-            [els.btnAll, els.btnNew].forEach((btn) => btn.classList.remove("active"));
+        function setActiveTab(mode) {
+            [els.btnAll, els.btnNew, els.btnShortlist].forEach((btn) => btn.classList.remove("active"));
             if (mode === "new") els.btnNew.classList.add("active");
             if (mode === "all") els.btnAll.classList.add("active");
+            if (mode === "shortlist") els.btnShortlist.classList.add("active");
         }
 
         function getFilteredTenders() {
@@ -356,27 +467,46 @@
                 ].some((field) => (field || "").toLowerCase().includes(searchTerm));
 
                 const matchesNew = filterMode !== "new" || (t.first_seen_at || "").startsWith(today);
-                return matchesSearch && matchesNew;
+                const matchesShortlist = filterMode !== "shortlist" || isShortlisted(t.tender_no);
+                return matchesSearch && matchesNew && matchesShortlist;
             });
         }
 
         function renderTable() {
             const tenders = getFilteredTenders();
 
-            els.meta.textContent = `${tenders.length} tender${tenders.length === 1 ? "" : "s"} shown`;
+            let meta = `${tenders.length} tender${tenders.length === 1 ? "" : "s"} shown`;
+            if (filterMode === "shortlist") {
+                meta += " in shortlist";
+            }
+            els.meta.textContent = meta;
 
             if (!tenders.length) {
+                const emptyMessage = filterMode === "shortlist"
+                    ? "No shortlisted tenders yet. Click the star on any tender to add it here."
+                    : "Try another search, or wait for the daily GitHub Action to fetch data.";
                 els.table.innerHTML = `
                     <div class="empty">
                         <strong>No tenders found</strong>
-                        <p>Try another search, or wait for the daily GitHub Action to fetch data.</p>
+                        <p>${emptyMessage}</p>
                     </div>
                 `;
                 return;
             }
 
-            const rows = tenders.map((t) => `
+            const rows = tenders.map((t) => {
+                const starred = isShortlisted(t.tender_no);
+                return `
                 <tr>
+                    <td>
+                        <button
+                            class="btn-star ${starred ? "active" : ""}"
+                            type="button"
+                            data-tender-no="${escapeHtml(t.tender_no)}"
+                            title="${starred ? "Remove from shortlist" : "Add to shortlist"}"
+                            aria-label="${starred ? "Remove from shortlist" : "Add to shortlist"}"
+                        >${starred ? "★" : "☆"}</button>
+                    </td>
                     <td><span class="tender-no">${escapeHtml(t.tender_no)}</span></td>
                     <td>${escapeHtml(t.area_city || "—")}</td>
                     <td class="name-cell">${escapeHtml(t.name || "—")}</td>
@@ -388,12 +518,14 @@
                         ${(t.first_seen_at || "").startsWith(today) ? '<span class="badge-new">New</span>' : ""}
                     </td>
                 </tr>
-            `).join("");
+            `;
+            }).join("");
 
             els.table.innerHTML = `
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Tender No</th>
                             <th>Area / City</th>
                             <th>Description</th>
@@ -420,6 +552,7 @@
             els.total.textContent = stats.total ?? 0;
             els.newToday.textContent = stats.new_today ?? 0;
             els.updated.textContent = formatDateTime(stats.last_scraped || null);
+            updateShortlistStats();
         }
 
         async function loadData() {
@@ -442,6 +575,12 @@
             }
         }
 
+        els.table.addEventListener("click", (event) => {
+            const button = event.target.closest(".btn-star");
+            if (!button) return;
+            toggleShortlist(button.dataset.tenderNo);
+        });
+
         els.btnSearch.addEventListener("click", () => {
             searchTerm = els.search.value.trim().toLowerCase();
             renderTable();
@@ -456,7 +595,7 @@
 
         els.btnNew.addEventListener("click", () => {
             filterMode = "new";
-            setActiveButton("new");
+            setActiveTab("new");
             renderTable();
         });
 
@@ -464,10 +603,17 @@
             filterMode = "all";
             searchTerm = "";
             els.search.value = "";
-            setActiveButton("all");
+            setActiveTab("all");
             renderTable();
         });
 
+        els.btnShortlist.addEventListener("click", () => {
+            filterMode = "shortlist";
+            setActiveTab("shortlist");
+            renderTable();
+        });
+
+        loadShortlist();
         loadData();
     </script>
 </body>
