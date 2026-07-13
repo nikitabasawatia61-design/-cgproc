@@ -3,6 +3,8 @@ import sqlite3
 from datetime import datetime
 from pathlib import Path
 
+from scraper.location import extract_area_city
+
 DB_PATH = Path(__file__).parent / "tenders.db"
 DATA_JSON = Path(__file__).parent / "docs" / "data" / "tenders.json"
 
@@ -31,7 +33,14 @@ def init_db():
             CREATE INDEX IF NOT EXISTS idx_tenders_first_seen
             ON tenders(first_seen_at DESC)
         """)
+        _ensure_area_city_column(conn)
         conn.commit()
+
+
+def _ensure_area_city_column(conn):
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(tenders)")}
+    if "area_city" not in columns:
+        conn.execute("ALTER TABLE tenders ADD COLUMN area_city TEXT")
 
 
 def get_existing_tender_numbers():
@@ -42,17 +51,23 @@ def get_existing_tender_numbers():
 
 def save_tender(data):
     now = datetime.now().isoformat(timespec="seconds")
+    area_city = data.get("area_city") or extract_area_city(
+        name=data.get("name", ""),
+        department=data.get("department", ""),
+    )
     with get_connection() as conn:
+        _ensure_area_city_column(conn)
         conn.execute(
             """
             INSERT INTO tenders
-                (tender_no, name, department, amount, last_date, first_seen_at, last_updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+                (tender_no, name, department, amount, last_date, area_city, first_seen_at, last_updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tender_no) DO UPDATE SET
                 name = excluded.name,
                 department = excluded.department,
                 amount = excluded.amount,
                 last_date = excluded.last_date,
+                area_city = excluded.area_city,
                 last_updated_at = excluded.last_updated_at
             """,
             (
@@ -61,6 +76,7 @@ def save_tender(data):
                 data.get("department", ""),
                 data.get("amount", ""),
                 data.get("last_date", ""),
+                area_city,
                 now,
                 now,
             ),
@@ -73,9 +89,9 @@ def get_all_tenders(search=None, new_only=False, limit=500):
     params = []
 
     if search:
-        query += " AND (tender_no LIKE ? OR name LIKE ? OR department LIKE ?)"
+        query += " AND (tender_no LIKE ? OR name LIKE ? OR department LIKE ? OR area_city LIKE ?)"
         term = f"%{search}%"
-        params.extend([term, term, term])
+        params.extend([term, term, term, term])
 
     if new_only:
         today = datetime.now().strftime("%Y-%m-%d")
@@ -177,8 +193,8 @@ def import_tender_record(tender):
         conn.execute(
             """
             INSERT INTO tenders
-                (tender_no, name, department, amount, last_date, first_seen_at, last_updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+                (tender_no, name, department, amount, last_date, area_city, first_seen_at, last_updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 tender["tender_no"],
@@ -186,6 +202,8 @@ def import_tender_record(tender):
                 tender.get("department", ""),
                 tender.get("amount", ""),
                 tender.get("last_date", ""),
+                tender.get("area_city")
+                or extract_area_city(tender.get("name", ""), tender.get("department", "")),
                 first_seen,
                 last_updated,
             ),
@@ -209,3 +227,27 @@ def export_to_json(json_path=None):
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
     return path
+
+
+def backfill_area_city():
+    """Fill area_city for tenders that don't have it yet."""
+    updated = 0
+    with get_connection() as conn:
+        _ensure_area_city_column(conn)
+        rows = conn.execute(
+            "SELECT tender_no, name, department, area_city FROM tenders"
+        ).fetchall()
+
+        for row in rows:
+            if row["area_city"]:
+                continue
+            area_city = extract_area_city(row["name"], row["department"])
+            if not area_city:
+                continue
+            conn.execute(
+                "UPDATE tenders SET area_city = ? WHERE tender_no = ?",
+                (area_city, row["tender_no"]),
+            )
+            updated += 1
+        conn.commit()
+    return updated

@@ -249,7 +249,7 @@
 
         <form class="toolbar" method="get" action="/">
             <div class="search-box">
-                <input type="text" name="q" value="{{ search }}" placeholder="Search tender no, name, department...">
+                <input type="text" name="q" value="{{ search }}" placeholder="Search tender no, city, name, department...">
             </div>
             {% if new_only %}
                 <input type="hidden" name="new" value="1">
@@ -265,6 +265,7 @@
                 <thead>
                     <tr>
                         <th>Tender No</th>
+                        <th>Area / City</th>
                         <th>Description</th>
                         <th>Department</th>
                         <th>Amount</th>
@@ -278,6 +279,7 @@
                         <td>
                             <span class="tender-no">{{ t.tender_no }}</span>
                         </td>
+                        <td>{{ t.area_city or '—' }}</td>
                         <td class="name-cell">{{ t.name or '—' }}</td>
                         <td>{{ t.department or '—' }}</td>
                         <td>{{ t.amount or '—' }}</td>

@@ -44,6 +44,9 @@ def main():
         sys.exit(1)
 
     if args.export_json:
+        updated = db.backfill_area_city()
+        if updated:
+            print(f"Backfilled area/city for {updated} tenders")
         path = db.export_to_json()
         print(f"Exported data to {path}")
 

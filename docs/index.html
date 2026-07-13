@@ -154,6 +154,24 @@
             color: white;
         }
 
+        .btn-run {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-color: #16a34a;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-run:hover {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+        }
+
+        .run-hint {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
         .meta {
             color: var(--muted);
             font-size: 0.85rem;
@@ -232,7 +250,7 @@
 
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
-            table { min-width: 760px; }
+            table { min-width: 860px; }
         }
     </style>
 </head>
@@ -264,12 +282,24 @@
 
         <div class="toolbar">
             <div class="search-box">
-                <input type="text" id="search" placeholder="Search tender no, description, department...">
+                <input type="text" id="search" placeholder="Search tender no, city, description, department...">
             </div>
             <button class="btn" id="btn-search">Search</button>
             <button class="btn" id="btn-new">New Today</button>
             <button class="btn active" id="btn-all">All</button>
+            <a
+                class="btn btn-run"
+                href="https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml"
+                target="_blank"
+                rel="noopener"
+            >
+                Fetch Tenders Now
+            </a>
         </div>
+
+        <p class="run-hint">
+            Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.
+        </p>
 
         <div class="meta" id="result-meta"></div>
 
@@ -322,6 +352,7 @@
                     t.tender_no,
                     t.name,
                     t.department,
+                    t.area_city,
                 ].some((field) => (field || "").toLowerCase().includes(searchTerm));
 
                 const matchesNew = filterMode !== "new" || (t.first_seen_at || "").startsWith(today);
@@ -347,6 +378,7 @@
             const rows = tenders.map((t) => `
                 <tr>
                     <td><span class="tender-no">${escapeHtml(t.tender_no)}</span></td>
+                    <td>${escapeHtml(t.area_city || "—")}</td>
                     <td class="name-cell">${escapeHtml(t.name || "—")}</td>
                     <td>${escapeHtml(t.department || "—")}</td>
                     <td>${escapeHtml(t.amount || "—")}</td>
@@ -363,6 +395,7 @@
                     <thead>
                         <tr>
                             <th>Tender No</th>
+                            <th>Area / City</th>
                             <th>Description</th>
                             <th>Department</th>
                             <th>Amount</th>

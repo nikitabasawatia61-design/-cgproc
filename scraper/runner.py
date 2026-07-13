@@ -197,6 +197,7 @@ def run_scraper(start_page=1, headless=False, stop_after_existing_pages=3):
                         "department": details.get("department", ""),
                         "amount": details.get("amount", ""),
                         "last_date": details.get("last_date", ""),
+                        "area_city": details.get("area_city", ""),
                     }
 
                     print(required_data)
