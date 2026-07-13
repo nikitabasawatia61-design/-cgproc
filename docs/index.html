@@ -230,6 +230,63 @@
             margin-bottom: 1rem;
         }
 
+        .sync-panel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .sync-copy {
+            flex: 1 1 220px;
+        }
+
+        .sync-copy strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .sync-copy span,
+        .sync-status {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .sync-status.cloud { color: var(--new); }
+        .sync-status.local { color: var(--warn); }
+
+        .sync-code-box {
+            flex: 1 1 220px;
+            min-width: 200px;
+        }
+
+        .sync-code-box input {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .sync-code-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        .sync-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
         .meta {
             color: var(--muted);
             font-size: 0.85rem;
@@ -351,6 +408,21 @@
             </button>
         </div>
 
+        <div class="sync-panel">
+            <div class="sync-copy">
+                <strong>Sync shortlist across devices</strong>
+                <span>Use the same sync code on phone, laptop, or tablet.</span>
+                <div class="sync-status" id="sync-status">Checking sync...</div>
+            </div>
+            <div class="sync-code-box">
+                <input type="text" id="sync-code" placeholder="Sync code, e.g. my-tenders-2026">
+            </div>
+            <div class="sync-actions">
+                <button class="btn" id="btn-sync-connect" type="button">Connect</button>
+                <button class="btn" id="btn-sync-generate" type="button">Generate</button>
+            </div>
+        </div>
+
         <div class="toolbar">
             <div class="search-box">
                 <input type="text" id="search" placeholder="Search tender no, city, description, department...">
@@ -385,14 +457,15 @@
         </p>
     </div>
 
+    <script src="firebase-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="shortlist-sync.js"></script>
     <script>
-        const SHORTLIST_KEY = "cgproc_shortlist";
-
         let allTenders = [];
         let stats = {};
         let filterMode = "all";
         let searchTerm = "";
-        let shortlisted = new Set();
         const today = new Date().toISOString().slice(0, 10);
 
         const els = {
@@ -408,41 +481,40 @@
             btnNew: document.getElementById("btn-new"),
             btnAll: document.getElementById("btn-all"),
             btnShortlist: document.getElementById("btn-shortlist"),
+            syncCode: document.getElementById("sync-code"),
+            syncStatus: document.getElementById("sync-status"),
+            btnSyncConnect: document.getElementById("btn-sync-connect"),
+            btnSyncGenerate: document.getElementById("btn-sync-generate"),
         };
 
-        function loadShortlist() {
-            try {
-                const saved = JSON.parse(localStorage.getItem(SHORTLIST_KEY) || "[]");
-                shortlisted = new Set(Array.isArray(saved) ? saved : []);
-            } catch {
-                shortlisted = new Set();
-            }
+        function updateShortlistStats() {
+            const count = ShortlistSync.getAll().size;
+            els.shortlistStat.textContent = count;
+            els.shortlistCount.textContent = count;
         }
 
-        function saveShortlist() {
-            localStorage.setItem(SHORTLIST_KEY, JSON.stringify([...shortlisted]));
-            updateShortlistStats();
+        function updateSyncStatus() {
+            const status = ShortlistSync.status();
+            els.syncStatus.className = `sync-status ${status.mode === "cloud" ? "cloud" : "local"}`;
+            if (status.mode === "cloud") {
+                els.syncStatus.textContent = `Connected: ${status.code} · ${status.message}`;
+            } else if (!ShortlistSync.isConfigured()) {
+                els.syncStatus.innerHTML = `${status.message}. <a href="https://github.com/nikitabasawatia61-design/-cgproc/blob/main/docs/SYNC_SETUP.md" target="_blank" rel="noopener">Setup guide</a>`;
+            } else {
+                els.syncStatus.textContent = status.message;
+            }
+            if (ShortlistSync.getSyncCode()) {
+                els.syncCode.value = ShortlistSync.getSyncCode();
+            }
         }
 
         function isShortlisted(tenderNo) {
-            return shortlisted.has(String(tenderNo));
+            return ShortlistSync.has(tenderNo);
         }
 
         function toggleShortlist(tenderNo) {
-            const id = String(tenderNo);
-            if (shortlisted.has(id)) {
-                shortlisted.delete(id);
-            } else {
-                shortlisted.add(id);
-            }
-            saveShortlist();
+            ShortlistSync.toggle(tenderNo);
             renderTable();
-        }
-
-        function updateShortlistStats() {
-            const count = shortlisted.size;
-            els.shortlistStat.textContent = count;
-            els.shortlistCount.textContent = count;
         }
 
         function formatDateTime(value) {
@@ -613,7 +685,28 @@
             renderTable();
         });
 
-        loadShortlist();
+        els.btnSyncConnect.addEventListener("click", () => {
+            try {
+                ShortlistSync.connect(els.syncCode.value);
+                updateSyncStatus();
+            } catch (error) {
+                els.syncStatus.className = "sync-status local";
+                els.syncStatus.textContent = error.message;
+            }
+        });
+
+        els.btnSyncGenerate.addEventListener("click", () => {
+            els.syncCode.value = ShortlistSync.generateCode();
+        });
+
+        ShortlistSync.onChange(() => {
+            updateShortlistStats();
+            updateSyncStatus();
+            renderTable();
+        });
+
+        ShortlistSync.init();
+        updateSyncStatus();
         loadData();
     </script>
 </body>

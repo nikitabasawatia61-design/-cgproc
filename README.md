@@ -66,6 +66,15 @@ The workflow runs automatically at **6:00 AM IST** every day.
 
 You can also trigger it manually anytime from the **Actions** tab → **Daily Tender Scrape** → **Run workflow**.
 
+## Cross-device shortlist
+
+Shortlist sync uses Firebase (free). See **[docs/SYNC_SETUP.md](docs/SYNC_SETUP.md)** for a 5-minute setup.
+
+1. Create a free Firebase project
+2. Fill in `docs/firebase-config.js`
+3. Push to GitHub
+4. On any device, use the same **sync code** in the dashboard
+
 ## Local development
 
 ```bash
