@@ -4,6 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 from scraper.location import extract_area_city
+from scraper.dates import is_tender_closed, parse_last_date
 
 DB_PATH = Path(__file__).parent / "tenders.db"
 DATA_JSON = Path(__file__).parent / "docs" / "data" / "tenders.json"
@@ -103,7 +104,9 @@ def get_all_tenders(search=None, new_only=False, limit=500):
 
     with get_connection() as conn:
         rows = conn.execute(query, params).fetchall()
-    return [dict(row) for row in rows]
+
+    tenders = [dict(row) for row in rows]
+    return [t for t in tenders if not is_tender_closed(t.get("last_date"))]
 
 
 def get_tender_by_number(tender_no):
@@ -117,20 +120,38 @@ def get_tender_by_number(tender_no):
 
 def get_stats():
     with get_connection() as conn:
-        total = conn.execute("SELECT COUNT(*) FROM tenders").fetchone()[0]
-        today = datetime.now().strftime("%Y-%m-%d")
-        new_today = conn.execute(
-            "SELECT COUNT(*) FROM tenders WHERE first_seen_at LIKE ?",
-            (f"{today}%",),
-        ).fetchone()[0]
-        last_scraped = conn.execute(
-            "SELECT MAX(last_updated_at) FROM tenders"
-        ).fetchone()[0]
+        rows = conn.execute("SELECT last_date, first_seen_at, last_updated_at FROM tenders").fetchall()
+
+    active_rows = [row for row in rows if not is_tender_closed(row["last_date"])]
+    today = datetime.now().strftime("%Y-%m-%d")
+    new_today = sum(
+        1 for row in active_rows
+        if (row["first_seen_at"] or "").startswith(today)
+    )
+    last_scraped = max(
+        (row["last_updated_at"] for row in active_rows if row["last_updated_at"]),
+        default=None,
+    )
+
     return {
-        "total": total,
+        "total": len(active_rows),
         "new_today": new_today,
         "last_scraped": last_scraped,
     }
+
+
+def remove_closed_tenders():
+    """Delete tenders whose bid due date has passed."""
+    removed = 0
+    with get_connection() as conn:
+        rows = conn.execute("SELECT tender_no, last_date FROM tenders").fetchall()
+        for row in rows:
+            if not is_tender_closed(row["last_date"]):
+                continue
+            conn.execute("DELETE FROM tenders WHERE tender_no = ?", (row["tender_no"],))
+            removed += 1
+        conn.commit()
+    return removed
 
 
 def import_from_excel(excel_path):
@@ -213,7 +234,7 @@ def import_tender_record(tender):
 
 
 def export_to_json(json_path=None):
-    """Export tenders for GitHub Pages UI."""
+    """Export active tenders for GitHub Pages UI."""
     path = Path(json_path or DATA_JSON)
     path.parent.mkdir(parents=True, exist_ok=True)
 

@@ -47,6 +47,9 @@ def main():
         updated = db.backfill_area_city(force_all=True)
         if updated:
             print(f"Refreshed area/city for {updated} tenders")
+        removed = db.remove_closed_tenders()
+        if removed:
+            print(f"Removed {removed} closed tenders")
         path = db.export_to_json()
         print(f"Exported data to {path}")
 
