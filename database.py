@@ -99,7 +99,7 @@ def get_all_tenders(search=None, new_only=False, limit=500):
         query += " AND first_seen_at LIKE ?"
         params.append(f"{today}%")
 
-    query += " ORDER BY CAST(tender_no AS INTEGER) DESC, first_seen_at DESC LIMIT ?"
+    query += " ORDER BY first_seen_at DESC, CAST(tender_no AS INTEGER) DESC LIMIT ?"
     params.append(limit)
 
     with get_connection() as conn:

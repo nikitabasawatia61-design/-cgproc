@@ -572,10 +572,10 @@
 
         function sortNewestFirst(tenders) {
             return [...tenders].sort((a, b) => {
-                const aNo = Number(a.tender_no) || 0;
-                const bNo = Number(b.tender_no) || 0;
-                if (bNo !== aNo) return bNo - aNo;
-                return (b.first_seen_at || "").localeCompare(a.first_seen_at || "");
+                const aSeen = a.first_seen_at || "";
+                const bSeen = b.first_seen_at || "";
+                if (bSeen !== aSeen) return bSeen.localeCompare(aSeen);
+                return (Number(b.tender_no) || 0) - (Number(a.tender_no) || 0);
             });
         }
 
