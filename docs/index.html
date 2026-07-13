@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Tenders Dashboard</title>
+    <meta name="description" content="Chhattisgarh government open tenders — updated daily">
+    <style>
+        :root {
+            --bg: #0b1220;
+            --surface: #151f32;
+            --surface-hover: #1c2940;
+            --border: #2a3a55;
+            --text: #edf2f7;
+            --muted: #8fa3bf;
+            --accent: #4f8cff;
+            --accent-soft: rgba(79, 140, 255, 0.15);
+            --new: #34d399;
+            --new-bg: rgba(52, 211, 153, 0.12);
+            --warn: #fbbf24;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+            background:
+                radial-gradient(circle at top right, rgba(79, 140, 255, 0.12), transparent 35%),
+                var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 3rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-top: 0.5rem;
+            max-width: 680px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.75rem 0;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem 1.25rem;
+        }
+
+        .stat-card .label {
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .stat-card .value {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-top: 0.35rem;
+        }
+
+        .stat-card.highlight {
+            border-color: rgba(52, 211, 153, 0.35);
+            background: linear-gradient(180deg, rgba(52, 211, 153, 0.08), var(--surface));
+        }
+
+        .stat-card.highlight .value { color: var(--new); }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.6rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        .search-box::before {
+            content: "⌕";
+            position: absolute;
+            left: 0.95rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+        }
+
+        .btn {
+            padding: 0.75rem 1.1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .btn:hover { background: var(--surface-hover); }
+        .btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .table-wrap {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.9rem 1rem;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--muted);
+            background: rgba(0, 0, 0, 0.18);
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: var(--surface-hover); }
+
+        .tender-no {
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .badge-new {
+            display: inline-block;
+            background: var(--new-bg);
+            color: var(--new);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.18rem 0.45rem;
+            border-radius: 999px;
+            margin-left: 0.45rem;
+            text-transform: uppercase;
+        }
+
+        .name-cell { max-width: 340px; }
+
+        .empty, .loading, .error {
+            text-align: center;
+            padding: 3.5rem 1rem;
+            color: var(--muted);
+        }
+
+        .error { color: #fca5a5; }
+
+        .footer {
+            margin-top: 2rem;
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-align: center;
+        }
+
+        .footer a { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .table-wrap { overflow-x: auto; }
+            table { min-width: 760px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="eyebrow">Chhattisgarh E-Procurement</div>
+            <h1>Open Tenders Dashboard</h1>
+            <p class="subtitle">
+                Automatically fetches new tenders daily from the CG government portal.
+                Hosted free on GitHub Pages.
+            </p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="label">Total Tenders</div>
+                <div class="value" id="stat-total">—</div>
+            </div>
+            <div class="stat-card highlight">
+                <div class="label">New Today</div>
+                <div class="value" id="stat-new">—</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Last Updated</div>
+                <div class="value" id="stat-updated" style="font-size:1rem;margin-top:0.55rem;">—</div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search tender no, description, department...">
+            </div>
+            <button class="btn" id="btn-search">Search</button>
+            <button class="btn" id="btn-new">New Today</button>
+            <button class="btn active" id="btn-all">All</button>
+        </div>
+
+        <div class="meta" id="result-meta"></div>
+
+        <div class="table-wrap" id="table-container">
+            <div class="loading">Loading tender data...</div>
+        </div>
+
+        <p class="footer">
+            Data source:
+            <a href="https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do" target="_blank" rel="noopener">
+                CG E-Procurement Portal
+            </a>
+            · Updated daily by GitHub Actions
+        </p>
+    </div>
+
+    <script>
+        let allTenders = [];
+        let stats = {};
+        let filterMode = "all";
+        let searchTerm = "";
+        const today = new Date().toISOString().slice(0, 10);
+
+        const els = {
+            total: document.getElementById("stat-total"),
+            newToday: document.getElementById("stat-new"),
+            updated: document.getElementById("stat-updated"),
+            search: document.getElementById("search"),
+            meta: document.getElementById("result-meta"),
+            table: document.getElementById("table-container"),
+            btnSearch: document.getElementById("btn-search"),
+            btnNew: document.getElementById("btn-new"),
+            btnAll: document.getElementById("btn-all"),
+        };
+
+        function formatDateTime(value) {
+            if (!value) return "Never";
+            return value.replace("T", " ").slice(0, 16);
+        }
+
+        function setActiveButton(mode) {
+            [els.btnAll, els.btnNew].forEach((btn) => btn.classList.remove("active"));
+            if (mode === "new") els.btnNew.classList.add("active");
+            if (mode === "all") els.btnAll.classList.add("active");
+        }
+
+        function getFilteredTenders() {
+            return allTenders.filter((t) => {
+                const matchesSearch = !searchTerm || [
+                    t.tender_no,
+                    t.name,
+                    t.department,
+                ].some((field) => (field || "").toLowerCase().includes(searchTerm));
+
+                const matchesNew = filterMode !== "new" || (t.first_seen_at || "").startsWith(today);
+                return matchesSearch && matchesNew;
+            });
+        }
+
+        function renderTable() {
+            const tenders = getFilteredTenders();
+
+            els.meta.textContent = `${tenders.length} tender${tenders.length === 1 ? "" : "s"} shown`;
+
+            if (!tenders.length) {
+                els.table.innerHTML = `
+                    <div class="empty">
+                        <strong>No tenders found</strong>
+                        <p>Try another search, or wait for the daily GitHub Action to fetch data.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const rows = tenders.map((t) => `
+                <tr>
+                    <td><span class="tender-no">${escapeHtml(t.tender_no)}</span></td>
+                    <td class="name-cell">${escapeHtml(t.name || "—")}</td>
+                    <td>${escapeHtml(t.department || "—")}</td>
+                    <td>${escapeHtml(t.amount || "—")}</td>
+                    <td>${escapeHtml(t.last_date || "—")}</td>
+                    <td>
+                        ${escapeHtml((t.first_seen_at || "").slice(0, 10) || "—")}
+                        ${(t.first_seen_at || "").startsWith(today) ? '<span class="badge-new">New</span>' : ""}
+                    </td>
+                </tr>
+            `).join("");
+
+            els.table.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tender No</th>
+                            <th>Description</th>
+                            <th>Department</th>
+                            <th>Amount</th>
+                            <th>Bid Due Date</th>
+                            <th>Added</th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            `;
+        }
+
+        function escapeHtml(value) {
+            return String(value)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;");
+        }
+
+        function updateStats() {
+            els.total.textContent = stats.total ?? 0;
+            els.newToday.textContent = stats.new_today ?? 0;
+            els.updated.textContent = formatDateTime(stats.last_scraped || null);
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch("data/tenders.json?" + Date.now());
+                if (!response.ok) throw new Error("Could not load tender data");
+
+                const payload = await response.json();
+                allTenders = payload.tenders || [];
+                stats = payload.stats || {};
+                updateStats();
+                renderTable();
+            } catch (error) {
+                els.table.innerHTML = `
+                    <div class="error">
+                        <strong>Failed to load data</strong>
+                        <p>${escapeHtml(error.message)}</p>
+                    </div>
+                `;
+            }
+        }
+
+        els.btnSearch.addEventListener("click", () => {
+            searchTerm = els.search.value.trim().toLowerCase();
+            renderTable();
+        });
+
+        els.search.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                searchTerm = els.search.value.trim().toLowerCase();
+                renderTable();
+            }
+        });
+
+        els.btnNew.addEventListener("click", () => {
+            filterMode = "new";
+            setActiveButton("new");
+            renderTable();
+        });
+
+        els.btnAll.addEventListener("click", () => {
+            filterMode = "all";
+            searchTerm = "";
+            els.search.value = "";
+            setActiveButton("all");
+            renderTable();
+        });
+
+        loadData();
+    </script>
+</body>
+</html>

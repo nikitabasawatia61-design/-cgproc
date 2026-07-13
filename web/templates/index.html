@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Tenders Dashboard</title>
+    <style>
+        :root {
+            --bg: #0f1419;
+            --surface: #1a2332;
+            --surface-hover: #243044;
+            --border: #2d3a4f;
+            --text: #e7ecf3;
+            --muted: #8b9cb3;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --new: #22c55e;
+            --new-bg: rgba(34, 197, 94, 0.12);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        .stat-card .label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-card .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+
+        .stat-card.highlight .value {
+            color: var(--new);
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.65rem 1rem 0.65rem 2.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+        }
+
+        .search-box::before {
+            content: "⌕";
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            padding: 0.65rem 1.1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .btn:hover {
+            background: var(--surface-hover);
+        }
+
+        .btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .table-wrap {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.85rem 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--surface-hover);
+        }
+
+        .tender-no {
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .badge-new {
+            display: inline-block;
+            background: var(--new-bg);
+            color: var(--new);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .name-cell {
+            max-width: 320px;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--muted);
+        }
+
+        .empty p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .table-wrap { overflow-x: auto; }
+            table { min-width: 700px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CG E-Procurement Tenders</h1>
+            <p class="subtitle">Chhattisgarh government open tenders — updated daily</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="label">Total Tenders</div>
+                <div class="value">{{ stats.total }}</div>
+            </div>
+            <div class="stat-card highlight">
+                <div class="label">New Today</div>
+                <div class="value">{{ stats.new_today }}</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Last Scraped</div>
+                <div class="value" style="font-size: 1rem; margin-top: 0.5rem;">
+                    {{ stats.last_scraped[:16].replace('T', ' ') if stats.last_scraped else 'Never' }}
+                </div>
+            </div>
+        </div>
+
+        <form class="toolbar" method="get" action="/">
+            <div class="search-box">
+                <input type="text" name="q" value="{{ search }}" placeholder="Search tender no, name, department...">
+            </div>
+            {% if new_only %}
+                <input type="hidden" name="new" value="1">
+            {% endif %}
+            <button type="submit" class="btn">Search</button>
+            <a href="/?new=1" class="btn {% if new_only %}active{% endif %}">New Today</a>
+            <a href="/" class="btn {% if not new_only and not search %}active{% endif %}">All</a>
+        </form>
+
+        <div class="table-wrap">
+            {% if tenders %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tender No</th>
+                        <th>Description</th>
+                        <th>Department</th>
+                        <th>Amount</th>
+                        <th>Bid Due Date</th>
+                        <th>Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in tenders %}
+                    <tr>
+                        <td>
+                            <span class="tender-no">{{ t.tender_no }}</span>
+                        </td>
+                        <td class="name-cell">{{ t.name or '—' }}</td>
+                        <td>{{ t.department or '—' }}</td>
+                        <td>{{ t.amount or '—' }}</td>
+                        <td>{{ t.last_date or '—' }}</td>
+                        <td>
+                            {{ t.first_seen_at[:10] }}
+                            {% if t.first_seen_at[:10] == today %}
+                            <span class="badge-new">New</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty">
+                <strong>No tenders found</strong>
+                <p>Run <code>python run_daily.py</code> to fetch tenders, or adjust your search.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

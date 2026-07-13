@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+tenders.db
+tender_results.xlsx
+logs/
+*.log
+.DS_Store
+Thumbs.db
+chromedriver*
+.wdm/
