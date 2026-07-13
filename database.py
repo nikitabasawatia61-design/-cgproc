@@ -229,8 +229,8 @@ def export_to_json(json_path=None):
     return path
 
 
-def backfill_area_city():
-    """Fill area_city for tenders that don't have it yet."""
+def backfill_area_city(force_all=False):
+    """Fill or refresh area_city from description and department."""
     updated = 0
     with get_connection() as conn:
         _ensure_area_city_column(conn)
@@ -239,10 +239,10 @@ def backfill_area_city():
         ).fetchall()
 
         for row in rows:
-            if row["area_city"]:
-                continue
             area_city = extract_area_city(row["name"], row["department"])
             if not area_city:
+                continue
+            if not force_all and row["area_city"] == area_city:
                 continue
             conn.execute(
                 "UPDATE tenders SET area_city = ? WHERE tender_no = ?",
