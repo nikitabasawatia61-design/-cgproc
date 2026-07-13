@@ -154,6 +154,24 @@ def remove_closed_tenders():
     return removed
 
 
+def remove_tenders_not_on_portal(portal_numbers):
+    """Delete tenders no longer shown on the portal open listing."""
+    portal_set = {str(number).strip() for number in portal_numbers if number}
+    if not portal_set:
+        return 0
+
+    removed = 0
+    with get_connection() as conn:
+        rows = conn.execute("SELECT tender_no FROM tenders").fetchall()
+        for row in rows:
+            if row["tender_no"] in portal_set:
+                continue
+            conn.execute("DELETE FROM tenders WHERE tender_no = ?", (row["tender_no"],))
+            removed += 1
+        conn.commit()
+    return removed
+
+
 def import_from_excel(excel_path):
     """One-time migration from existing Excel file."""
     from openpyxl import load_workbook

@@ -105,12 +105,12 @@ def create_driver(headless=False):
     )
 
 
-def run_scraper(start_page=1, headless=False, stop_after_existing_pages=3):
+def run_scraper(start_page=1, headless=False, full_scan=True):
     """
     Scrape tenders from the CG e-procurement portal.
 
-    stop_after_existing_pages: stop early when this many consecutive pages
-    have zero new tenders (useful for daily runs).
+    full_scan: scan every listing page so missing tenders are fetched and
+    counts stay aligned with the live portal.
     """
     db.init_db()
     existing_tenders = db.get_existing_tender_numbers()
@@ -122,14 +122,20 @@ def run_scraper(start_page=1, headless=False, stop_after_existing_pages=3):
 
     new_count = 0
     skipped_count = 0
-    consecutive_existing_pages = 0
+    portal_numbers = set()
 
     try:
         driver.get(URL)
 
         if not authenticate(driver):
             print("Login/authentication failed")
-            return {"new": 0, "skipped": 0, "error": "authentication failed"}
+            return {
+                "new": 0,
+                "skipped": 0,
+                "portal_total": 0,
+                "removed_stale": 0,
+                "error": "authentication failed",
+            }
 
         wait_for_listing(wait)
 
@@ -154,7 +160,9 @@ def run_scraper(start_page=1, headless=False, stop_after_existing_pages=3):
                 print("No tenders found. Scraping completed.")
                 break
 
-            page_new_count = 0
+            for tender in tenders:
+                portal_numbers.add(str(tender["number"]).strip())
+
             index = 0
 
             while index < total:
@@ -205,7 +213,6 @@ def run_scraper(start_page=1, headless=False, stop_after_existing_pages=3):
 
                     existing_tenders.add(tender_no)
                     new_count += 1
-                    page_new_count += 1
                     print(f"Saved tender: {tender_no}")
 
                     if not return_to_same_page(driver, wait, page_no):
@@ -224,24 +231,26 @@ def run_scraper(start_page=1, headless=False, stop_after_existing_pages=3):
 
             print(f"\nCompleted Page {page_no}")
 
-            if page_new_count == 0:
-                consecutive_existing_pages += 1
-                if consecutive_existing_pages >= stop_after_existing_pages:
-                    print(
-                        f"No new tenders on {stop_after_existing_pages} consecutive pages. "
-                        "Stopping early."
-                    )
-                    break
-            else:
-                consecutive_existing_pages = 0
+            if not full_scan:
+                break
 
             page_no += 1
 
     finally:
         driver.quit()
 
-    summary = {"new": new_count, "skipped": skipped_count, "error": None}
+    removed_stale = db.remove_tenders_not_on_portal(portal_numbers)
+
+    summary = {
+        "new": new_count,
+        "skipped": skipped_count,
+        "portal_total": len(portal_numbers),
+        "removed_stale": removed_stale,
+        "error": None,
+    }
     print("\n========== FINAL SUMMARY ==========")
+    print(f"Portal listing total: {summary['portal_total']}")
     print(f"New tenders scraped: {new_count}")
     print(f"Skipped existing tenders: {skipped_count}")
+    print(f"Removed stale tenders: {removed_stale}")
     return summary

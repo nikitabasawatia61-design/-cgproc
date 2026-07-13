@@ -52,8 +52,13 @@ def main():
             print(f"Removed {removed} closed tenders")
         path = db.export_to_json()
         print(f"Exported data to {path}")
+        stats = db.get_stats()
+        print(f"Active tenders in dashboard: {stats['total']}")
 
-    print(f"Done. {result['new']} new tenders added.")
+    print(
+        f"Done. {result['new']} new tenders added. "
+        f"Portal listing: {result.get('portal_total', 0)}."
+    )
 
 
 if __name__ == "__main__":
