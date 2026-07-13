@@ -45,13 +45,11 @@ git push -u origin main
 
 1. Open your repo on GitHub
 2. Go to **Settings → Pages**
-3. Under **Build and deployment**, set:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main`
-   - **Folder:** `/docs`
-4. Click **Save**
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**
+4. Go to **Actions** tab → run **Deploy GitHub Pages** workflow (or push any change to `docs/`)
 
-Your UI will be live in 1–2 minutes.
+Your UI will be live in 1–2 minutes at:
+`https://<your-github-username>.github.io/<repo-name>/`
 
 ### 3. Enable GitHub Actions
 
