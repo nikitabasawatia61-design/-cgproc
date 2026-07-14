@@ -1,5 +1,6 @@
 import time
 
+from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -42,7 +43,9 @@ def go_to_page(driver, wait, page_no):
 def recover_to_page(driver, wait, page_no):
     print(f"Recovering to Page {page_no}")
 
-    driver.get(URL)
+    if not open_url(driver, URL):
+        print("Recovery could not open portal")
+        return False
     time.sleep(2)
 
     if not authenticate(driver):
@@ -87,8 +90,25 @@ def return_to_same_page(driver, wait, page_no):
     return True
 
 
+def open_url(driver, url, retries=3):
+    for attempt in range(1, retries + 1):
+        try:
+            print(f"Opening portal (attempt {attempt}/{retries})...")
+            driver.get(url)
+            return True
+        except TimeoutException:
+            print(f"Page load timeout on attempt {attempt}")
+            try:
+                driver.execute_script("window.stop();")
+            except Exception:
+                pass
+            time.sleep(5)
+    return False
+
+
 def create_driver(headless=False):
     options = Options()
+    options.page_load_strategy = "eager"
     if headless:
         options.add_argument("--headless=new")
         options.add_argument("--window-size=1920,1080")
@@ -99,10 +119,13 @@ def create_driver(headless=False):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    return webdriver.Chrome(
+    driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options,
     )
+    driver.set_page_load_timeout(180)
+    driver.set_script_timeout(60)
+    return driver
 
 
 def run_scraper(start_page=1, headless=False, full_scan=True):
@@ -118,14 +141,22 @@ def run_scraper(start_page=1, headless=False, full_scan=True):
     print(f"Already saved tenders: {len(existing_tenders)}")
 
     driver = create_driver(headless=headless)
-    wait = WebDriverWait(driver, 30)
+    wait = WebDriverWait(driver, 45)
 
     new_count = 0
     skipped_count = 0
     portal_numbers = set()
 
     try:
-        driver.get(URL)
+        if not open_url(driver, URL):
+            print("Could not open portal")
+            return {
+                "new": 0,
+                "skipped": 0,
+                "portal_total": 0,
+                "removed_stale": 0,
+                "error": "portal timeout",
+            }
 
         if not authenticate(driver):
             print("Login/authentication failed")
