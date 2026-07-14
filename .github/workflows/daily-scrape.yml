@@ -31,11 +31,14 @@ jobs:
       - name: Install Google Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget gnupg
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+          sudo apt-get install -y wget gnupg ca-certificates
+          wget -q -O /tmp/google-linux-signing-key.pub https://dl.google.com/linux/linux_signing_key.pub
+          gpg --batch --yes --no-tty --dearmor -o /tmp/google-chrome.gpg /tmp/google-linux-signing-key.pub
+          sudo mv /tmp/google-chrome.gpg /usr/share/keyrings/google-chrome.gpg
           echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
+          google-chrome --version
 
       - name: Run scraper
         env:
