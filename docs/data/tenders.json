@@ -1,8 +1,8 @@
 {
-  "exported_at": "2026-07-13T20:05:27",
+  "exported_at": "2026-07-14T16:34:33",
   "stats": {
-    "total": 1204,
-    "new_today": 1204,
+    "total": 1196,
+    "new_today": 0,
     "last_scraped": "2026-07-13T18:56:30"
   },
   "tenders": [
@@ -500,17 +500,6 @@
       "first_seen_at": "2026-07-13T18:56:29",
       "last_updated_at": "2026-07-13T18:56:29",
       "area_city": "Dondilohara"
-    },
-    {
-      "id": 2082,
-      "tender_no": "194809",
-      "name": "RFP FOR SELECTION OF AGENCY FOR OPERATION AND MAINTENANCE OF FACILITY PLAZA AT SINDOOR PARK. (4th Call)",
-      "department": "SECRETARY RAIGARH URBAN PUBLIC SERVICE SOCIETY",
-      "amount": "",
-      "last_date": "14 Jul, 2026 4:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Raigarh"
     },
     {
       "id": 2083,
@@ -2722,17 +2711,6 @@
       "first_seen_at": "2026-07-13T18:56:28",
       "last_updated_at": "2026-07-13T18:56:28",
       "area_city": "Dhamtari"
-    },
-    {
-      "id": 2044,
-      "tender_no": "194861",
-      "name": "स्व. श्री लखीराम अग्रवाल स्मृति, शासकीय चिकित्सा महाविद्यालय रायगढ़ (छ.ग.) के अधीनस्थ चिकित्सकीय उपकरण, क्रय किये जाने के संबंध में दर अनुबंधक्रय किये जाने के संबंध में दर अनुबंध ;करने हेतु ई-टेंडर के माध्यम से इच्छुक फर्म/प्रदायकर्ता/डिलर/निर्माता कंपनी से खुली निविदा आमंत्रित किया जाता है।",
-      "department": "HEALTH & FAMILY WELFARE",
-      "amount": "",
-      "last_date": "14 Jul, 2026 11:59:00 AM IST",
-      "first_seen_at": "2026-07-13T18:56:28",
-      "last_updated_at": "2026-07-13T18:56:28",
-      "area_city": null
     },
     {
       "id": 2045,
@@ -8763,28 +8741,6 @@
       "area_city": "Raipur"
     },
     {
-      "id": 812,
-      "tender_no": "193657",
-      "name": "मेनरोड से महामाया मंदिर तक गौरवपथ निर्माण कार्य",
-      "department": "NAGAR PANCHAYAT LAWAN",
-      "amount": "",
-      "last_date": "13 Jul, 2026 9:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:19",
-      "last_updated_at": "2026-07-13T18:56:19",
-      "area_city": "Lawan"
-    },
-    {
-      "id": 856,
-      "tender_no": "193577",
-      "name": "Selection of Technical Consultant for The Campus Planning and Designing for National Institute of Fashion Technology (NIFT) in Nava Raipur Atal Nagar, Dist. Raipur (C.G.)",
-      "department": "CHIEF ENGINEER OFFICE",
-      "amount": "",
-      "last_date": "14 Jul, 2026 3:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:19",
-      "last_updated_at": "2026-07-13T18:56:19",
-      "area_city": "Raipur"
-    },
-    {
       "id": 892,
       "tender_no": "193510",
       "name": "Special Repair Work of Various Road & Culverts of Vidhansabha Sub-Division, Raipur (C.G.)",
@@ -9577,17 +9533,6 @@
       "area_city": "Bilaspur"
     },
     {
-      "id": 767,
-      "tender_no": "193725",
-      "name": "Empanelment of agencies for providing plug-and-play Wi-Fi Internet services, Access Point (AP) hardware, and on-site technical support for temporary/event-based requirements on a rental basis",
-      "department": "STATE DATA CENTRE",
-      "amount": "",
-      "last_date": "14 Jul, 2026 12:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": null
-    },
-    {
       "id": 528,
       "tender_no": "193958",
       "name": "DEVELOPMENT OF BOTANICAL GARDEN AS OXYZONE AT GOVT. NAGARJUN POST GRADUATE SCINCE COLLEGE BUILDING I/C. WATER SUPPLY SANITERY FITTINGS & ELECTRIFICATION WORK AT DISTT. RAIPUR. (VIDHANSABHA DN. RAIPUR). ( DEPOSIT WORK). (Without Escalation and Bonus)",
@@ -10100,28 +10045,6 @@
       "department": "LAUH PURUSH SARDAR VALLABH BHAI PATEL SAHAKARI SHAKKAR KHARKHANA MRYADIT,PANDARIYA",
       "amount": "",
       "last_date": "15 Jul, 2026 12:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:16",
-      "last_updated_at": "2026-07-13T18:56:16",
-      "area_city": "Pandariya"
-    },
-    {
-      "id": 424,
-      "tender_no": "194084",
-      "name": "Electrical Items (Authorized dealer/Manufacturer)",
-      "department": "LAUH PURUSH SARDAR VALLABH BHAI PATEL SAHAKARI SHAKKAR KHARKHANA MRYADIT,PANDARIYA",
-      "amount": "",
-      "last_date": "14 Jul, 2026 12:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:16",
-      "last_updated_at": "2026-07-13T18:56:16",
-      "area_city": "Pandariya"
-    },
-    {
-      "id": 425,
-      "tender_no": "194083",
-      "name": "Instrument Items ( Non Authorized Dealer)",
-      "department": "LAUH PURUSH SARDAR VALLABH BHAI PATEL SAHAKARI SHAKKAR KHARKHANA MRYADIT,PANDARIYA",
-      "amount": "",
-      "last_date": "14 Jul, 2026 12:00:00 PM IST",
       "first_seen_at": "2026-07-13T18:56:16",
       "last_updated_at": "2026-07-13T18:56:16",
       "area_city": "Pandariya"
@@ -12666,17 +12589,6 @@
       "first_seen_at": "2026-07-13T18:56:14",
       "last_updated_at": "2026-07-13T18:56:14",
       "area_city": "Raipur"
-    },
-    {
-      "id": 199,
-      "tender_no": "194359",
-      "name": "AMC AND JOB WORK",
-      "department": "LAUH PURUSH SARDAR VALLABH BHAI PATEL SAHAKARI SHAKKAR KHARKHANA MRYADIT,PANDARIYA",
-      "amount": "",
-      "last_date": "14 Jul, 2026 12:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:14",
-      "last_updated_at": "2026-07-13T18:56:14",
-      "area_city": "Pandariya"
     },
     {
       "id": 210,
