@@ -39,10 +39,6 @@ def main():
     print("Starting daily tender fetch...")
     result = run_scraper(headless=args.headless)
 
-    if result.get("error"):
-        print(f"Scraper finished with error: {result['error']}")
-        sys.exit(1)
-
     if args.export_json:
         updated = db.backfill_area_city(force_all=True)
         if updated:
@@ -54,6 +50,10 @@ def main():
         print(f"Exported data to {path}")
         stats = db.get_stats()
         print(f"Active tenders in dashboard: {stats['total']}")
+
+    if result.get("error"):
+        print(f"Scraper finished with error: {result['error']}")
+        sys.exit(1)
 
     print(
         f"Done. {result['new']} new tenders added. "

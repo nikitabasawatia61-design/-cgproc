@@ -14,7 +14,7 @@ def authenticate(driver, attempt=1):
     print(f"\n========== Authentication Attempt {attempt} ==========")
 
     if attempt > MAX_ATTEMPTS:
-        print("❌ Maximum authentication attempts reached.")
+        print("Maximum authentication attempts reached.")
         return False
 
     wait = WebDriverWait(driver, 20)
@@ -70,7 +70,7 @@ def authenticate(driver, attempt=1):
 
     if failure:
 
-        print("❌ Authentication Failed")
+        print("Authentication Failed")
 
         # ======================================
         # Click Back
@@ -120,6 +120,6 @@ def authenticate(driver, attempt=1):
     # ==========================================
     # Success
     # ==========================================
-    print("✅ Authentication Successful")
+    print("Authentication Successful")
 
     return True
