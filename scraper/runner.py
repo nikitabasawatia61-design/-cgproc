@@ -1,4 +1,6 @@
 import os
+import re
+import subprocess
 import time
 
 from selenium import webdriver
@@ -88,6 +90,16 @@ def return_to_same_page(driver, wait, page_no):
     return True
 
 
+def _get_browser_version(chrome_bin):
+    try:
+        output = subprocess.check_output([chrome_bin, "--version"], text=True)
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
+    match = re.search(r"(\d+\.\d+\.\d+\.\d+)", output)
+    return match.group(1) if match else None
+
+
 def create_driver(headless=False):
     options = Options()
     if headless:
@@ -101,14 +113,20 @@ def create_driver(headless=False):
     options.add_argument("--disable-dev-shm-usage")
 
     chrome_bin = os.environ.get("CHROME_BIN") or os.environ.get("GOOGLE_CHROME_SHIM")
-
     if chrome_bin:
         options.binary_location = chrome_bin
-        # Let Selenium Manager pick a chromedriver that matches this Chrome build.
-        service = Service()
+        browser_version = _get_browser_version(chrome_bin)
+        print(f"Chrome binary: {chrome_bin}")
+        print(f"Chrome version: {browser_version or 'unknown'}")
+        if browser_version:
+            driver_path = ChromeDriverManager(driver_version=browser_version).install()
+        else:
+            driver_path = ChromeDriverManager().install()
     else:
-        service = Service(ChromeDriverManager().install())
+        driver_path = ChromeDriverManager().install()
 
+    print(f"ChromeDriver path: {driver_path}")
+    service = Service(executable_path=driver_path)
     return webdriver.Chrome(service=service, options=options)
 
 

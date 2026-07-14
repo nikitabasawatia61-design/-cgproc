@@ -32,6 +32,9 @@ jobs:
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
 
+      - name: Remove mismatched system chromedriver
+        run: sudo rm -f /usr/bin/chromedriver
+
       - name: Run scraper
         env:
           CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
