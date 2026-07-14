@@ -37,7 +37,17 @@ def main():
         print(f"Imported {count} tenders from {EXCEL_FILE}")
 
     print("Starting daily tender fetch...")
-    result = run_scraper(headless=args.headless)
+    try:
+        result = run_scraper(headless=args.headless)
+    except Exception as error:
+        print(f"Scraper crashed: {error}")
+        result = {
+            "new": 0,
+            "skipped": 0,
+            "portal_total": 0,
+            "removed_stale": 0,
+            "error": str(error),
+        }
 
     if args.export_json:
         updated = db.backfill_area_city(force_all=True)

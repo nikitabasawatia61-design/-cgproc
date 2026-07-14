@@ -1,7 +1,8 @@
 import time
 
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium import webdriver
+from selenium.webdriver.remote.remote_connection import RemoteConnection
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -96,19 +97,21 @@ def open_url(driver, url, retries=3):
             print(f"Opening portal (attempt {attempt}/{retries})...")
             driver.get(url)
             return True
-        except TimeoutException:
-            print(f"Page load timeout on attempt {attempt}")
+        except (TimeoutException, WebDriverException, Exception) as error:
+            print(f"Page load failed on attempt {attempt}: {type(error).__name__}: {error}")
             try:
                 driver.execute_script("window.stop();")
             except Exception:
                 pass
-            time.sleep(5)
+            time.sleep(10)
     return False
 
 
 def create_driver(headless=False):
+    RemoteConnection.set_timeout(300)
+
     options = Options()
-    options.page_load_strategy = "eager"
+    options.page_load_strategy = "none"
     if headless:
         options.add_argument("--headless=new")
         options.add_argument("--window-size=1920,1080")
@@ -123,8 +126,8 @@ def create_driver(headless=False):
         service=Service(ChromeDriverManager().install()),
         options=options,
     )
-    driver.set_page_load_timeout(180)
-    driver.set_script_timeout(60)
+    driver.set_page_load_timeout(300)
+    driver.set_script_timeout(120)
     return driver
 
 

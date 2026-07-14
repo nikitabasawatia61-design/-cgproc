@@ -64,7 +64,27 @@ After the first successful run, `docs/data/tenders.json` will be updated and the
 
 The workflow runs automatically at **6:00 AM IST** every day.
 
-You can also trigger it manually anytime from the **Actions** tab → **Daily Tender Scrape** → **Run workflow**.
+**Important:** The CG government portal often **blocks or times out** for GitHub Actions servers in the US. Your original local script works because your PC is in India.
+
+### Recommended: run locally on your PC
+
+```powershell
+.\run_local_and_push.ps1
+```
+
+Or schedule it daily with:
+
+```powershell
+.\schedule_daily.ps1
+```
+
+Then change the scheduled task command to:
+
+```powershell
+powershell -File "C:\Users\91706\Desktop\cgproc\run_local_and_push.ps1"
+```
+
+You can also trigger GitHub Actions manually, but local scraping is more reliable.
 
 ## Cross-device shortlist
 

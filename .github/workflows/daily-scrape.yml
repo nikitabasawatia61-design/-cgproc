@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-core.txt
 
+      - name: Test portal connectivity
+        run: |
+          curl -I --max-time 30 "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do" || echo "Portal may be slow or blocked from GitHub servers"
+
       - name: Install Google Chrome
         run: |
           sudo apt-get update
@@ -41,6 +45,7 @@ jobs:
           google-chrome --version
 
       - name: Run scraper
+        continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
         run: python run_daily.py --headless --import-json --export-json
