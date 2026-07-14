@@ -28,16 +28,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-core.txt
 
-      - name: Set up Chrome
-        id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Remove mismatched system chromedriver
-        run: sudo rm -f /usr/bin/chromedriver
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gnupg
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
       - name: Run scraper
         env:
-          CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
           PYTHONUNBUFFERED: "1"
         run: python run_daily.py --headless --import-json --export-json
 
