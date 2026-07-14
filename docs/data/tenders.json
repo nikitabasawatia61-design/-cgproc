@@ -1,11 +1,2156 @@
 {
-  "exported_at": "2026-07-14T16:34:33",
+  "exported_at": "2026-07-14T18:24:33",
   "stats": {
-    "total": 1196,
-    "new_today": 0,
-    "last_scraped": "2026-07-13T18:56:30"
+    "total": 1346,
+    "new_today": 195,
+    "last_scraped": "2026-07-14T18:23:14"
   },
   "tenders": [
+    {
+      "id": 2398,
+      "tender_no": "194926",
+      "name": "शासकीय बालक हाई स्कूल अंतर्गत मिनी स्टेडियम निर्माण कार्य ग्राम नवागढ़, वि.ख.नवागढ",
+      "department": "EXECUTIVE ENGINEER, RURAL ENGINEERING SERVICES",
+      "amount": "",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:23:14",
+      "last_updated_at": "2026-07-14T18:23:14",
+      "area_city": ""
+    },
+    {
+      "id": 2397,
+      "tender_no": "194927",
+      "name": "Renovation of Bus stand at ward - 10 nagar panchayat kotba",
+      "department": "NAGAR PANCHAYAT KOTBA",
+      "amount": "1339000.00",
+      "last_date": "27 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T18:21:25",
+      "last_updated_at": "2026-07-14T18:21:25",
+      "area_city": "Kotba"
+    },
+    {
+      "id": 2396,
+      "tender_no": "194928",
+      "name": "Construction of BT taping at ward 13 Pankaj House to Birju gupta House and Ward 09 Main road to PDS house, Nagar panchayt kotba",
+      "department": "NAGAR PANCHAYAT KOTBA",
+      "amount": "2607000.00",
+      "last_date": "27 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:20:54",
+      "last_updated_at": "2026-07-14T18:20:54",
+      "area_city": "Kotba"
+    },
+    {
+      "id": 2395,
+      "tender_no": "194929",
+      "name": "Construction of Puliya at ward - 01 Bhalukhar Nagar panchayt kotba",
+      "department": "NAGAR PANCHAYAT KOTBA",
+      "amount": "3767000.00",
+      "last_date": "27 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:20:24",
+      "last_updated_at": "2026-07-14T18:20:24",
+      "area_city": "Kotba"
+    },
+    {
+      "id": 2394,
+      "tender_no": "194930",
+      "name": "construction of high tech bus stand at ward no -.2 by pass road pathalgaon",
+      "department": "NAGAR PANCHAYAT, PATHALGAON",
+      "amount": "46814000.00",
+      "last_date": "22 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:19:54",
+      "last_updated_at": "2026-07-14T18:19:54",
+      "area_city": "Pathalgaon"
+    },
+    {
+      "id": 2393,
+      "tender_no": "194931",
+      "name": "Revamping of Material Recovery Facility (MRF) including installation of Machinery and construction of Compost Plant in Municipal Areas of SITAPUR, Chhattisgarh",
+      "department": "NAGAR PANCHAYAT SITAPUR",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T18:19:27",
+      "last_updated_at": "2026-07-14T18:19:27",
+      "area_city": "Sitapur"
+    },
+    {
+      "id": 2392,
+      "tender_no": "194932",
+      "name": "RFP for Selection of Consulting firms for preparation of DPR’s and to function as PMC for infrastructure component of Urban Flood Risk Management Project for Raipur Municipal Corporation (RMC), Chhattisgarh",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
+      "amount": "",
+      "last_date": "22 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:18:58",
+      "last_updated_at": "2026-07-14T18:18:58",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2391,
+      "tender_no": "194933",
+      "name": "Establishment and Operation of a Water Testing Laboratory for Cetralised State Level(5th Call)",
+      "department": "DIRECTORATE OF URBAN ADMINISTRATION & DEVELOPMENT",
+      "amount": "",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:18:26",
+      "last_updated_at": "2026-07-14T18:18:26",
+      "area_city": ""
+    },
+    {
+      "id": 2390,
+      "tender_no": "194935",
+      "name": "CONSTRUCTION OF 07 MIG, 42 nos LIG & 13 nos EWS (TOTAL - 62 HOUSES) UNDER ATAL VIHAR YOJNA AT BANDHI, DIST-GORELLA PENDRA MARWAHI, DIV-KORBA(C.G.)",
+      "department": "EXECUTIVE ENGINEER",
+      "amount": "55513000.00",
+      "last_date": "16 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T18:17:59",
+      "last_updated_at": "2026-07-14T18:17:59",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2389,
+      "tender_no": "194938",
+      "name": "CONSTRUCTION OF TOILET BLOCK TYPE-1 (10-Seater) ASPIRATIONAL TOILET AT OLD SARANGARH BUS STAND AS PER ENCLOSED SPECIFICATION AND DRAWINGS INCLUDING DEFECT LIABILITY PERIOD OF 36 MONTHS FROM THE DATE OF COMPLETION. (BALANCE WORK) (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "23 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:16:11",
+      "last_updated_at": "2026-07-14T18:16:11",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2388,
+      "tender_no": "194939",
+      "name": "Revamping of Material Recovery Facility (MRF) including installation of Machinery and construction of Compost Plant in Municipal Areas of UTAI, Chhattisgarh",
+      "department": "NAGAR PANCHAYAT UTAI",
+      "amount": "",
+      "last_date": "22 Jul, 2026 5:30:00 AM IST",
+      "first_seen_at": "2026-07-14T18:15:44",
+      "last_updated_at": "2026-07-14T18:15:44",
+      "area_city": "Utai"
+    },
+    {
+      "id": 2387,
+      "tender_no": "194940",
+      "name": "वार्ड क्र. 11 में सामुदायिक भवन निर्माण कार्य। (अधोसंरचना मद 2024-25)",
+      "department": "NAGAR PANCHAYAT ABHANPUR",
+      "amount": "",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:15:18",
+      "last_updated_at": "2026-07-14T18:15:18",
+      "area_city": "Abhanpur"
+    },
+    {
+      "id": 2386,
+      "tender_no": "194941",
+      "name": "Request for Proposal (RFP) For Selection of e-Sign Service Provider for Implementation of e-Sign Services in the e-District Project",
+      "department": "RAIPUR",
+      "amount": "",
+      "last_date": "5 Aug, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T18:14:50",
+      "last_updated_at": "2026-07-14T18:14:50",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2385,
+      "tender_no": "194942",
+      "name": "नगर पालिक निगम, रायगढ़ क्षेत्रान्तर्गत गौरवपथ में लगे स्वागत द्वार (छातामुड़ा चौक, कयाघाट चौक) का जीर्णोद्धार कार्य।",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:14:23",
+      "last_updated_at": "2026-07-14T18:14:23",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2384,
+      "tender_no": "194943",
+      "name": "Construction work of additional room,cultural stage and paver block construction work on the first floor of the community building located in Ward No.54 Jamnipali.",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "1499932.18",
+      "last_date": "22 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T18:13:56",
+      "last_updated_at": "2026-07-14T18:13:56",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2383,
+      "tender_no": "194944",
+      "name": "Construction of community building near Hanuman temple in front of CIPET College as per demand of Dhivar community under ward no. 52.",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "1000023.17",
+      "last_date": "22 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T18:13:29",
+      "last_updated_at": "2026-07-14T18:13:29",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2382,
+      "tender_no": "194945",
+      "name": "Construction of courtyard and shed near Ward No.54, Baredimunda Mahant Mohalla, Kabir Chowra.",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "1000000.00",
+      "last_date": "22 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T18:13:00",
+      "last_updated_at": "2026-07-14T18:13:00",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2381,
+      "tender_no": "194946",
+      "name": "CSIDC/ Flat. Fac./RFP/03/2026 For Development of Flatted Factory under Public Private Partnership (PPP) mode at INDUSTRIAL ESTATE, BHILAI, DURG (CHHATTISGARH)",
+      "department": "LAND ALLOTMENT",
+      "amount": "",
+      "last_date": "6 Aug, 2026 4:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:11:15",
+      "last_updated_at": "2026-07-14T18:11:15",
+      "area_city": "Durg"
+    },
+    {
+      "id": 2380,
+      "tender_no": "194947",
+      "name": "Supply of 25 Manpower (Safayi Mitra Commando) , Municipal Corporation, Bhilai-Charoda (1 st call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, BHILAI CHARODA",
+      "amount": "4220000.00",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:10:45",
+      "last_updated_at": "2026-07-14T18:10:45",
+      "area_city": "Bhilai Charoda"
+    },
+    {
+      "id": 2379,
+      "tender_no": "194948",
+      "name": "Inviting Expression of Interest from Interested Parties for Development,Operation and Management of Sports Academies on Public-Private-Partnership (PPP) mode Chhattisgarh",
+      "department": "DIRECTORATE OF SPORTS AND YOUTH WELFARE, CHHATTISGARH",
+      "amount": "",
+      "last_date": "20 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T18:10:18",
+      "last_updated_at": "2026-07-14T18:10:18",
+      "area_city": "Chhattisgarh"
+    },
+    {
+      "id": 2378,
+      "tender_no": "194952",
+      "name": "Design, Construction, Testing, Commissioning of All The Components of Interception and Diversion Based Sewage Treatment Plant (STP) Work Including 05 Years of Operation and Maintenance of The Entire System in NAGAR PANCHAYAT, UTAI under SBM 2.0",
+      "department": "NAGAR PANCHAYAT UTAI",
+      "amount": "",
+      "last_date": "22 Jul, 2026 5:30:00 AM IST",
+      "first_seen_at": "2026-07-14T18:09:49",
+      "last_updated_at": "2026-07-14T18:09:49",
+      "area_city": "Utai"
+    },
+    {
+      "id": 2377,
+      "tender_no": "194953",
+      "name": "Construction of Crematoriya, Pathway, Plantation & lawn Development Boundrywall, Entrance Gate, Chabutra, Borewell, Shade, Concrete Chair, Mural Work, MS railin, Truss & Light Pole MUKTIDHAM NIRMAN WORK, NAGAR PANCHAYAT BALODA",
+      "department": "NAGAR PANCHAYAT BALUDA",
+      "amount": "",
+      "last_date": "28 Jul, 2026 6:31:00 PM IST",
+      "first_seen_at": "2026-07-14T18:09:23",
+      "last_updated_at": "2026-07-14T18:09:23",
+      "area_city": "Baluda"
+    },
+    {
+      "id": 2376,
+      "tender_no": "194956",
+      "name": "Construction of CC Road from BT Road to Abdus House at WN 04.(Road SOR 01/01/2025)",
+      "department": "NAGAR PANCHAYAT LAKHANPUR",
+      "amount": "",
+      "last_date": "27 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:08:56",
+      "last_updated_at": "2026-07-14T18:08:56",
+      "area_city": "Lakhanpur"
+    },
+    {
+      "id": 2375,
+      "tender_no": "194957",
+      "name": "CONSTRUCTION OF ONE NEW ROOM AND ONE LIBRARY ROOM AT DISTRICT JUDGE BUNGLOW B-5/7, AT RAIPUR DISTRICT RAIPUR",
+      "department": "Pwd Div No1 Raipur",
+      "amount": "2531000.00",
+      "last_date": "27 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:08:29",
+      "last_updated_at": "2026-07-14T18:08:29",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2374,
+      "tender_no": "194959",
+      "name": "गुरु बालक दास प्रतिमा एवं सौन्दर्यीकरण कार्य, सतनाम चौक, रावांभाठा छत्रपति शिवाजी वार्ड क्रमांक 15 नगर पालिक निगम बीरगांव",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, BIRGAON",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:07:59",
+      "last_updated_at": "2026-07-14T18:07:59",
+      "area_city": "Birgaon"
+    },
+    {
+      "id": 2373,
+      "tender_no": "194960",
+      "name": "B.T. Patch Repair work of Various Road under P.W.D. Sub Division No. 01 Narayanpur.",
+      "department": "Division Narayanpur",
+      "amount": "2500000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:06:13",
+      "last_updated_at": "2026-07-14T18:06:13",
+      "area_city": "Narayanpur"
+    },
+    {
+      "id": 2372,
+      "tender_no": "194962",
+      "name": "B.T. Patch Repair work of Various Road under P.W.D. Sub Division No. 02 Orchha Narayanpur",
+      "department": "Division Narayanpur",
+      "amount": "2500000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:05:46",
+      "last_updated_at": "2026-07-14T18:05:46",
+      "area_city": "Narayanpur"
+    },
+    {
+      "id": 2371,
+      "tender_no": "194965",
+      "name": "Construction Work of Bridge Over Canal Near Agrasen Tiraha and C.C. Road From Bridge To DDM Road, Expansion Work of Sunaliya Chowk & C.C. Road Along The Canal Bank From Sunaliya Chowk To Ratakhar Joda Bridge VIA Agrasen Tiraha in Korba (C.G.)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "185021000.00",
+      "last_date": "30 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T18:05:15",
+      "last_updated_at": "2026-07-14T18:05:15",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2370,
+      "tender_no": "194966",
+      "name": "e –TENDER FOR RATE CONTRACT OF CONSUMABLE ITEMS TO CHHATTISGARH MEDICAL SERVICES CORPORATION LTD",
+      "department": "CGMSC L",
+      "amount": "",
+      "last_date": "21 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T18:04:49",
+      "last_updated_at": "2026-07-14T18:04:49",
+      "area_city": ""
+    },
+    {
+      "id": 2369,
+      "tender_no": "194967",
+      "name": "Revamping of Material Recovery Facility (MRF) including installation of Machinery and construction of Compost Plant in Municipal Areas of KONTA",
+      "department": "NAGAR PANCHAYAT KONTA",
+      "amount": "2790000.00",
+      "last_date": "23 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:04:18",
+      "last_updated_at": "2026-07-14T18:04:18",
+      "area_city": "Konta"
+    },
+    {
+      "id": 2368,
+      "tender_no": "194968",
+      "name": "(Group No. 01) Repair And Maintenance Of Roof Leakage, Hammal Shade, Platform At Dhamdha Distt-Durg & Repair And Maintenance Of Floor At Durg Distt-Durg (C.G.)",
+      "department": "CGSWC",
+      "amount": "6791200.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T18:03:49",
+      "last_updated_at": "2026-07-14T18:03:49",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2367,
+      "tender_no": "194969",
+      "name": "उपसंभाग-1 के अन्तर्गत विभिन्न आवासीय एवं गैर आवासीय भवनों में वाटर पू्रफिंग कार्य।",
+      "department": "Pwd Div No1 Raipur",
+      "amount": "1500000.00",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:03:22",
+      "last_updated_at": "2026-07-14T18:03:22",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2366,
+      "tender_no": "194970",
+      "name": "Balance Work Outer Boundry Wall Around Mahila Jail and Side of Phe office at Central Jail, Raipur.C.G.",
+      "department": "PWD Div No2 Raipur",
+      "amount": "6803000.00",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:02:51",
+      "last_updated_at": "2026-07-14T18:02:51",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2365,
+      "tender_no": "194971",
+      "name": "Providing and Fixing 5th Km Stone, Ordinary Km Stone, 0.20 Km Stone, Boundary Stone & Median Maintenance of Various Roads Under Survey Sub Division Raipur",
+      "department": "Pwd Div No1 Raipur",
+      "amount": "2000000.00",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:01:08",
+      "last_updated_at": "2026-07-14T18:01:08",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2364,
+      "tender_no": "194972",
+      "name": "Special Repair Work of Various Road & Culvert Under P.W.D. Sub Division No. 02, Raipur",
+      "department": "Vidhansabha Div Raipur",
+      "amount": "2000000.00",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:00:37",
+      "last_updated_at": "2026-07-14T18:00:37",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2363,
+      "tender_no": "194973",
+      "name": "White Washing, Colour Washing, Distempering & Painting Work at Police Line Section Under Maintenance Sub-Division Raipur (C.G.)",
+      "department": "Pwd Div No1 Raipur",
+      "amount": "2000000.00",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T18:00:09",
+      "last_updated_at": "2026-07-14T18:00:09",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2362,
+      "tender_no": "194991",
+      "name": "Construction of Additional Room at ward 20 Manendragarh 2nd call",
+      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, MANENDRAGARH",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:30:12 PM IST",
+      "first_seen_at": "2026-07-14T17:59:40",
+      "last_updated_at": "2026-07-14T17:59:40",
+      "area_city": "Manendragarh"
+    },
+    {
+      "id": 2361,
+      "tender_no": "194992",
+      "name": "Construction of Shamudhayik bhawan at ward 01 Manendragarh 2nd call",
+      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, MANENDRAGARH",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:30:12 PM IST",
+      "first_seen_at": "2026-07-14T17:59:08",
+      "last_updated_at": "2026-07-14T17:59:08",
+      "area_city": "Manendragarh"
+    },
+    {
+      "id": 2360,
+      "tender_no": "194993",
+      "name": "सामान्य मद के तहत् कुशाभाउ ठाकरे वार्ड क्रमांक -07 अंतर्गत प्रधानमंत्री आवास योजना 145 में पाईप लाईन विस्तार एवं इंटरकनेक्शन कार्य",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
+      "amount": "",
+      "last_date": "23 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:58:40",
+      "last_updated_at": "2026-07-14T17:58:40",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2359,
+      "tender_no": "194994",
+      "name": "Interior, furniture, Artwork & overall development & Maintenance of Tribal Museum at Dantewada, Chhattisgarh with 3 years of AMC",
+      "department": "TECHNICAL EDUCATION(DPLCS)",
+      "amount": "",
+      "last_date": "29 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:58:11",
+      "last_updated_at": "2026-07-14T17:58:11",
+      "area_city": "Dantewada"
+    },
+    {
+      "id": 2358,
+      "tender_no": "194995",
+      "name": "Construction of Community Building in Sitamani Motisagar Para (Sahis Samaj) Korba at ward No-07",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "1000186.00",
+      "last_date": "20 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T17:57:43",
+      "last_updated_at": "2026-07-14T17:57:43",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2357,
+      "tender_no": "194996",
+      "name": "Construction of Dr. Bheemrao Ambedkar Sarv Samaj Manglik Bhawan at Ward No 03 at Ramanujganj (1st Call)",
+      "department": "NAGAR PANCHAYAT, RAMANNUJGANJ",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:55:59",
+      "last_updated_at": "2026-07-14T17:55:59",
+      "area_city": "Ramannujganj"
+    },
+    {
+      "id": 2356,
+      "tender_no": "194997",
+      "name": "(Group No. 02) Construction Of Cycle Stand And Main Gate Work At Arang Distt-Raipur Repair And Maintenance Of Manager Quarter Work And Construction Work Of Boundarywall And Roof Leakage, At Tilda Distt-Raipur (C.G.)",
+      "department": "CGSWC",
+      "amount": "17579700.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:55:32",
+      "last_updated_at": "2026-07-14T17:55:32",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2355,
+      "tender_no": "194998",
+      "name": "Construction of Office for Divisional Joint Director Agriculture at Labhandih Raipur in Chhattisgarh Under Construction Sub Division No.1, Atal Nagar Nava Raipur (C.G.)",
+      "department": "Pwd Div No3 Raipur",
+      "amount": "15910000.00",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:55:03",
+      "last_updated_at": "2026-07-14T17:55:03",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2354,
+      "tender_no": "194999",
+      "name": "(Group No. 03) Construction Of Boundarywall Work At Geedam Distt-Dantewada, Repair And Maintenance Of 15000 Mt Godown Premises At Keshloor Distt-Bastar & Repair And Maintenance Of 2800 Mt Of Roof Leakage, Eletrification Work, Rolling Shutter And Contruction Of Choukidar Qtr Work At Karpawand Distt-Bastar (C.G.)",
+      "department": "CGSWC",
+      "amount": "5211100.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:54:32",
+      "last_updated_at": "2026-07-14T17:54:32",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2353,
+      "tender_no": "195000",
+      "name": "(Group No. 04) Repair And Maintenance Of 800 Mt Godown Premises At Narharpur Distt-Kanker, Repair And Maintenance Of Floor & Roof Leakage Work At Keshkal Distt-Kondagaon & Repair And Maintenance Of Roof Leakage Work At Kondagaon Distt-Kondagaon (C.G.)",
+      "department": "CGSWC",
+      "amount": "7515000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:54:02",
+      "last_updated_at": "2026-07-14T17:54:02",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2352,
+      "tender_no": "195001",
+      "name": "(Group No. 05) Construction Of Boundarywall Work At Bodasagar Distt-Sakti, Repair And Maintenance Of Manager Quarter , Electrification Work And Water Supply & Sanitary Fitting At Baradwar Distt-Sakti, Repair And Maintenance Of 4000 MT Godown, Repair And Maintenance Office Building, Electrification Wokr And Repair And Maintenance Of Boundarywall Work At Kharsia (Mandi Premeses) Distt-Raigarh & Repair And Maintenance Of 7200 Mt Godown, Roof Repairing, Elctrification Of 7200 MT Godown, Dismantaling Old Choukidar Quarter Work, Electrification Of Choukidar Quarter, Repair And Maintenance Of Weight Bridge, Repair And Maintenance Of Boundarywall At Kharsia (Banipathar Premeses) Distt-Raigarh (C.G.)",
+      "department": "CGSWC",
+      "amount": "14588200.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:53:34",
+      "last_updated_at": "2026-07-14T17:53:34",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2351,
+      "tender_no": "195002",
+      "name": "Group No. 06) Repair And Maintenance Of Roof Leakage Work At Kurud Distt-Dhamtari (C.G.)",
+      "department": "CGSWC",
+      "amount": "4373000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:52:59",
+      "last_updated_at": "2026-07-14T17:52:59",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2350,
+      "tender_no": "195003",
+      "name": "Pipeline expansion work in various places from ward number 01 to 20.( 1. Ward No. 20 Pipe line extension work from Laldas Mahant house to Bahimandand. 2. Ward No. 07 Pipe line extension work from Manoj's house to Deepak's house. 3. Ward No. 18 Pipe line extension work from Annapurna Singh's house to Ajay Jaiswal's house. 4. Pipe line extension work from Ward No. 19 Main Road to Anupam Gupta's house. 5. Ward No. 04 Pipeline extension work from Ghanshyam's house to Arafat's house. 6. Pipeline extension work from ward number 04 to Malkhan's house. 8. Pipeline extension work from ward number 17 to Dutta ji's house. 9. Pipeline extension work from Ward No. 8 to Neecha Das house. 11. Pipeline extension work from Ward No. 07 to Dinesh Verma's house",
+      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, BHIKUNTHPUR",
+      "amount": "",
+      "last_date": "29 Jul, 2026 5:30:11 PM IST",
+      "first_seen_at": "2026-07-14T17:52:31",
+      "last_updated_at": "2026-07-14T17:52:31",
+      "area_city": "Bhikunthpur"
+    },
+    {
+      "id": 2349,
+      "tender_no": "195006",
+      "name": "SUPPLY INSTALLATION AND TESTING INCLUDING CIVIL, MECHANICAL & ELECTRICAL WORKS OF MBBR-LAMELLA BASED TECHNOLOGY SEWERAGE TREATMENT PLANT CAPACITY 200 KLD INCLUDING 02 YEAR OF MAINTENANCE WORK UNDER ATAL VIHAR YOJNA AT BIJABHAT, DISTT. BEMETARA",
+      "department": "EXECUTIVE ENGINEER",
+      "amount": "",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:50:46",
+      "last_updated_at": "2026-07-14T17:50:46",
+      "area_city": "Bemetara"
+    },
+    {
+      "id": 2348,
+      "tender_no": "195007",
+      "name": "Construction Work of Dr. Bheemrao Ambedkar Smriti Talab at Ward No 06 (1st Call)",
+      "department": "NAGAR PANCHAYAT, RAMANNUJGANJ",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:49:45",
+      "last_updated_at": "2026-07-14T17:49:45",
+      "area_city": "Ramannujganj"
+    },
+    {
+      "id": 2347,
+      "tender_no": "195010",
+      "name": "राज्य प्रवर्तित योजना अंतर्गत वार्ड क्रमांक 17 उरकुरा मुक्तिधाम सौन्दर्यीकरण कार्य",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, BIRGAON",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:49:15",
+      "last_updated_at": "2026-07-14T17:49:15",
+      "area_city": "Birgaon"
+    },
+    {
+      "id": 2346,
+      "tender_no": "195011",
+      "name": "(Group No. 07) Repair And Maintenance Of Old Godown Premises, Repair And Maintenance Of Roof Leakage At Orda (Raigarh) Distt-Raigarh (C.G.)",
+      "department": "CGSWC",
+      "amount": "5038200.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:48:44",
+      "last_updated_at": "2026-07-14T17:48:44",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2345,
+      "tender_no": "195012",
+      "name": "(Group No. 08) Repair And Maintenance Of Roof Leakage At Basna Distt-Mahasamund (C.G.)",
+      "department": "CGSWC",
+      "amount": "5865000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:48:13",
+      "last_updated_at": "2026-07-14T17:48:13",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2344,
+      "tender_no": "195013",
+      "name": "Construction Work of Atal Smriti Talab at Ward No 13 (1st Call)",
+      "department": "NAGAR PANCHAYAT, RAMANNUJGANJ",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:47:40",
+      "last_updated_at": "2026-07-14T17:47:40",
+      "area_city": "Ramannujganj"
+    },
+    {
+      "id": 2343,
+      "tender_no": "195014",
+      "name": "Construction Of C.C. Road Work Of 14000 Mt Godown Premises At- Baradwar Distt-Sakti (C.G.)",
+      "department": "CGSWC",
+      "amount": "10636000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:47:08",
+      "last_updated_at": "2026-07-14T17:47:08",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2342,
+      "tender_no": "195016",
+      "name": "Construction Of C.C. Road Work Of 20200 Mt Godown Premises At- Khokra (Janjgir) Distt-Janjgir-Champa (C.G.)",
+      "department": "CGSWC",
+      "amount": "15216000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:45:18",
+      "last_updated_at": "2026-07-14T17:45:18",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2341,
+      "tender_no": "195017",
+      "name": "Zonal Work For 2026-27 Road SOR 15.06.2026 (Every Work upto 5.00 Lakh) 1st Call",
+      "department": "NAGAR PANCHAYAT, RAMANNUJGANJ",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:44:48",
+      "last_updated_at": "2026-07-14T17:44:48",
+      "area_city": "Ramannujganj"
+    },
+    {
+      "id": 2340,
+      "tender_no": "195019",
+      "name": "15 अगस्त स्वतंत्रता दिवस 2026 के अवसर पर पुलिस परेड ग्रांउड में शमियाना पंडाल एवं कुर्सी एवं अन्य बैठक व्यवस्था कार्य।",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
+      "amount": "2550000.00",
+      "last_date": "29 Jul, 2026 5:30:19 PM IST",
+      "first_seen_at": "2026-07-14T17:44:14",
+      "last_updated_at": "2026-07-14T17:44:14",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2339,
+      "tender_no": "195020",
+      "name": "Zonal Work For 2026-27 Building SOR 10.06.2026 (Every Work upto 5.00 Lakh) 1st Call",
+      "department": "NAGAR PANCHAYAT, RAMANNUJGANJ",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:43:40",
+      "last_updated_at": "2026-07-14T17:43:40",
+      "area_city": "Ramannujganj"
+    },
+    {
+      "id": 2338,
+      "tender_no": "195021",
+      "name": "Construction Of C.C. Road Work Of 10800 MT Godown Premises At- Ucchibhatti (Champa) Distt-Janjgir-Champa (C.G.)",
+      "department": "CGSWC",
+      "amount": "7481000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:43:09",
+      "last_updated_at": "2026-07-14T17:43:09",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2337,
+      "tender_no": "195022",
+      "name": "स्वतंत्रता दिवस 2026 (15 अगस्त 2026) के अवसर पर पुलिस परेड ग्राउण्ड में ड्रोम निर्माण वॉटर प्रोफिंग, फ्रेम, तख्त एवं फ्लेक्स फ्रेमिंग व्यवस्था का कार्य।",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
+      "amount": "1150000.00",
+      "last_date": "29 Jul, 2026 5:30:15 PM IST",
+      "first_seen_at": "2026-07-14T17:42:41",
+      "last_updated_at": "2026-07-14T17:42:41",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2336,
+      "tender_no": "195023",
+      "name": "Construction Of C.C. Road Work Of 30600 MT Godown Premises At- Orda (Raigarh) Distt-Raigarh (C.G.)",
+      "department": "CGSWC",
+      "amount": "17137000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T17:42:12",
+      "last_updated_at": "2026-07-14T17:42:12",
+      "area_city": "Cgswc"
+    },
+    {
+      "id": 2335,
+      "tender_no": "195024",
+      "name": "CONSTRUCTION OF \"COMMUNITY HALL\" AT KANKER & DURGUKONDAL DISTRICT KANKER",
+      "department": "EXECUTIVE ENGINEER",
+      "amount": "7004000.00",
+      "last_date": "27 Jul, 2026 5:30:22 PM IST",
+      "first_seen_at": "2026-07-14T17:41:43",
+      "last_updated_at": "2026-07-14T17:41:43",
+      "area_city": "Kanker"
+    },
+    {
+      "id": 2334,
+      "tender_no": "195025",
+      "name": "Contruction of R.C.C. Drain at ward no. 08 Ashok Banjara house to Nahar and Contruction of C.C. Road at ward no. 15 Budhu House to Meghnath House, nagar panchayat kotba",
+      "department": "NAGAR PANCHAYAT KOTBA",
+      "amount": "1081000.00",
+      "last_date": "22 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:39:49",
+      "last_updated_at": "2026-07-14T17:39:49",
+      "area_city": "Kotba"
+    },
+    {
+      "id": 2333,
+      "tender_no": "195027",
+      "name": "Renuation of Muktidham at Ward No 07 (1st Call)",
+      "department": "NAGAR PANCHAYAT, RAMANNUJGANJ",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:39:15",
+      "last_updated_at": "2026-07-14T17:39:15",
+      "area_city": "Ramannujganj"
+    },
+    {
+      "id": 2332,
+      "tender_no": "195029",
+      "name": "Tender invited for Procurement of DFG-Based Ethanol for Supply to OMC Depots under EBP Programme for Q4 of ESY 2026–27",
+      "department": "MAA DANTESHWARI MAKKA PROCESSING AND MARKETING COOPERATIVE SOCIETY LTD.KONDAGAON",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:35:00 PM IST",
+      "first_seen_at": "2026-07-14T17:38:40",
+      "last_updated_at": "2026-07-14T17:38:40",
+      "area_city": "Kondagaon"
+    },
+    {
+      "id": 2331,
+      "tender_no": "195033",
+      "name": "नगर पालिक निगम, रायगढ़ क्षेत्रान्तर्गत कोसाबाड़ी केन्द्र के पास ऑक्सीजोन निर्माण कार्य। (05 वर्ष के संधारण सहित)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "31 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:38:06",
+      "last_updated_at": "2026-07-14T17:38:06",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2330,
+      "tender_no": "195035",
+      "name": "GIS-Based Property Tax Enhancement & Urban Infrastructure Mapping Project for Municipal Corporation Raipur, Dist.",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:37:37",
+      "last_updated_at": "2026-07-14T17:37:37",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2329,
+      "tender_no": "195036",
+      "name": "बालसमुन्द तालाब उन्नयन एवं विकास कार्य ।",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "31 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:37:07",
+      "last_updated_at": "2026-07-14T17:37:07",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2328,
+      "tender_no": "195038",
+      "name": "77 MLD प्लांट से निकलने वाले Waste Water Re – circulation में उपयोग हेतु पाइप लाइन एवं पंप स्थापना कार्य |",
+      "department": "DDUPSS",
+      "amount": "6443226.00",
+      "last_date": "27 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:36:36",
+      "last_updated_at": "2026-07-14T17:36:36",
+      "area_city": "Ddupss"
+    },
+    {
+      "id": 2327,
+      "tender_no": "195039",
+      "name": "Construction Extension and Maintenance of Community Building Near Tower Chowk at Ward No. 04 Ratakhar",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "1499730.00",
+      "last_date": "31 Jul, 2026 5:30:52 PM IST",
+      "first_seen_at": "2026-07-14T17:36:04",
+      "last_updated_at": "2026-07-14T17:36:04",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2326,
+      "tender_no": "195041",
+      "name": "वार्ड क्रमांक 01 में मनेन्द्रगढ़ रोड, माखन विहार के सामने तिरंगा चौक निर्माण कार्य।",
+      "department": "EXECATIVE ENGINEER, MUNICIPAL CORPORATION",
+      "amount": "4935000.00",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:34:11",
+      "last_updated_at": "2026-07-14T17:34:11",
+      "area_city": "Municipal Corporation"
+    },
+    {
+      "id": 2325,
+      "tender_no": "195042",
+      "name": "वार्ड क्रमांक 04 मुक्तिपारा मुक्तिधाम के विकास कार्य बावत्।",
+      "department": "EXECATIVE ENGINEER, MUNICIPAL CORPORATION",
+      "amount": "4106000.00",
+      "last_date": "29 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:33:39",
+      "last_updated_at": "2026-07-14T17:33:39",
+      "area_city": "Municipal Corporation"
+    },
+    {
+      "id": 2324,
+      "tender_no": "195046",
+      "name": "WMM Patch Repair Work on road Under Sub Division Bastar.",
+      "department": "Uttar Baster Div. No. 2",
+      "amount": "1440000.00",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:32:47",
+      "last_updated_at": "2026-07-14T17:32:47",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2323,
+      "tender_no": "195047",
+      "name": "WMM Patch Repair Work on road Under sub Division Lohandiguda.",
+      "department": "Uttar Baster Div. No. 2",
+      "amount": "1441000.00",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:30:59",
+      "last_updated_at": "2026-07-14T17:30:59",
+      "area_city": ""
+    },
+    {
+      "id": 2322,
+      "tender_no": "195048",
+      "name": "WMM Patch Repair Work on road Under Sub Division Darbha.",
+      "department": "Uttar Baster Div. No. 2",
+      "amount": "1254000.00",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:30:23",
+      "last_updated_at": "2026-07-14T17:30:23",
+      "area_city": ""
+    },
+    {
+      "id": 2321,
+      "tender_no": "195086",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-01 block -Koilibeda Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:28:59",
+      "last_updated_at": "2026-07-14T17:28:59",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2320,
+      "tender_no": "195087",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-02 block -Koilibeda Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:28:27",
+      "last_updated_at": "2026-07-14T17:28:27",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2319,
+      "tender_no": "195088",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-03 block -Durgukondal Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:27:58",
+      "last_updated_at": "2026-07-14T17:27:58",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2318,
+      "tender_no": "195089",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-04 block -Bhanupratappur Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:27:26",
+      "last_updated_at": "2026-07-14T17:27:26",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2317,
+      "tender_no": "195090",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-05 block -Antagarh/Kanker Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:26:53",
+      "last_updated_at": "2026-07-14T17:26:53",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2316,
+      "tender_no": "195091",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-06 block -Antagarh/Kanker Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:26:22",
+      "last_updated_at": "2026-07-14T17:26:22",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2315,
+      "tender_no": "195092",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-07 block -Antagarh/Kanker Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:24:28",
+      "last_updated_at": "2026-07-14T17:24:28",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2314,
+      "tender_no": "195093",
+      "name": "NIT 209 dt 06-07-2026 Construction of Long Span Bridge work pkg CG 08 LSB SCA-08 block -Antagarh/Kanker Dist.- Kanker.",
+      "department": "SE CIRCLE 02 BASTAR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:24:00",
+      "last_updated_at": "2026-07-14T17:24:00",
+      "area_city": "Bastar"
+    },
+    {
+      "id": 2313,
+      "tender_no": "195108",
+      "name": "जोन क्रमांक 03, 04, 05 एवं 06 के विभिन्न स्थानों पर रोड़ डामरीकरण एवं नवीनीकरण कार्य।",
+      "department": "COMMISSINOR,MUNICIPAL CORPORATION, BILASPUR",
+      "amount": "",
+      "last_date": "1 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:23:21",
+      "last_updated_at": "2026-07-14T17:23:21",
+      "area_city": "Bilaspur"
+    },
+    {
+      "id": 2312,
+      "tender_no": "195133",
+      "name": "E-tender/Auction for Block/Shop No. 15/10 (ST Category) under the Uttar Gangotri Commercial Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1181600.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:20:48",
+      "last_updated_at": "2026-07-14T17:20:48",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2311,
+      "tender_no": "195135",
+      "name": "E-tender/Auction for Block/Shop No. 19/08 (SC Category) under the Uttar Gangotri Commercial Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2405400.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:20:15",
+      "last_updated_at": "2026-07-14T17:20:15",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2310,
+      "tender_no": "195136",
+      "name": "E-tender/Auction for Block/Shop No. 19/17 (EX Sodier Category) under the Uttar Gangotri Commercial Complex Scheme of Bhilai Municipal",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2405400.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:19:44",
+      "last_updated_at": "2026-07-14T17:19:44",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2309,
+      "tender_no": "195137",
+      "name": "E-tender/Auction for Block/Shop No. G/195 under the Akash Ganga Commercial Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1073463.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:19:13",
+      "last_updated_at": "2026-07-14T17:19:13",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2308,
+      "tender_no": "195138",
+      "name": "E-tender/Auction for Block/Shop No. G/206 under the Akash Ganga Commercial Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1073463.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:18:41",
+      "last_updated_at": "2026-07-14T17:18:41",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2307,
+      "tender_no": "195139",
+      "name": "E-tender/Auction for Block/Shop No. G/207 under the Akash Ganga Commercial Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1073463.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:18:08",
+      "last_updated_at": "2026-07-14T17:18:08",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2306,
+      "tender_no": "195140",
+      "name": "E-tender/Auction for Block/Shop No. 01 under the Pragati Complex Commercial Complex Scheme of Bhilai Municipal Corporation",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:17:37",
+      "last_updated_at": "2026-07-14T17:17:37",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2305,
+      "tender_no": "195141",
+      "name": "E-tender/Auction for Block/Shop No. 02 under the Pragati Complex Scheme of Bhilai Municipal Corporation",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1012800.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:17:06",
+      "last_updated_at": "2026-07-14T17:17:06",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2304,
+      "tender_no": "195142",
+      "name": "E-tender/Auction for Block/Shop 03 under the Pragti Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1118300.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:15:15",
+      "last_updated_at": "2026-07-14T17:15:15",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2303,
+      "tender_no": "195143",
+      "name": "E-tender/Auction for Block/Shop No. 04 under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "580250.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:14:46",
+      "last_updated_at": "2026-07-14T17:14:46",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2302,
+      "tender_no": "195145",
+      "name": "E-tender/Auction for Block/Shop No. 09 under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:14:17",
+      "last_updated_at": "2026-07-14T17:14:17",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2301,
+      "tender_no": "195146",
+      "name": "E-tender/Auction for Block/Shop No. 10 under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1012800.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:13:45",
+      "last_updated_at": "2026-07-14T17:13:45",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2300,
+      "tender_no": "195147",
+      "name": "E-tender/Auction for Block/Shop No. 11 under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "5291880.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:13:16",
+      "last_updated_at": "2026-07-14T17:13:16",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2299,
+      "tender_no": "195148",
+      "name": "E-tender/Auction for Block/Shop No. 12 (ST Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:12:49",
+      "last_updated_at": "2026-07-14T17:12:49",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2298,
+      "tender_no": "195153",
+      "name": "E-tender/Auction for Block/Shop No. 13 (OBC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:12:21",
+      "last_updated_at": "2026-07-14T17:12:21",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2297,
+      "tender_no": "195154",
+      "name": "E-tender/Auction for Block/Shop No. 14 (OBC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:11:56",
+      "last_updated_at": "2026-07-14T17:11:56",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2296,
+      "tender_no": "195155",
+      "name": "E-tender/Auction for Block/Shop No. 15 (OBC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:10:15",
+      "last_updated_at": "2026-07-14T17:10:15",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2295,
+      "tender_no": "195156",
+      "name": "E-tender/Auction for Block/Shop No. 16 (OBC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:09:49",
+      "last_updated_at": "2026-07-14T17:09:49",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2294,
+      "tender_no": "195157",
+      "name": "E-tender/Auction for Block/Shop No. 17 (OBC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:09:23",
+      "last_updated_at": "2026-07-14T17:09:23",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2293,
+      "tender_no": "195158",
+      "name": "E-tender/Auction for Block/Shop No. 18 (Female Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:08:53",
+      "last_updated_at": "2026-07-14T17:08:53",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2292,
+      "tender_no": "195159",
+      "name": "E-tender/Auction for Block/Shop No. 19 (Female Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:08:22",
+      "last_updated_at": "2026-07-14T17:08:22",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2291,
+      "tender_no": "195161",
+      "name": "E-tender/Auction for Block/Shop No. 20 (OBC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:07:50",
+      "last_updated_at": "2026-07-14T17:07:50",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2290,
+      "tender_no": "195162",
+      "name": "E-tender/Auction for Block/Shop No. 21 (ST Category)Pragati Complex Scheme of Bhilai Municipal Corporation",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:07:20",
+      "last_updated_at": "2026-07-14T17:07:20",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2289,
+      "tender_no": "195163",
+      "name": "E-tender/Auction for Block/Shop No. 22 (SC Category) under the Pragati Complex Scheme of Bhilai Municipal Corporation..",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "1160500.00",
+      "last_date": "3 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:06:48",
+      "last_updated_at": "2026-07-14T17:06:48",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2288,
+      "tender_no": "195311",
+      "name": "E-tender/Auction for Block/Shop No. Type-A-20 (SC Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2320500.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:04:55",
+      "last_updated_at": "2026-07-14T17:04:55",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2287,
+      "tender_no": "195313",
+      "name": "E-tender/Auction for Block/Shop No. Type-B-1 (widowhood and abandonment Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2137750.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:04:34",
+      "last_updated_at": "2026-07-14T17:04:34",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2286,
+      "tender_no": "195315",
+      "name": "E-tender/Auction for Block/Shop No. Type-B-2 (OBC Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2137750.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:04:14",
+      "last_updated_at": "2026-07-14T17:04:14",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2285,
+      "tender_no": "195316",
+      "name": "E-tender/Auction for Block/Shop No. Type-B-3 (GEN Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2137750.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:03:55",
+      "last_updated_at": "2026-07-14T17:03:55",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2284,
+      "tender_no": "195317",
+      "name": "E-tender/Auction for Block/Shop No. Type-B-4 (GEN Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "2137750.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:03:38",
+      "last_updated_at": "2026-07-14T17:03:38",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2283,
+      "tender_no": "195318",
+      "name": "E-tender/Auction for Block/Shop No. Type-C-1 (GEN Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "952000.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:03:18",
+      "last_updated_at": "2026-07-14T17:03:18",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2282,
+      "tender_no": "195319",
+      "name": "E-tender/Auction for Block/Shop No. Type-C-2 (OBC Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "952000.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:02:58",
+      "last_updated_at": "2026-07-14T17:02:58",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2281,
+      "tender_no": "195320",
+      "name": "E-tender/Auction for Block/Shop No. Type-C-3 (Fenale Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "952000.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:02:38",
+      "last_updated_at": "2026-07-14T17:02:38",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2280,
+      "tender_no": "195321",
+      "name": "E-tender/Auction for Block/Shop No. Type-C-4 (SC Category) under the Pt. Dindayal. Mini Stadium Scheme of Bhilai Municipal Corporation.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "952000.00",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:02:19",
+      "last_updated_at": "2026-07-14T17:02:19",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2279,
+      "tender_no": "195335",
+      "name": "CONSTRUCTION OF HARDI TO KIRNA (CANAL ROAD ) LENGTH 1.50 KM.",
+      "department": "Division Mungeli",
+      "amount": "12708000.00",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:01:46",
+      "last_updated_at": "2026-07-14T17:01:46",
+      "area_city": "Mungeli"
+    },
+    {
+      "id": 2278,
+      "tender_no": "195336",
+      "name": "STRENGTHING AND RENEWAL WORK OF JANJGIR BYPASS (ODR) ROAD FROM KM 1/2 TO KM 2/4 (100 M) = 1.30 KM.",
+      "department": "Division Champa",
+      "amount": "7726000.00",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:01:26",
+      "last_updated_at": "2026-07-14T17:01:26",
+      "area_city": "Champa"
+    },
+    {
+      "id": 2277,
+      "tender_no": "195337",
+      "name": "(I) B.T. RENEWAL WORK OF JANJGIR-KERA-SHIVRINARAYAN ROAD FROM KM 3/6 TO 3/10 = 0.60 KM (II) B.T. RENEWAL OF COLLECTORATE APPROACH ROAD (LENGTH = 0.795 KM)",
+      "department": "Division Champa",
+      "amount": "7368000.00",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:00:47",
+      "last_updated_at": "2026-07-14T17:00:47",
+      "area_city": "Champa"
+    },
+    {
+      "id": 2276,
+      "tender_no": "195338",
+      "name": "STRENGTHING AND RENEWAL WORK OF CIVIL COURT APPROACH ROAD (LENGTH = 600.00 M) AND BODSARA-SIONI (VR) ROAD FROM KM 1/2 TO KM 4/6 = 3600 M.",
+      "department": "Division Champa",
+      "amount": "6685000.00",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T17:00:28",
+      "last_updated_at": "2026-07-14T17:00:28",
+      "area_city": "Champa"
+    },
+    {
+      "id": 2275,
+      "tender_no": "195340",
+      "name": "CONSTRUCTION OF RCC DRAIN AT SIDHIVINAYAK COLONY W.N. 09 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:59:47",
+      "last_updated_at": "2026-07-14T16:59:47",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2274,
+      "tender_no": "195341",
+      "name": "B.T.RENEWAL OF ARJUNI TO KARUMAHU ROAD (V.R.).L= 2.00 K.M., B.T.RENEWAL OF AKALTARA TO JARWE (KHOND) ROAD.(V.R.) L= 1.00 K.M. & STRENGTHENING OF BANARI APP.ROAD (V.R.) L= 0.700 K.M. UNDER SUB-DIVISION JANJGIR,DISTT - JANJGIR-CHAMPA (C.G.)",
+      "department": "Division Champa",
+      "amount": "7421000.00",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:59:30",
+      "last_updated_at": "2026-07-14T16:59:30",
+      "area_city": "Champa"
+    },
+    {
+      "id": 2273,
+      "tender_no": "195342",
+      "name": "Revamping of Material Recovery Facility (MRF) including installation of Machinery and construction of Compost Plant in Municipal Areas of AAMDI, Chhattisgarh.",
+      "department": "NAGAR PANCHAYAT AMDI",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-14T16:59:10",
+      "last_updated_at": "2026-07-14T16:59:10",
+      "area_city": "Amdi"
+    },
+    {
+      "id": 2272,
+      "tender_no": "195344",
+      "name": "B.T.RENEWAL OF TAROD-KIRARI-TAGA-DHARASHIV ROAD.(M.D.R.) L= 1.00 K.M & UPGRADATION WORK OF N.H.-49 TO ARJUNI APP.ROAD.(V.R.) L= 1.00 K.M. UNDER SUB-DIVISION JANJGIR,DISTT - JANJGIR-CHAMPA (C.G.)",
+      "department": "Division Champa",
+      "amount": "7190000.00",
+      "last_date": "20 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:58:53",
+      "last_updated_at": "2026-07-14T16:58:53",
+      "area_city": "Champa"
+    },
+    {
+      "id": 2271,
+      "tender_no": "195345",
+      "name": "CONSTRUCTION OF RCC DRAIN FROM RAMNIVAS TAKIES TO CSEB OFFICE COMPLEX TO JAGDAMBA ASHRAM NEW MARINE DRIVE AT W.N. 19/20 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:58:34",
+      "last_updated_at": "2026-07-14T16:58:34",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2270,
+      "tender_no": "195346",
+      "name": "CONSTRUCTION OF RCC DRAIN FROM ATUL DEWANGAN TO Dr. SAHU HOME (KHETPARA) AT W.N. 21 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:58:17",
+      "last_updated_at": "2026-07-14T16:58:17",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2269,
+      "tender_no": "195347",
+      "name": "CONSTRUCTION OF RAPADAND(KERSAI) TO RAITOLI ROAD LENGTH 1.74 K.M. OF DISTRICT JASHPUR . 2. CONSTRUCTION OF SINGIBAHAR MAIN ROAD TO RAIMUNDA ROAD LENGTH 0.94 K.M. OF DISTRICT JASHPUR",
+      "department": "Division Jaspur",
+      "amount": "30808000.00",
+      "last_date": "5 Aug, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:58:01",
+      "last_updated_at": "2026-07-14T16:58:01",
+      "area_city": "Jaspur"
+    },
+    {
+      "id": 2268,
+      "tender_no": "195349",
+      "name": "CONSTRUCTION OF BHAWARKHOH TO GANGAPUR- KARRI KUPPA ROAD IN DISTT.- SURAJPUR (C.G.) (LENGTH- 5.10 KM).",
+      "department": "Division Surajpur",
+      "amount": "69794000.00",
+      "last_date": "5 Aug, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:57:34",
+      "last_updated_at": "2026-07-14T16:57:34",
+      "area_city": "Surajpur"
+    },
+    {
+      "id": 2267,
+      "tender_no": "195350",
+      "name": "CONSTRUCTION OF RCC DRAIN FROM GULMOHAR COLONY GARDEN TO BELADULA SCHOOL AT W.N. 21 (2nd call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:57:16",
+      "last_updated_at": "2026-07-14T16:57:16",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2266,
+      "tender_no": "195351",
+      "name": "STRENTHENING AND UPGRADATION WORK OF SYAHI-SANAWAL ROAD, LENGTH K.M. 1 TO 9, 13 TO 18 AND 23 TO 35 = 28.00 K.M. i/c CULVERT DIST.- BALRAMPUR-RAMANUJGANJ (Work code – W31658)",
+      "department": "Division Ramanujganj",
+      "amount": "91048000.00",
+      "last_date": "5 Aug, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:56:56",
+      "last_updated_at": "2026-07-14T16:56:56",
+      "area_city": "Ramanujganj"
+    },
+    {
+      "id": 2265,
+      "tender_no": "195352",
+      "name": "CONSTRUCTION OF RCC DRAIN FROM KAMLA NEHARU GARDEN TO NALA AT W.N. 23 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:56:34",
+      "last_updated_at": "2026-07-14T16:56:34",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2264,
+      "tender_no": "195356",
+      "name": "Construction of God Sahastrabahu Chowk and Welcome Gate and God Sahastrabahu Statue Stablishment at Kasaniya Mod Katghora",
+      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, KHATGHORA",
+      "amount": "2473000.00",
+      "last_date": "29 Jul, 2026 5:30:21 PM IST",
+      "first_seen_at": "2026-07-14T16:56:16",
+      "last_updated_at": "2026-07-14T16:56:16",
+      "area_city": "Khatghora"
+    },
+    {
+      "id": 2263,
+      "tender_no": "195357",
+      "name": "Construction of Auditorium at Priyadarshani Parishar (west) 1000 Seator in Bhilai.",
+      "department": "COMMISSIONER, MUNICIPAL CORPORATION, BHILAI",
+      "amount": "",
+      "last_date": "4 Aug, 2026 6:30:47 PM IST",
+      "first_seen_at": "2026-07-14T16:56:00",
+      "last_updated_at": "2026-07-14T16:56:00",
+      "area_city": "Bhilai"
+    },
+    {
+      "id": 2262,
+      "tender_no": "195358",
+      "name": "पोस्ट मैट्रिक अजजा कन्या छात्रावास दंतेवाड़ा, पार्ट 01 में मॉडल शौचालय निर्माण कार्य",
+      "department": "PWD JAGDALPUR",
+      "amount": "1250000.00",
+      "last_date": "4 Aug, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:55:40",
+      "last_updated_at": "2026-07-14T16:55:40",
+      "area_city": "Jagdalpur"
+    },
+    {
+      "id": 2261,
+      "tender_no": "195359",
+      "name": "Construction of Andi Kirkar Jamgahan to Satbahaniya Road Length 5.30 Km..",
+      "department": "SAKTI",
+      "amount": "76248000.00",
+      "last_date": "31 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:55:21",
+      "last_updated_at": "2026-07-14T16:55:21",
+      "area_city": "Sakti"
+    },
+    {
+      "id": 2260,
+      "tender_no": "195360",
+      "name": "CONSTRUCTION OF STORM WATER DRAIN FROM MITTHUMUDA TALAB TO SAMUDAYIK BHAVAN AT W.N. 37/36 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:55:01",
+      "last_updated_at": "2026-07-14T16:55:01",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2259,
+      "tender_no": "195362",
+      "name": "Construction of 06 Nos. Barrack (Factory Barrack (G.F./F.F./& II F. High Cell Barrack) i/c Electrification work at Central Jail Jagdalpur (Balance Work). (Work code – W23863)",
+      "department": "Uttar Baster Div. No. 1 Jagdalpur",
+      "amount": "24119000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:54:40",
+      "last_updated_at": "2026-07-14T16:54:40",
+      "area_city": "Jagdalpur"
+    },
+    {
+      "id": 2258,
+      "tender_no": "195363",
+      "name": "Construction of Chandabeda (Ghotiya Munda to Chhindli Road) inc Bridge & Culverts Length 3.375 Km Work Code W29745 Dist Kondagaon",
+      "department": "Division Kondagaon",
+      "amount": "40519000.00",
+      "last_date": "31 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:54:18",
+      "last_updated_at": "2026-07-14T16:54:18",
+      "area_city": "Kondagaon"
+    },
+    {
+      "id": 2257,
+      "tender_no": "195365",
+      "name": "Ward No. 02: Construction of pathway from Pushpa Gupta's house to Balkrishna Dubey's shop",
+      "department": "NAGAR PANCHAYAT BHATGAON(B)",
+      "amount": "",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:53:55",
+      "last_updated_at": "2026-07-14T16:53:55",
+      "area_city": ""
+    },
+    {
+      "id": 2256,
+      "tender_no": "195367",
+      "name": "Ward No. 02 Pathway construction work from Mouli Medical Stores to Petrol Pump",
+      "department": "NAGAR PANCHAYAT BHATGAON(B)",
+      "amount": "",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:53:39",
+      "last_updated_at": "2026-07-14T16:53:39",
+      "area_city": ""
+    },
+    {
+      "id": 2255,
+      "tender_no": "195368",
+      "name": "Construction work of 2 Nos F, 15 Nos G, 20 Nos H& 15 Nos I Type Residential Quarter for Officers & Employees of Civil Court Gariyaband with Approach Road, Drainage Gaurden, Cow Catcher, Overhead Tank, Boundrywall & Electrification at Dist. Gariyaband.(Gariyaband Dn.).",
+      "department": "Gariyaband Division",
+      "amount": "84067000.00",
+      "last_date": "31 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:53:21",
+      "last_updated_at": "2026-07-14T16:53:21",
+      "area_city": "Gariyaband"
+    },
+    {
+      "id": 2254,
+      "tender_no": "195369",
+      "name": "Construction Of High Level Bridge i/c Approach Road Across Lamti Nalla On Lemru-Shyang Road.",
+      "department": "Bridge Division Bilaspur",
+      "amount": "37064000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:53:04",
+      "last_updated_at": "2026-07-14T16:53:04",
+      "area_city": "Bilaspur"
+    },
+    {
+      "id": 2253,
+      "tender_no": "195370",
+      "name": "Construction of valve chamber, valve fitting, pipe fitting etc.& Installation of 02 HP Submersible power pump 03 nos & Providing G.I. steel Str., and PVC tank capacity 10000ltr.x03nos & Construction of brick Masonry Switch room Provision of electric connection for Three phase -02 nos & Providing connection in house hold and public instiutions-22nos with valve specials and all fitting i/c all allied civil works complete with in 06 Months, and trial run operation, maintenance for 06 Months.at village -KOTUR, Block- BHOPAL PATNAM, District - Bijapur. under Jal Jeevan Mission - Single Village Scheme.(1st call ) Risk & cost आमंत्रित निविदा अधूरे कार्य एवं पुराने दर ( PHE SOR 01.06.2020 ) आधारित है",
+      "department": "O/O EE & MEMBER SECRETARY (DWSM), PHE DIV, BIJAPUR",
+      "amount": "2865000.00",
+      "last_date": "31 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:52:47",
+      "last_updated_at": "2026-07-14T16:52:47",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2252,
+      "tender_no": "195371",
+      "name": "Commericial Shop for Urban Income Genration anhd Livelihood Enhancement in the directly affected area under Municipal Corporation Korba",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "",
+      "last_date": "4 Aug, 2026 5:30:35 PM IST",
+      "first_seen_at": "2026-07-14T16:52:30",
+      "last_updated_at": "2026-07-14T16:52:30",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2251,
+      "tender_no": "195372",
+      "name": "CONSTRUCTION OF STORM WATER DRAIN NEAR MAHAPAUR HOUSE AT W.N. 38 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:52:09",
+      "last_updated_at": "2026-07-14T16:52:09",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2250,
+      "tender_no": "195374",
+      "name": "Construction of High Level Bridge i/c Approaches Across Malger River in Km. 3/6 on Burgum to Sameli Road.",
+      "department": "Bridge Division Jagdalpur",
+      "amount": "36710000.00",
+      "last_date": "27 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:51:52",
+      "last_updated_at": "2026-07-14T16:51:52",
+      "area_city": "Jagdalpur"
+    },
+    {
+      "id": 2249,
+      "tender_no": "195375",
+      "name": "Construction of Kanker Bhanupratappur Sambalpur Road to Michchipara Road Length 2.15 km. (i/c Culverts and Bridges).",
+      "department": "Division Bhanupratapur",
+      "amount": "31471000.00",
+      "last_date": "31 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:51:33",
+      "last_updated_at": "2026-07-14T16:51:33",
+      "area_city": "Bhanupratapur"
+    },
+    {
+      "id": 2248,
+      "tender_no": "195376",
+      "name": "INTERNAL REPARING, RENEWAL, RENOVATION FASAD LIGHTING UPGRADATION WORK & INTERNAL RENOVATION WITH ELECTRIFICATION WORK OF DR. B.R. AMBEDKAR MEMORIAL HOSPITAL, AT RAIPUR , DISTT. RAIPUR.(DN. NO.2, RAPIUR).(DEPOSITE WORK) (Without Escalation and Bonus)",
+      "department": "PWD Div No2 Raipur",
+      "amount": "302393000.00",
+      "last_date": "31 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:51:17",
+      "last_updated_at": "2026-07-14T16:51:17",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2247,
+      "tender_no": "195377",
+      "name": "Construction of Toilet Block Type-1 (10 Seater) Aspirational Toilet at ward no. 06 Near Ward Office at Achholi as per enclosed specifications and drawings including Defect liability period of 36 months from the date of completion",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, BIRGAON",
+      "amount": "",
+      "last_date": "5 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:50:58",
+      "last_updated_at": "2026-07-14T16:50:58",
+      "area_city": "Birgaon"
+    },
+    {
+      "id": 2246,
+      "tender_no": "195378",
+      "name": "विधायक निधि मद से तात्यापारा वार्ड क्रमांक 36 अंतर्गत शीतला मंदिर रामजी हलवाई गली के पास पूर्व निर्मित सामुदायिक भवन में कक्ष निर्माण तथा शेष कार्यो को पूर्ण करनें हेतु।",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
+      "amount": "",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:50:42",
+      "last_updated_at": "2026-07-14T16:50:42",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2245,
+      "tender_no": "195380",
+      "name": "वार्ड क्रमांक 45 जिला अस्पताल अम्बिकापुर के छत पर शेड निर्माण कार्य।",
+      "department": "EXECATIVE ENGINEER, MUNICIPAL CORPORATION",
+      "amount": "4966000.00",
+      "last_date": "28 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:50:26",
+      "last_updated_at": "2026-07-14T16:50:26",
+      "area_city": "Municipal Corporation"
+    },
+    {
+      "id": 2244,
+      "tender_no": "195381",
+      "name": "CONSTRUCTION OF RCC RETAINING WALL NALA AT IRANI BASTI W.N. 34/36 (2nd Call)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:50:09",
+      "last_updated_at": "2026-07-14T16:50:09",
+      "area_city": "Raigarh"
+    },
+    {
+      "id": 2243,
+      "tender_no": "195383",
+      "name": "STRENGTHENING OF KENDAI-BARDAR- BAIKUNTHPUR- SONHAT- RAMGARH-M.P. BOARDER ROAD LENGTH 20.46 KM DISTT- KOREA (C.G.)",
+      "department": "Koria Division Manendragarh",
+      "amount": "152938000.00",
+      "last_date": "31 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:49:53",
+      "last_updated_at": "2026-07-14T16:49:53",
+      "area_city": "Manendragarh"
+    },
+    {
+      "id": 2242,
+      "tender_no": "195385",
+      "name": "EOI For Prayas Awasiya Vidlalya, Jashpur for year 2026-27 to 2029-30",
+      "department": "ACTWD JASHPUR",
+      "amount": "",
+      "last_date": "28 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:49:36",
+      "last_updated_at": "2026-07-14T16:49:36",
+      "area_city": "Jashpur"
+    },
+    {
+      "id": 2241,
+      "tender_no": "195387",
+      "name": "CONSTRUCTION WORK OF ASPIRATIONAL TOILET BLOCK TYPE-2 AT WARD NO 04 PHARASGAON.",
+      "department": "NAGAR PANCHAYAT PHARASGAON",
+      "amount": "1692000.00",
+      "last_date": "6 Aug, 2026 5:30:17 PM IST",
+      "first_seen_at": "2026-07-14T16:49:19",
+      "last_updated_at": "2026-07-14T16:49:19",
+      "area_city": "Pharasgaon"
+    },
+    {
+      "id": 2240,
+      "tender_no": "195388",
+      "name": "B.T. Renewal Work, Construction of R.C.C. Open Drain, R.C.C. Slab Culvert & Hume Pipe Culvert at Light Industrial Area, Bhilai Distt. Durg (C.G.)",
+      "department": "CHHATTISGARH STATE INDUSTRIAL DEVELOPMENT CORPORATION (CSIDC)",
+      "amount": "92762000.00",
+      "last_date": "29 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:49:05",
+      "last_updated_at": "2026-07-14T16:49:05",
+      "area_city": "Durg"
+    },
+    {
+      "id": 2239,
+      "tender_no": "195389",
+      "name": "Providing of Fitness Certificate of vehicles under Civil/ Sanitation work",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:48:48",
+      "last_updated_at": "2026-07-14T16:48:48",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2238,
+      "tender_no": "195394",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है - works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender part-1 Block- Bijapur, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:48:31",
+      "last_updated_at": "2026-07-14T16:48:31",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2237,
+      "tender_no": "195397",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender part-2 Block- Bijapur, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:48:11",
+      "last_updated_at": "2026-07-14T16:48:11",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2236,
+      "tender_no": "195400",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender part-1 Block- Bhairamghar, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:47:52",
+      "last_updated_at": "2026-07-14T16:47:52",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2235,
+      "tender_no": "195402",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender part-2 Block- Bhairamghar, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:47:36",
+      "last_updated_at": "2026-07-14T16:47:36",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2234,
+      "tender_no": "195404",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender part-3 Block- Bhairamghar, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:47:19",
+      "last_updated_at": "2026-07-14T16:47:19",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2233,
+      "tender_no": "195405",
+      "name": "Construction of R.C.C Drain and C.C. Road Near Gopeshwar House To Aas Mangalam DadarNala Under Ward No-34",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "2585000.00",
+      "last_date": "4 Aug, 2026 5:30:46 PM IST",
+      "first_seen_at": "2026-07-14T16:46:59",
+      "last_updated_at": "2026-07-14T16:46:59",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2232,
+      "tender_no": "195406",
+      "name": "Construction Work of CC Road Near Career Public School at Ward No 28 PT. RSS Nagar Zone .",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "1650000.00",
+      "last_date": "4 Aug, 2026 5:30:46 PM IST",
+      "first_seen_at": "2026-07-14T16:46:43",
+      "last_updated_at": "2026-07-14T16:46:43",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2231,
+      "tender_no": "195408",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender partt-1 Block- Usoor, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:46:25",
+      "last_updated_at": "2026-07-14T16:46:25",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2230,
+      "tender_no": "195409",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender partt-2 Block- Usoor, Distt. Bijapur ( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:46:06",
+      "last_updated_at": "2026-07-14T16:46:06",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2229,
+      "tender_no": "195411",
+      "name": "आमंत्रित निविदा सेक्टर ( जोनल ) पर आधारित है -works such as partial construction, minor construction, maintenance, partial electrification, electrification, and toilet construction/repair of Ashram hostel buildings under the department. Sector Tender part-1 Block- Bhopalpatnam, Distt. Bijapur( 1st Call )",
+      "department": "ACTW BIJAPUR",
+      "amount": "5000000.00",
+      "last_date": "7 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:45:52",
+      "last_updated_at": "2026-07-14T16:45:52",
+      "area_city": "Bijapur"
+    },
+    {
+      "id": 2228,
+      "tender_no": "195413",
+      "name": "665(1) Brown Sugar Sale E-Tender",
+      "department": "ADMIN_OFFICE",
+      "amount": "",
+      "last_date": "20 Jul, 2026 12:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:45:35",
+      "last_updated_at": "2026-07-14T16:45:35",
+      "area_city": ""
+    },
+    {
+      "id": 2227,
+      "tender_no": "195414",
+      "name": "Construction of Community Hall At Ruabandha North Ward no.-02 Risali (C.G.)",
+      "department": "MUNICIPAL CORPORATION RISALI",
+      "amount": "",
+      "last_date": "4 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:45:22",
+      "last_updated_at": "2026-07-14T16:45:22",
+      "area_city": "Risali"
+    },
+    {
+      "id": 2226,
+      "tender_no": "195415",
+      "name": "665(2) Scrap Material Sale E-Tender",
+      "department": "ADMIN_OFFICE",
+      "amount": "",
+      "last_date": "20 Jul, 2026 12:00:00 PM IST",
+      "first_seen_at": "2026-07-14T16:45:07",
+      "last_updated_at": "2026-07-14T16:45:07",
+      "area_city": ""
+    },
+    {
+      "id": 2225,
+      "tender_no": "195429",
+      "name": "Construction of R.C.C Drain and C.C. Paving Work Near Jeevan Patel House To Swai Uncle House Purani Basti DadarKhurd Under Ward No-34",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "2230000.00",
+      "last_date": "4 Aug, 2026 5:30:46 PM IST",
+      "first_seen_at": "2026-07-14T16:44:52",
+      "last_updated_at": "2026-07-14T16:44:52",
+      "area_city": "Korba"
+    },
+    {
+      "id": 2224,
+      "tender_no": "195430",
+      "name": "NIT 1153 Consction & maintenance of PMGSY Road PKG No CG 19-66 District- Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "35294000.00",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:44:33",
+      "last_updated_at": "2026-07-14T16:44:33",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2223,
+      "tender_no": "195431",
+      "name": "Construction of hostel for mentally disabled children at Nehru School campus, Nayapara Ward, Dhamtari, Distt-Dhamtari(C.G.)",
+      "department": "EXECUTIVE ENGINEER, RURAL ENGINEERING SERVICES",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:44:09",
+      "last_updated_at": "2026-07-14T16:44:09",
+      "area_city": "Dhamtari"
+    },
+    {
+      "id": 2222,
+      "tender_no": "195432",
+      "name": "NIT 1153 Consction & maintenance of PMGSY Road PKG No CG 19-67 District- Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "21915000.00",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:43:55",
+      "last_updated_at": "2026-07-14T16:43:55",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2221,
+      "tender_no": "195434",
+      "name": "NIT 1153 Consction & maintenance of PMGSY Road PKG No CG 19-65 District- Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "22977000.00",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:43:42",
+      "last_updated_at": "2026-07-14T16:43:42",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2220,
+      "tender_no": "195435",
+      "name": "NIT 1153 Consction & maintenance of PMGSY Road PKG No CG 19-68 District- Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "10903000.00",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:43:24",
+      "last_updated_at": "2026-07-14T16:43:24",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2219,
+      "tender_no": "195436",
+      "name": "NIT 1153 Consction & maintenance of PMGSY Road PKG No CG 19-92 District- Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "9598000.00",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:43:11",
+      "last_updated_at": "2026-07-14T16:43:11",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2218,
+      "tender_no": "195438",
+      "name": "CONSTRUCTION OF UCHIT MULY DUKAN SAH GODAM WARD NO. 10 NARHARPUR",
+      "department": "NAGAR PANCHAYAT NARHARPUR",
+      "amount": "1243000.00",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:42:53",
+      "last_updated_at": "2026-07-14T16:42:53",
+      "area_city": "Narharpur"
+    },
+    {
+      "id": 2217,
+      "tender_no": "195440",
+      "name": "वार्ड क्रमांक 01 से 15 में अध्यक्ष एवं पार्षद निधि/ निकाय निधि/मरम्मत संधारण मद से सी.सी. रोड एवं नाली निर्माण/मरम्मत कार्य (जोनल निविदा, एक कार्य लागत राशि अधिकतम 3.00 लाख)",
+      "department": "NAGAR PANCHAYAT, PALARI",
+      "amount": "",
+      "last_date": "5 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:42:39",
+      "last_updated_at": "2026-07-14T16:42:39",
+      "area_city": "Palari"
+    },
+    {
+      "id": 2216,
+      "tender_no": "195443",
+      "name": "Design, Construction, Testing, Commissioning of All The Components of Interception and Diversion Based Sewage Treatment Plant (STP) Work Including 05 Years of Operation and Maintenance of The Entire System in Nagar Panchayat, MALHAR under SBM 2.0",
+      "department": "NAGAR PANCHAYAT MALHAR",
+      "amount": "27356000.00",
+      "last_date": "24 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:42:22",
+      "last_updated_at": "2026-07-14T16:42:22",
+      "area_city": "Malhar"
+    },
+    {
+      "id": 2215,
+      "tender_no": "195445",
+      "name": "वार्ड क्रमांक 01 से 15 में अध्यक्ष एवं पार्षद निधि/निकाय निधि/मरम्मत संधारण मद से चबुतरा, भवन एवं अन्य निर्माण/मरम्मत कार्य (जोनल निविदा, एक कार्य लागत राशि अधिकतम 3.00 लाख)",
+      "department": "NAGAR PANCHAYAT, PALARI",
+      "amount": "",
+      "last_date": "5 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:42:06",
+      "last_updated_at": "2026-07-14T16:42:06",
+      "area_city": "Palari"
+    },
+    {
+      "id": 2214,
+      "tender_no": "195447",
+      "name": "वार्ड क्रमांक 01 से 15 में अध्यक्ष एवं पार्षद निधि/निकाय निधि से बोर खनन एवं पाईप लाइन विस्तार कार्य (जोनल निविदा, एक कार्य लागत राशि अधिकतम 3.00 लाख)",
+      "department": "NAGAR PANCHAYAT, PALARI",
+      "amount": "",
+      "last_date": "5 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:41:50",
+      "last_updated_at": "2026-07-14T16:41:50",
+      "area_city": "Palari"
+    },
+    {
+      "id": 2213,
+      "tender_no": "195448",
+      "name": "Providing Laying and Jointing of HDPE Pipe Line (90mm dia {8kg/sq.cm}) for Distribution System. Ward No. 01,02,06,08,09,10,11 and 15 (Estimated Area)",
+      "department": "NAGAR PANCHAYAT BARSOOR",
+      "amount": "",
+      "last_date": "30 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:41:37",
+      "last_updated_at": "2026-07-14T16:41:37",
+      "area_city": "Barsoor"
+    },
+    {
+      "id": 2212,
+      "tender_no": "195452",
+      "name": "1151 Construction & Maintenance LSB , SCA Fund, PKG No Gorkha to Chintagupha road RD 200 m District-Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "29404000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:41:23",
+      "last_updated_at": "2026-07-14T16:41:23",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2211,
+      "tender_no": "195456",
+      "name": "1151 Construction & Maintenance LSB , SCA Fund, PKG No Bheji to Bhandarpadar road RD 1500 m District-Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "25043000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:41:09",
+      "last_updated_at": "2026-07-14T16:41:09",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2210,
+      "tender_no": "195458",
+      "name": "1151 Construction & Maintenance LSB , SCA Fund, PKG No Mariguda Chintalnar to Mangalguda road RD 600 m District-Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "31387000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:40:55",
+      "last_updated_at": "2026-07-14T16:40:55",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2209,
+      "tender_no": "195459",
+      "name": "1151 Construction & Maintenance LSB , SCA Fund, PKG No Bodko to paliya road RD 3000 m District-Sukma",
+      "department": "CGRRDA RAIPUR",
+      "amount": "30977000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:40:41",
+      "last_updated_at": "2026-07-14T16:40:41",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2208,
+      "tender_no": "195461",
+      "name": "NIT 1152 Cons. &Main. Long Span Bridge under PMJANMAN PKG No CGLSB 24-66 District-Balrampur",
+      "department": "CGRRDA RAIPUR",
+      "amount": "29561000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:40:27",
+      "last_updated_at": "2026-07-14T16:40:27",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2207,
+      "tender_no": "195463",
+      "name": "NIT 1152 Cons. &Main. Long Span Bridge under PMJANMAN PKG No CGLSB 24-73 District-Balrampur",
+      "department": "CGRRDA RAIPUR",
+      "amount": "69170000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:40:14",
+      "last_updated_at": "2026-07-14T16:40:14",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2206,
+      "tender_no": "195464",
+      "name": "NIT 1152 Cons. &Main. Long Span Bridge under PMJANMAN PKG No CGLSB 24-74 District-Balrampur",
+      "department": "CGRRDA RAIPUR",
+      "amount": "23482000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:40:00",
+      "last_updated_at": "2026-07-14T16:40:00",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2205,
+      "tender_no": "195465",
+      "name": "NIT 1152 Cons. &Main. Long Span Bridge under PMJANMAN PKG No CGLSB 23-39 District-Gariyaband",
+      "department": "CGRRDA RAIPUR",
+      "amount": "15844000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:39:45",
+      "last_updated_at": "2026-07-14T16:39:45",
+      "area_city": "Raipur"
+    },
+    {
+      "id": 2204,
+      "tender_no": "195466",
+      "name": "NIT 1152 Cons. &Main. Long Span Bridge under PKG No CGLSB 23- 40 District-Gariyaband",
+      "department": "CGRRDA RAIPUR",
+      "amount": "16921000.00",
+      "last_date": "21 Jul, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-14T16:39:30",
+      "last_updated_at": "2026-07-14T16:39:30",
+      "area_city": "Raipur"
+    },
     {
       "id": 2187,
       "tender_no": "194560",
@@ -678,72 +2823,6 @@
       "area_city": "Raigarh"
     },
     {
-      "id": 2099,
-      "tender_no": "194788",
-      "name": "CONSTRUCTION & MAINTENANCE OF ERRABORR TO CHIKALGUDA ROAD LENGTH 5.10 KM. (BALANCE WORK) (RCPLWE PROJECT) DISTT-SUKMA",
-      "department": "Div. Sukma",
-      "amount": "20035000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Sukma"
-    },
-    {
-      "id": 2100,
-      "tender_no": "194786",
-      "name": "Construction Of High Level Bridge and Approach Road Across Chiraipani Nalla on Raigarh-Chiraipani Road K.M. 9/2",
-      "department": "Bridge Division Raigarh",
-      "amount": "42423000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Raigarh"
-    },
-    {
-      "id": 2101,
-      "tender_no": "194785",
-      "name": "Construction of Aamkot to Dutapipali Road Length 2.65 km. i/c Culverts and Bridge.",
-      "department": "Division Bhanupratapur",
-      "amount": "29138000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Bhanupratapur"
-    },
-    {
-      "id": 2102,
-      "tender_no": "194784",
-      "name": "Construction of Sodhe to Gattapara Road Length 2.10 km. i/c Culverts and Bridge.",
-      "department": "Division Bhanupratapur",
-      "amount": "24494000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Bhanupratapur"
-    },
-    {
-      "id": 2103,
-      "tender_no": "194783",
-      "name": "CONSTRUCTION OF NEW GOVT. ITI BUILDING , 50 SEATER HOSTEL BUILDING & �F� TYPE QUARTER I/C. WATER SUPPLY, SANITERY FITTINGS & ELECTRIFICATION WORK AT BANGOLI(KHARORA) BLOCK TILDA.( VIDHANSABHA DN. RAIPUR).",
-      "department": "Vidhansabha Div Raipur",
-      "amount": "52150000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Raipur"
-    },
-    {
-      "id": 2104,
-      "tender_no": "194782",
-      "name": "CONSTRUCTION OF HIGH LEVEL BRIDGE I/C APPROACH ROAD ACROSS KALIBEDA NALLA IN KM. 2/10 ON MAKDI – HIRAPUR ROAD.",
-      "department": "BRIDGE DIVISION KANKER",
-      "amount": "73545000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Kanker"
-    },
-    {
       "id": 2105,
       "tender_no": "194781",
       "name": "वार्ड क्र. 21 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
@@ -764,17 +2843,6 @@
       "first_seen_at": "2026-07-13T18:56:29",
       "last_updated_at": "2026-07-13T18:56:29",
       "area_city": "Mungeli"
-    },
-    {
-      "id": 2107,
-      "tender_no": "194779",
-      "name": "Upgradation of Bilaspur Link Road Length 2.50 km.",
-      "department": "Division No. 1 Bilaspur",
-      "amount": "34493000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Bilaspur"
     },
     {
       "id": 2108,
@@ -830,17 +2898,6 @@
       "first_seen_at": "2026-07-13T18:56:29",
       "last_updated_at": "2026-07-13T18:56:29",
       "area_city": "Korba"
-    },
-    {
-      "id": 2113,
-      "tender_no": "194773",
-      "name": "CONSTRUCTION OF NEW CIVIL COURT BUILDING I/C. WATER SUPPLY, SANITERY FITTINGS & ELECTRIFICATION WORK AT PIHHORA DIST. MAHASAMUND( MAHASAMUND DN.)",
-      "department": "Mahasamund Division",
-      "amount": "58296000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Mahasamund"
     },
     {
       "id": 2114,
@@ -920,17 +2977,6 @@
       "area_city": null
     },
     {
-      "id": 2121,
-      "tender_no": "194764",
-      "name": "Revamping of Material Recovery Facility (MRF) including installation of Machinery and construction of Compost Plant in Municipal Areas of PARPODI, Chhattisgarh",
-      "department": "NAGAR PANCHAYAT PARPODI",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Parpodi"
-    },
-    {
       "id": 2122,
       "tender_no": "194760",
       "name": "CONSTRUCTION OF OVER HEAD WATER TANK AT WARD NO. 09 (250 KL)",
@@ -951,39 +2997,6 @@
       "first_seen_at": "2026-07-13T18:56:29",
       "last_updated_at": "2026-07-13T18:56:29",
       "area_city": "Durg"
-    },
-    {
-      "id": 2124,
-      "tender_no": "194758",
-      "name": "Construction of Kotankhod to Niche Kamta Road Length 1.80 km. i/c Culverts and Bridge.",
-      "department": "Division Bhanupratapur",
-      "amount": "20171000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Bhanupratapur"
-    },
-    {
-      "id": 2125,
-      "tender_no": "194757",
-      "name": "Construction of SH-05 (Tadoki) to Padbeda Road Length 3.00 km. i/c Culverts and Bridge.",
-      "department": "Division Bhanupratapur",
-      "amount": "44948000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Bhanupratapur"
-    },
-    {
-      "id": 2126,
-      "tender_no": "194756",
-      "name": "CONSTRUCTION OF G-TYPE QUARTERS & BOUNDRY WALL ETC. AT 209 GAD AVAS CAMPUS KACHANA I/C. ELECTRIFICATION WORK AT DIST. RAIPUR(DN. NO.3, NAWA RAIPUR.)",
-      "department": "Pwd Div No3 Raipur",
-      "amount": "78472000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Raipur"
     },
     {
       "id": 2127,
@@ -2777,28 +4790,6 @@
       "first_seen_at": "2026-07-13T18:56:28",
       "last_updated_at": "2026-07-13T18:56:28",
       "area_city": "Mahasamund"
-    },
-    {
-      "id": 2051,
-      "tender_no": "194841",
-      "name": "CONSTRUCTION OF100 SEATER BOYS HOSTEL BUILDING FOR PVTG STUDENTS I/c ELECTRIFICATION, WATER SUPPLY, SANITARY FITTING AT GURIYA DISTT. NARAYANPUR (without escalation and bonus)",
-      "department": "Division Narayanpur",
-      "amount": "27041000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:28",
-      "last_updated_at": "2026-07-13T18:56:28",
-      "area_city": "Narayanpur"
-    },
-    {
-      "id": 2052,
-      "tender_no": "194840",
-      "name": "CONSTUCTION OF GOVT. COLLEGE BUIDING CHHOTEDONGAR DIST- NARAYANPUR i/c WATER SUPPLY, SANITARY FITTING, ELECTRIFICATION WORK Work Code :- W30853",
-      "department": "Division Narayanpur",
-      "amount": "45432000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:28",
-      "last_updated_at": "2026-07-13T18:56:28",
-      "area_city": "Narayanpur"
     },
     {
       "id": 2053,
@@ -7619,39 +9610,6 @@
       "area_city": "Baloda-Bazar"
     },
     {
-      "id": 1083,
-      "tender_no": "191748",
-      "name": "जोन क्रं. 05 क्षेत्रान्तर्गत वार्ड क्रं. 30 से 37 एवं 40 के विभिन्न जगहो पर आवश्यकतानुसार समय समय पर आर.सी.सी. स्लैब निर्माण/मरम्मत एवं भवन मरम्मत कायो (वित्तीय वर्ष 2026-27 हेतु)",
-      "department": "COMMISSINOR,MUNICIPAL CORPORATION, BILASPUR",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:21",
-      "last_updated_at": "2026-07-13T18:56:21",
-      "area_city": "Bilaspur"
-    },
-    {
-      "id": 1084,
-      "tender_no": "191746",
-      "name": "जोन क्रं. 05 क्षेत्रान्तर्गत वार्ड क्रं. 30 से 37 एवं 40 के विभिन्न जगहो पर आवश्यकतानुसार समय समय पर सी सी सडक पैंच रिपेयरिंग एवं अन्य कार्यो हेतु (वित्तीय वर्ष 2026-27 हेतु)",
-      "department": "COMMISSINOR,MUNICIPAL CORPORATION, BILASPUR",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:21",
-      "last_updated_at": "2026-07-13T18:56:21",
-      "area_city": "Bilaspur"
-    },
-    {
-      "id": 1085,
-      "tender_no": "191745",
-      "name": "जोन क्रं. 05 क्षेत्रान्तर्गत वार्ड क्रं. 30 से 37 एवं 40 के विभिन्न जगहो पर आवश्यकतानुसार समय समय पर नाली, स्लैब एवं अन्य मरम्मत कार्य हेतु (वित्तीय वर्ष 2026-27 हेतु)",
-      "department": "COMMISSINOR,MUNICIPAL CORPORATION, BILASPUR",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:21",
-      "last_updated_at": "2026-07-13T18:56:21",
-      "area_city": "Bilaspur"
-    },
-    {
       "id": 1086,
       "tender_no": "191642",
       "name": "सामुदायिक भवन में मंच सह शेड निर्माण कार्य, उर्जा पार्क के बलग में राजकिशोर नगर वार्ड क्र. 51 बिलासपुर",
@@ -8653,28 +10611,6 @@
       "area_city": "Bemetara"
     },
     {
-      "id": 988,
-      "tender_no": "194584",
-      "name": "वार्ड क्र. 40 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:20",
-      "last_updated_at": "2026-07-13T18:56:20",
-      "area_city": "Raigarh"
-    },
-    {
-      "id": 989,
-      "tender_no": "194582",
-      "name": "वार्ड क्र. 39 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:20",
-      "last_updated_at": "2026-07-13T18:56:20",
-      "area_city": "Raigarh"
-    },
-    {
       "id": 990,
       "tender_no": "194581",
       "name": "District Bemetara, Industrial Park Chandanu Raveli, Block D Plot Number 16, Size 990 Sq Meter",
@@ -8706,17 +10642,6 @@
       "first_seen_at": "2026-07-13T18:56:20",
       "last_updated_at": "2026-07-13T18:56:20",
       "area_city": "Bijapur"
-    },
-    {
-      "id": 1009,
-      "tender_no": "193269",
-      "name": "छत्तीसगढ़ निवास/छत्तीसगढ़ भवन, द्वारका नई दिल्ली में अतिरिक्त एवं आवश्यक कार्य।",
-      "department": "EXECUTIVE ENGINEER,PWD CHHATTISGARH BHAWAN DIVISION ,NEW DELHI",
-      "amount": "3864000.00",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:20",
-      "last_updated_at": "2026-07-13T18:56:20",
-      "area_city": "New Delhi"
     },
     {
       "id": 1043,
@@ -8772,17 +10697,6 @@
       "first_seen_at": "2026-07-13T18:56:18",
       "last_updated_at": "2026-07-13T18:56:18",
       "area_city": "Kawardha"
-    },
-    {
-      "id": 673,
-      "tender_no": "194578",
-      "name": "वार्ड क्र. 37 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": "Raigarh"
     },
     {
       "id": 674,
@@ -9082,17 +10996,6 @@
       "area_city": "Pendra"
     },
     {
-      "id": 721,
-      "tender_no": "194521",
-      "name": "वार्ड क्र. 31 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": "Raigarh"
-    },
-    {
       "id": 722,
       "tender_no": "194520",
       "name": "SUPPLYING & FIXING OF L.E.D. STREET LIGHTING , AT NAYAKTAND TO KHARORA GAURAV PATH( LENGTH- 2.5 K.M.) DISTT.- RAIPUR (C.G.)",
@@ -9245,17 +11148,6 @@
       "first_seen_at": "2026-07-13T18:56:18",
       "last_updated_at": "2026-07-13T18:56:18",
       "area_city": "Khatghora"
-    },
-    {
-      "id": 736,
-      "tender_no": "194488",
-      "name": "SUPPLYING & INSTALLATION OF AUDIO CONFERENCING SYSTEM & PROJECTOR AT MEETING HALL & BOARD MEETING ROOM HEAD OFFICE (FOURTH FLOOR) PARYAVAS BHAVAN NAVA RAIPUR ATAL NAGAR (C.G)",
-      "department": "EXECUTIVE ENGINEER (ELECTRICAL)",
-      "amount": "5013000.00",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": "Nava Raipur Atal Nagar"
     },
     {
       "id": 737,
@@ -9412,17 +11304,6 @@
       "area_city": null
     },
     {
-      "id": 651,
-      "tender_no": "193783",
-      "name": "Construction of Talur Stopdam cum Causeway in Block Bastar, District Bastar",
-      "department": "CHIEF ENGINEER , GODAWARI BASIN, JAGDALPUR",
-      "amount": "31508544.45",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": "Jagdalpur"
-    },
-    {
       "id": 652,
       "tender_no": "193777",
       "name": "MOW, Special Repair & Addition Alteration Works in Vijeta Complex Section under Vidhansabha Sub Division, Raipur, C.G.",
@@ -9500,34 +11381,12 @@
       "area_city": "Raipur"
     },
     {
-      "id": 661,
-      "tender_no": "193768",
-      "name": "Bank Protection on Right Bank of Kumhli Anicut in Block Bastar, District Bastar",
-      "department": "CHIEF ENGINEER , GODAWARI BASIN, JAGDALPUR",
-      "amount": "30717779.95",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": "Jagdalpur"
-    },
-    {
       "id": 666,
       "tender_no": "193763",
       "name": "सामुदायिक भवन निर्माण कार्य। (महामाया के पास) वार्ड क्रमांक 02 सकरी।",
       "department": "COMMISSINOR,MUNICIPAL CORPORATION, BILASPUR",
       "amount": "",
       "last_date": "17 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:18",
-      "last_updated_at": "2026-07-13T18:56:18",
-      "area_city": "Bilaspur"
-    },
-    {
-      "id": 757,
-      "tender_no": "193746",
-      "name": "वार्ड क्र 60 गुरु विहार कॉलोनी में नाली निर्माण कार्य",
-      "department": "COMMISSINOR,MUNICIPAL CORPORATION, BILASPUR",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
       "first_seen_at": "2026-07-13T18:56:18",
       "last_updated_at": "2026-07-13T18:56:18",
       "area_city": "Bilaspur"
@@ -9564,17 +11423,6 @@
       "first_seen_at": "2026-07-13T18:56:17",
       "last_updated_at": "2026-07-13T18:56:17",
       "area_city": "Saraypali"
-    },
-    {
-      "id": 552,
-      "tender_no": "193932",
-      "name": "Construction Work OfMuktidham Vikash At Ward 01Bodla(1ST CALL)",
-      "department": "NAGAR PANCHAYAT, BODLA",
-      "amount": "3147000.00",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Bodla"
     },
     {
       "id": 555,
@@ -9619,17 +11467,6 @@
       "first_seen_at": "2026-07-13T18:56:17",
       "last_updated_at": "2026-07-13T18:56:17",
       "area_city": "Raipur"
-    },
-    {
-      "id": 560,
-      "tender_no": "193922",
-      "name": "Ward No. 09 Maharajband Pond Beautification Work (First Tender)",
-      "department": "NAGAR PANCHAYAT, BODLA",
-      "amount": "11463000.00",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Bodla"
     },
     {
       "id": 562,
@@ -9707,17 +11544,6 @@
       "first_seen_at": "2026-07-13T18:56:17",
       "last_updated_at": "2026-07-13T18:56:17",
       "area_city": "Raigarh"
-    },
-    {
-      "id": 575,
-      "tender_no": "193900",
-      "name": "e –TENDER FOR RATE CONTRACT OF (AYUSH) Homeo-Patent TO CHHATTISGARH MEDICAL SERVICES CORPORATION LTD.",
-      "department": "CGMSC L",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": null
     },
     {
       "id": 578,
@@ -9808,17 +11634,6 @@
       "area_city": "Durg"
     },
     {
-      "id": 586,
-      "tender_no": "193887",
-      "name": "e –TENDER FOR RATE CONTRACT OF (AYUSH) Homeo-Classical TO CHHATTISGARH MEDICAL SERVICES CORPORATION LTD.",
-      "department": "CGMSC L",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": null
-    },
-    {
       "id": 587,
       "tender_no": "193884",
       "name": "DEVELOPMENT WORKS FOR PATHWAY (ATAL PARISAR TO DOBY PLOT)",
@@ -9850,61 +11665,6 @@
       "first_seen_at": "2026-07-13T18:56:17",
       "last_updated_at": "2026-07-13T18:56:17",
       "area_city": "Bhatapara"
-    },
-    {
-      "id": 590,
-      "tender_no": "193877",
-      "name": "Small construction and repair work under MP, MLA, Chairman and Councilor heads from Ward No. 01 to 15 (Zonal Work)",
-      "department": "NAGAR PANCHAYAT KOTA",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:42 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Kota"
-    },
-    {
-      "id": 591,
-      "tender_no": "193876",
-      "name": "Construction and Repairing Work of RCC Drain, Munch and Shed at word No. 01 to 15 (Zonal Work)",
-      "department": "NAGAR PANCHAYAT KOTA",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:42 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Kota"
-    },
-    {
-      "id": 633,
-      "tender_no": "193816",
-      "name": "REPAIR OF C.C. LINING, CANAL & STRUCTURES OF DEORMAL MINOR, DEORI MINOR, DHANGARPARA MINOR, DHOLNAR MINOR, JAGADALLI MINOR, KURDA MINOR, KHUTADARHA MINOR & TEMPABHATA MINOR OF KHARSIA BRANCH CANAL. MINOR, KHUTADARHA MINOR & TEMPABHATA MINOR OF KHARSIA BRANCH CANAL.",
-      "department": "CHIEF ENGINEER, MINIMATA HASDEO BANGO PROJECT, BILASPUR",
-      "amount": "33856514.88",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Bilaspur"
-    },
-    {
-      "id": 639,
-      "tender_no": "193809",
-      "name": "CONSTRUCTION OF CHHOTE DUMARAPALI ANICUT IN BLOCK KHARSIA DISTRICT RAIGARH.",
-      "department": "CHIEF ENGINEER, MINIMATA HASDEO BANGO PROJECT, BILASPUR",
-      "amount": "21797088.41",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Bilaspur"
-    },
-    {
-      "id": 640,
-      "tender_no": "193807",
-      "name": "CONSTRUCTION OF ARAJHAR ANICUT IN BLOCK KHARSIA DISTRICT RAIGARH.",
-      "department": "CHIEF ENGINEER, MINIMATA HASDEO BANGO PROJECT, BILASPUR",
-      "amount": "21325784.76",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:17",
-      "last_updated_at": "2026-07-13T18:56:17",
-      "area_city": "Bilaspur"
     },
     {
       "id": 403,
@@ -10072,17 +11832,6 @@
       "area_city": "Balrampur"
     },
     {
-      "id": 431,
-      "tender_no": "194075",
-      "name": "Providing, laying, jointing, testing and commissioning of 63 & 75 mm dia HDPE PE-100, PN-6 1642mtr.& 80, 65 mm dia G.I. pipe 24 mtr.& providing connection in house hold and public instiutions-23 nos with valve specials and all fitting i/c all allied civil works complete with 06 Months trial run operation & maintanace for 06 Months. and at village -Damaram ( G.P. Sagmeta), Block-Bhairamgarh, District - Bijapur. under Jal Jeevan Mission - Single Village Scheme..(2nd call ) Risk & Cost",
-      "department": "O/O EE & MEMBER SECRETARY (DWSM), PHE DIV, BIJAPUR",
-      "amount": "880000.00",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:16",
-      "last_updated_at": "2026-07-13T18:56:16",
-      "area_city": "Bijapur"
-    },
-    {
       "id": 432,
       "tender_no": "194074",
       "name": "PIPED WATER SUPPLY SCHEME FOR On Risk & Cost PIPED WATER SUPPLY SCHEME FOR Village- Darridih ( Uraopara, Purvtola ,Khaspara ) BLOCK- Balrampur District – Balrampur(C.G.) Construction, Testing and Commissioning of R.C.C. Elevated Service Reservoir of 00 KL capacities – 00 No. & staging 12 mtr& staging And STEEL STRUCTURE 09 M HEIGHT & 10 KL (5000L X 2NO.)- 00 No.} PE TANK & Elevated Service Reservoirs of RCC Staging and HDPE Slim Tank of capacity 5000 Ltr of 00 No. 9 mtr staging (with switch room of size 1.8mx1.8mx3m) and 10000 Ltr of 00 No. 12 mtr staging.including providing and fixing of CI Double flange pipe, double flange specials & DI double flange soft seated sluice valve including construction of suitable R.C.C. Valve Chamber.Providing, laying, jointing, interconnection, testing and commissioning of rising main UPVC class 10 kg/sqcm 90 mm dia 00 m & HDPE 75mm dia 00 m & 63 mm dia 00 m., distribution UPVC class 6kg/sqcm 90mm dia. 00 m., 110 mm dia. 00 m., 140 mm dia. 00 m. 160 mm dia. 00 m.& distribution HDPE class 6kg/sqcm 63 mm dia. 1300 m., 75 mm dia. 127 m.with suitable joints GI Pipe, valve, specials and all fittings including all allied civil works, Supplying & Installation of Energy taging n five star BEE rating ISI Marked required capacity single phase / three phase, 50 Hz, 220V,, deep well submersible pump Stainless Steel body, suitable for 4”/6” tube well with Contral Panel Starter suitable for Submersible pump with dry run protection, connections, including clamps, bore cap etc. as required as per specifications butexcludingpipe,SS/Nylonwireropeandconnection cable including verification of tubewell yield& Electric connection from CSPDCL, construction of brick masonry switch room, construction of boundary wall around the over head tank, installation of electro chlorinator , construction of chlorinator room of providing functional household tap connection (F.H.T.C. 46 ) in individual households and government instiution etc. complete with trial run of 03 months after that O&M of 06 months under Village- Darridih ( Uraopara, Purvtola ,Khaspara ) BLOCK- Balrampur District – Balrampur(C.G.)",
@@ -10092,28 +11841,6 @@
       "first_seen_at": "2026-07-13T18:56:16",
       "last_updated_at": "2026-07-13T18:56:16",
       "area_city": "Balrampur"
-    },
-    {
-      "id": 433,
-      "tender_no": "194073",
-      "name": "Providing, laying, jointing, testing and commissioning of 63 & 75 mm dia HDPE PE-100, PN-6, 3870mtr.& 100 mm dia G.I. pipe 20mtr.& Contruction of T.W. drilling & providing connection in house hold and public instiutions-52nos with valve specials and all fitting i/c all allied civil works complete with 06 Months trial run operation & maintanace for 06 Months. and at village -Marriwada ( G.P. Metapal ), Block-Bijapur, District - Bijapur. under Jal Jeevan Mission - Single Village Scheme Risk in cost .(2nd call)",
-      "department": "O/O EE & MEMBER SECRETARY (DWSM), PHE DIV, BIJAPUR",
-      "amount": "2078000.00",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:16",
-      "last_updated_at": "2026-07-13T18:56:16",
-      "area_city": "Bijapur"
-    },
-    {
-      "id": 434,
-      "tender_no": "194072",
-      "name": "Providing, laying, jointing, testing and commissioning of 63 & 75 mm dia HDPE PE-100, PN-6 2145mtr.& 80, 65 mm dia G.I. pipe 25 mtr.& providing connection in house hold and public instiutions-24 nos with valve specials and all fitting i/c all allied civil works complete with 06 Months trial run operation & maintanace for 06 Months. and at village -Karremarka ( G.P. Sagmeta ), Block-Bhairamgarh, District - Bijapur. under Jal Jeevan Mission - Single Village Scheme. (2nd call ) Risk & Cost",
-      "department": "O/O EE & MEMBER SECRETARY (DWSM), PHE DIV, BIJAPUR",
-      "amount": "1076000.00",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:16",
-      "last_updated_at": "2026-07-13T18:56:16",
-      "area_city": "Bijapur"
     },
     {
       "id": 435,
@@ -10378,17 +12105,6 @@
       "first_seen_at": "2026-07-13T18:56:16",
       "last_updated_at": "2026-07-13T18:56:16",
       "area_city": "Bemetara"
-    },
-    {
-      "id": 499,
-      "tender_no": "193997",
-      "name": "राज्य आपदा न्यूनीकरण निधि (एस.डी.एम.एफ.) से जोन क्रमांक - 09 अंतर्गत राहत शिविर भवन निर्माण कार्य सतनाम पारा कचना।",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:16",
-      "last_updated_at": "2026-07-13T18:56:16",
-      "area_city": "Raipur"
     },
     {
       "id": 500,
@@ -11084,17 +12800,6 @@
       "area_city": "Raipur"
     },
     {
-      "id": 283,
-      "tender_no": "194258",
-      "name": "कार्यालय परियोजना प्रशासक, एकीकृत आदिवासी विकास परियोजना गौरेला भवन का जीर्णोद्धार एवं नवीनीकरण कार्य",
-      "department": "PENDRARAOD",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:15",
-      "last_updated_at": "2026-07-13T18:56:15",
-      "area_city": "Pendraraod"
-    },
-    {
       "id": 284,
       "tender_no": "194256",
       "name": "Supply of Petty Bazar Article For P.W.D. Division Gariaband (C.G.)",
@@ -11612,17 +13317,6 @@
       "area_city": "Raipur"
     },
     {
-      "id": 55,
-      "tender_no": "194656",
-      "name": "वार्ड क्र. 45 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:14",
-      "last_updated_at": "2026-07-13T18:56:14",
-      "area_city": "Raigarh"
-    },
-    {
       "id": 56,
       "tender_no": "194655",
       "name": "District : RAIPUR ,Readymade Garments Park , Plot Number :2, 1400.00 sqm",
@@ -11645,17 +13339,6 @@
       "area_city": "Raipur"
     },
     {
-      "id": 58,
-      "tender_no": "194651",
-      "name": "वार्ड क्र. 44 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:14",
-      "last_updated_at": "2026-07-13T18:56:14",
-      "area_city": "Raigarh"
-    },
-    {
       "id": 59,
       "tender_no": "194650",
       "name": "CONSTRUCTION OF H.L BRIDGE I/C APPROACH ROAD ACROSS GIRGHOLI NALLA ON RAJNANDGAON-KAWARDHA-PONDI ROAD ON Km-55/10 (SH-05).",
@@ -11676,17 +13359,6 @@
       "first_seen_at": "2026-07-13T18:56:14",
       "last_updated_at": "2026-07-13T18:56:14",
       "area_city": "Raipur"
-    },
-    {
-      "id": 61,
-      "tender_no": "194645",
-      "name": "वार्ड क्र. 43 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:14",
-      "last_updated_at": "2026-07-13T18:56:14",
-      "area_city": "Raigarh"
     },
     {
       "id": 62,
@@ -11720,17 +13392,6 @@
       "first_seen_at": "2026-07-13T18:56:14",
       "last_updated_at": "2026-07-13T18:56:14",
       "area_city": "Chhattisgarh"
-    },
-    {
-      "id": 91,
-      "tender_no": "194600",
-      "name": "वार्ड क्र. 42 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:14",
-      "last_updated_at": "2026-07-13T18:56:14",
-      "area_city": "Raigarh"
     },
     {
       "id": 94,
@@ -13139,17 +14800,6 @@
       "first_seen_at": "2026-07-13T18:56:13",
       "last_updated_at": "2026-07-13T18:56:13",
       "area_city": "Gaurela-Pendra-Marwahi"
-    },
-    {
-      "id": 50,
-      "tender_no": "194661",
-      "name": "वार्ड क्र. 48 में सी.सी. सड़क, आर.सी.सी. नाली, पुलिया, सामुदायिक भवन, छतदार चबुतरा आदि सिविल निर्माण कार्य एवं उसमें विद्युतीकरण स्थापना तथा सभी तरह में मरम्मत कार्य एवं आवश्यकतानुसार नये निर्माण कार्य। (तृतीय निविदा)",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIGARH",
-      "amount": "",
-      "last_date": "14 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:13",
-      "last_updated_at": "2026-07-13T18:56:13",
-      "area_city": "Raigarh"
     },
     {
       "id": 51,
