@@ -35,7 +35,6 @@ jobs:
       - name: Run scraper
         env:
           CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
-          CHROMEDRIVER_PATH: ${{ steps.setup-chrome.outputs.chromedriver-path }}
           PYTHONUNBUFFERED: "1"
         run: python run_daily.py --headless --import-json --export-json
 

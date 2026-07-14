@@ -101,13 +101,11 @@ def create_driver(headless=False):
     options.add_argument("--disable-dev-shm-usage")
 
     chrome_bin = os.environ.get("CHROME_BIN") or os.environ.get("GOOGLE_CHROME_SHIM")
-    chromedriver_path = os.environ.get("CHROMEDRIVER_PATH")
 
     if chrome_bin:
         options.binary_location = chrome_bin
-
-    if chromedriver_path:
-        service = Service(executable_path=chromedriver_path)
+        # Let Selenium Manager pick a chromedriver that matches this Chrome build.
+        service = Service()
     else:
         service = Service(ChromeDriverManager().install())
 
