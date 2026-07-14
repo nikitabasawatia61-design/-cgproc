@@ -2,7 +2,6 @@ import time
 
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium import webdriver
-from selenium.webdriver.remote.remote_connection import RemoteConnection
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -108,10 +107,7 @@ def open_url(driver, url, retries=3):
 
 
 def create_driver(headless=False):
-    RemoteConnection.set_timeout(300)
-
     options = Options()
-    options.page_load_strategy = "none"
     if headless:
         options.add_argument("--headless=new")
         options.add_argument("--window-size=1920,1080")
@@ -122,13 +118,10 @@ def create_driver(headless=False):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Chrome(
+    return webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options,
     )
-    driver.set_page_load_timeout(300)
-    driver.set_script_timeout(120)
-    return driver
 
 
 def run_scraper(start_page=1, headless=False, full_scan=True):
@@ -160,6 +153,8 @@ def run_scraper(start_page=1, headless=False, full_scan=True):
                 "removed_stale": 0,
                 "error": "portal timeout",
             }
+
+        time.sleep(3)
 
         if not authenticate(driver):
             print("Login/authentication failed")
