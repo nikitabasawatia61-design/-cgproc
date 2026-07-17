@@ -676,7 +676,7 @@
                 footerLabel: "GeM BidPlus Advance Search",
                 footerNote: "Live fetch from GeM BidPlus API",
                 fetchLabel: "Fetch GeM Tenders",
-                runHint: "Click <strong>Fetch GeM Tenders</strong> to call the BidPlus API and refresh this table.",
+                runHint: "Click <strong>Fetch GeM Tenders</strong> to load the latest Korba bids.",
                 emptyHint: "No GeM bids loaded yet. Click Fetch GeM Tenders to pull from the API.",
             },
         };
@@ -1004,7 +1004,7 @@
 
             isFetching = true;
             const previousLabel = els.btnFetch.textContent;
-            els.btnFetch.textContent = "Fetching from GeM API...";
+            els.btnFetch.textContent = "Fetching GeM Tenders...";
             els.btnFetch.disabled = true;
 
             const proxyUrl = localStorage.getItem("cgproc-gem-proxy") || window.GEM_API?.proxyUrl || "";
@@ -1026,22 +1026,22 @@
                     return;
                 }
 
-                els.meta.textContent = "No API proxy set. Starting GitHub cloud fetch...";
-                await runCloudGemFetch();
+                els.meta.textContent = "Loading latest GeM bids...";
+                const response = await fetch("data/gem-tenders.json?" + Date.now());
+                if (!response.ok) throw new Error("Could not load GeM tender data");
+                const payload = await response.json();
+                allTenders = payload.tenders || [];
+                stats = {
+                    ...(payload.stats || {}),
+                    total: getActiveTenders().length,
+                    last_scraped: payload.exported_at || payload.stats?.last_scraped,
+                };
+                updateStats();
+                renderTable();
+                els.meta.textContent = `Loaded ${allTenders.length} GeM bids (updated ${formatDateTime(stats.last_scraped)}).`;
             } catch (error) {
-                const message = error?.message || "GeM fetch failed";
-                els.meta.textContent = message;
-                try {
-                    await runCloudGemFetch();
-                } catch (fallbackError) {
-                    els.table.innerHTML = `
-                        <div class="error">
-                            <strong>GeM fetch failed</strong>
-                            <p>${escapeHtml(message)}</p>
-                            <p>${escapeHtml(fallbackError.message || "")}</p>
-                        </div>
-                    `;
-                }
+                els.meta.textContent = error.message || "GeM fetch failed";
+                await runCloudGemFetch();
             } finally {
                 isFetching = false;
                 els.btnFetch.textContent = previousLabel;
