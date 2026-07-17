@@ -1,0 +1,41 @@
+name: Fetch GeM Tenders
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: "30 2,8,14,20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-gem:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-core.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-core.txt
+
+      - name: Fetch GeM Korba bids
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python run_gem.py --export-json
+
+      - name: Commit updated GeM data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update GeM tender data [skip ci]"
+          file_pattern: docs/data/gem-tenders.json
+          skip_dirty_check: true

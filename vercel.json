@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/gem/fetch.js": {
+      "maxDuration": 30
+    }
+  }
+}

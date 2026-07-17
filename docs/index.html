@@ -566,15 +566,9 @@
                 <input type="text" id="search" placeholder="Search tender no, city, description, department...">
             </div>
             <button class="btn" id="btn-search">Search</button>
-            <a
-                class="btn btn-run"
-                id="btn-fetch"
-                href="https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml"
-                target="_blank"
-                rel="noopener"
-            >
+            <button class="btn btn-run" id="btn-fetch" type="button">
                 Fetch Tenders Now
-            </a>
+            </button>
         </div>
 
         <p class="run-hint" id="run-hint">
@@ -612,9 +606,8 @@
                     </div>
                 </div>
                 <div class="modal-section">
-                    <strong>Pull GeM tenders locally</strong>
-                    <p>GeM blocks direct browser calls from GitHub Pages. Run this on your PC, then push the JSON update.</p>
-                    <code class="modal-code">python run_gem.py --export-json</code>
+                    <strong>Live GeM fetch</strong>
+                    <p>On GeM view, click <strong>Fetch GeM Tenders</strong> to call the BidPlus API and refresh the table instantly.</p>
                     <div class="modal-actions">
                         <a
                             class="btn"
@@ -630,6 +623,8 @@
         </div>
     </div>
 
+    <script src="gem-config.js"></script>
+    <script src="gem-fetch.js"></script>
     <script src="firebase-config.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -642,6 +637,10 @@
         let dataSource = localStorage.getItem("cgproc-source") || "cg";
         const today = new Date().toISOString().slice(0, 10);
 
+        const CG_FETCH_URL = "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml";
+        const GEM_FETCH_URL = "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/fetch-gem.yml";
+        let isFetching = false;
+
         const SOURCE_CONFIG = {
             cg: {
                 dataFile: "data/tenders.json",
@@ -653,7 +652,6 @@
                 footerLink: "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do",
                 footerLabel: "CG E-Procurement Portal",
                 footerNote: "Updated daily by GitHub Actions",
-                fetchHref: "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml",
                 fetchLabel: "Fetch Tenders Now",
                 runHint: 'Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.',
                 emptyHint: "Try another search, or wait for the daily GitHub Action to fetch data.",
@@ -662,16 +660,15 @@
                 dataFile: "data/gem-tenders.json",
                 eyebrow: "GeM BidPlus",
                 title: "Korba GeM Bids",
-                subtitle: "Open bids on Government e Marketplace filtered for Chhattisgarh / Korba. Pull locally with run_gem.py.",
+                subtitle: "Open bids on Government e Marketplace filtered for Chhattisgarh / Korba. Click Fetch to pull live from the GeM API.",
                 pill: "GeM Korba",
                 pillClass: "gem",
                 footerLink: "https://bidplus.gem.gov.in/advance-search",
                 footerLabel: "GeM BidPlus Advance Search",
-                footerNote: "Updated when you run run_gem.py locally",
-                fetchHref: "https://github.com/nikitabasawatia61-design/-cgproc/blob/main/run_gem.py",
-                fetchLabel: "View Pull Script",
-                runHint: "Run <strong>python run_gem.py --export-json</strong> on your PC, then push <strong>docs/data/gem-tenders.json</strong>.",
-                emptyHint: "No GeM bids loaded yet. Run run_gem.py locally and push gem-tenders.json.",
+                footerNote: "Live fetch from GeM BidPlus API",
+                fetchLabel: "Fetch GeM Tenders",
+                runHint: "Click <strong>Fetch GeM Tenders</strong> to call the BidPlus API and refresh this table.",
+                emptyHint: "No GeM bids loaded yet. Click Fetch GeM Tenders to pull from the API.",
             },
         };
 
@@ -722,8 +719,8 @@
             els.footerLink.href = config.footerLink;
             els.footerLink.textContent = config.footerLabel;
             els.footerNote.textContent = config.footerNote;
-            els.btnFetch.href = config.fetchHref;
             els.btnFetch.textContent = config.fetchLabel;
+            els.btnFetch.disabled = isFetching;
             els.runHint.innerHTML = config.runHint;
             els.btnSwitchCg.classList.toggle("active", dataSource === "cg");
             els.btnSwitchGem.classList.toggle("active", dataSource === "gem");
@@ -944,6 +941,85 @@
             updateShortlistStats();
         }
 
+        function sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+
+        async function pollGemData(previousStamp, timeoutMs = 120000) {
+            const started = Date.now();
+            while (Date.now() - started < timeoutMs) {
+                const response = await fetch("data/gem-tenders.json?" + Date.now());
+                if (response.ok) {
+                    const payload = await response.json();
+                    const stamp = payload.exported_at || payload.stats?.last_scraped;
+                    if (stamp && stamp !== previousStamp) {
+                        allTenders = payload.tenders || [];
+                        stats = {
+                            ...(payload.stats || {}),
+                            total: getActiveTenders().length,
+                        };
+                        updateStats();
+                        renderTable();
+                        return true;
+                    }
+                }
+                await sleep(5000);
+            }
+            return false;
+        }
+
+        async function handleFetchClick() {
+            if (isFetching) return;
+
+            if (dataSource === "cg") {
+                window.open(CG_FETCH_URL, "_blank", "noopener");
+                return;
+            }
+
+            isFetching = true;
+            const previousLabel = els.btnFetch.textContent;
+            els.btnFetch.textContent = "Fetching from GeM API...";
+            els.btnFetch.disabled = true;
+            els.meta.textContent = "Calling GeM BidPlus API for Chhattisgarh / Korba...";
+
+            try {
+                const payload = await GemFetch.pullLive(allTenders);
+                allTenders = payload.tenders || [];
+                stats = {
+                    ...(payload.stats || {}),
+                    total: getActiveTenders().length,
+                    last_scraped: payload.fetched_at || payload.stats?.last_scraped,
+                };
+                updateStats();
+                renderTable();
+                els.meta.textContent = `Fetched ${allTenders.length} GeM bids just now.`;
+            } catch (error) {
+                const message = error?.message || "GeM fetch failed";
+                const corsBlocked = /failed to fetch|cors|networkerror/i.test(message);
+                if (corsBlocked) {
+                    const previousStamp = stats.last_scraped || "";
+                    window.open(GEM_FETCH_URL, "_blank", "noopener");
+                    els.meta.textContent = "Cloud GeM fetch started. Waiting for updated data...";
+                    const updated = await pollGemData(previousStamp);
+                    if (!updated) {
+                        els.meta.textContent = "Cloud fetch still running. Click Run workflow on GitHub, then try Fetch again.";
+                    }
+                    return;
+                }
+                els.table.innerHTML = `
+                    <div class="error">
+                        <strong>GeM fetch failed</strong>
+                        <p>${escapeHtml(message)}</p>
+                    </div>
+                `;
+                els.meta.textContent = message;
+            } finally {
+                isFetching = false;
+                els.btnFetch.textContent = previousLabel;
+                applySourceUi();
+            }
+        }
+
         async function loadData() {
             const config = getSourceConfig();
             try {
@@ -967,6 +1043,8 @@
                 `;
             }
         }
+
+        els.btnFetch.addEventListener("click", handleFetchClick);
 
         els.btnOpenGemModal.addEventListener("click", openGemModal);
         els.btnCloseGemModal.addEventListener("click", closeGemModal);
