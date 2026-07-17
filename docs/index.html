@@ -676,8 +676,8 @@
                 footerLabel: "GeM BidPlus Advance Search",
                 footerNote: "Live fetch from GeM BidPlus API",
                 fetchLabel: "Fetch GeM Tenders",
-                runHint: "Click <strong>Fetch GeM Tenders</strong> to load the latest Korba bids.",
-                emptyHint: "No GeM bids loaded yet. Click Fetch GeM Tenders to pull from the API.",
+                runHint: "Click <strong>Fetch GeM Tenders</strong> to call the BidPlus API and refresh all Korba bids.",
+                emptyHint: "No GeM bids yet. Click Fetch GeM Tenders to pull from the BidPlus API.",
             },
         };
 
@@ -964,16 +964,13 @@
                 if (response.ok) {
                     const payload = await response.json();
                     const stamp = payload.exported_at || payload.stats?.last_scraped;
-                    if (!previousStamp || (stamp && stamp !== previousStamp)) {
-                        allTenders = payload.tenders || [];
-                        stats = {
-                            ...(payload.stats || {}),
-                            total: getActiveTenders().length,
-                        };
-                        updateStats();
-                        renderTable();
-                        if (stamp && stamp !== previousStamp) return true;
-                        if (!previousStamp && allTenders.length) return true;
+                    if (stamp && stamp !== previousStamp) {
+                        applyGemPayload({
+                            tenders: payload.tenders || [],
+                            stats: payload.stats || {},
+                            fetched_at: stamp,
+                        });
+                        return true;
                     }
                 }
                 await sleep(5000);
@@ -981,13 +978,47 @@
             return false;
         }
 
-        async function runCloudGemFetch() {
-            const previousStamp = stats.last_scraped || stats.exported_at || "";
+        function applyGemPayload(payload) {
+            allTenders = payload.tenders || [];
+            stats = {
+                ...(payload.stats || {}),
+                total: getActiveTenders().length,
+                last_scraped: payload.fetched_at || payload.stats?.last_scraped,
+            };
+            updateStats();
+            renderTable();
+        }
+
+        async function triggerGemCloudWorkflow() {
+            const pat = localStorage.getItem("cgproc-github-pat");
+            if (pat) {
+                const response = await fetch(
+                    "https://api.github.com/repos/nikitabasawatia61-design/-cgproc/actions/workflows/fetch-gem.yml/dispatches",
+                    {
+                        method: "POST",
+                        headers: {
+                            Authorization: `Bearer ${pat}`,
+                            Accept: "application/vnd.github+json",
+                            "X-GitHub-Api-Version": "2022-11-28",
+                        },
+                        body: JSON.stringify({ ref: "main" }),
+                    }
+                );
+                if (response.ok) return "started";
+            }
             window.open(GEM_FETCH_URL, "_blank", "noopener");
-            els.meta.textContent = "On GitHub: click Run workflow → Run workflow. Waiting for GeM API data...";
+            return "manual";
+        }
+
+        async function runCloudGemFetch() {
+            const previousStamp = stats.last_scraped || "";
+            const mode = await triggerGemCloudWorkflow();
+            els.meta.textContent = mode === "started"
+                ? "Cloud GeM API fetch running on GitHub. Waiting for all bids..."
+                : "On GitHub: click Run workflow → Run workflow. Waiting for GeM API data...";
             const updated = await pollGemData(previousStamp, 180000);
             if (updated) {
-                els.meta.textContent = `Updated ${allTenders.length} GeM bids from cloud API.`;
+                els.meta.textContent = `Fetched ${allTenders.length} GeM bids from BidPlus API (via cloud).`;
                 return true;
             }
             els.meta.textContent = "Cloud fetch still running. Finish Run workflow on GitHub, then click Fetch again.";
@@ -1004,44 +1035,33 @@
 
             isFetching = true;
             const previousLabel = els.btnFetch.textContent;
-            els.btnFetch.textContent = "Fetching GeM Tenders...";
+            els.btnFetch.textContent = "Fetching from GeM API...";
             els.btnFetch.disabled = true;
+            els.meta.textContent = "Calling GeM BidPlus API for all Korba bids...";
 
             const proxyUrl = localStorage.getItem("cgproc-gem-proxy") || window.GEM_API?.proxyUrl || "";
+            if (proxyUrl) {
+                window.GEM_API = { ...(window.GEM_API || {}), proxyUrl };
+            }
 
             try {
-                if (proxyUrl) {
-                    els.meta.textContent = "Calling GeM BidPlus API via cloud proxy...";
-                    window.GEM_API = { ...(window.GEM_API || {}), proxyUrl };
-                    const payload = await GemFetch.pullLive(allTenders);
-                    allTenders = payload.tenders || [];
-                    stats = {
-                        ...(payload.stats || {}),
-                        total: getActiveTenders().length,
-                        last_scraped: payload.fetched_at || payload.stats?.last_scraped,
-                    };
-                    updateStats();
-                    renderTable();
-                    els.meta.textContent = `Fetched ${allTenders.length} GeM bids just now.`;
-                    return;
-                }
-
-                els.meta.textContent = "Loading latest GeM bids...";
-                const response = await fetch("data/gem-tenders.json?" + Date.now());
-                if (!response.ok) throw new Error("Could not load GeM tender data");
-                const payload = await response.json();
-                allTenders = payload.tenders || [];
-                stats = {
-                    ...(payload.stats || {}),
-                    total: getActiveTenders().length,
-                    last_scraped: payload.exported_at || payload.stats?.last_scraped,
-                };
-                updateStats();
-                renderTable();
-                els.meta.textContent = `Loaded ${allTenders.length} GeM bids (updated ${formatDateTime(stats.last_scraped)}).`;
+                const payload = await GemFetch.pullLive(allTenders);
+                applyGemPayload(payload);
+                els.meta.textContent = `Fetched ${allTenders.length} GeM bids from BidPlus API just now.`;
             } catch (error) {
-                els.meta.textContent = error.message || "GeM fetch failed";
-                await runCloudGemFetch();
+                const message = error?.message || "GeM API fetch failed";
+                const blocked = /failed to fetch|cors|networkerror|502|503|504/i.test(message);
+                if (blocked || !proxyUrl) {
+                    await runCloudGemFetch();
+                } else {
+                    els.table.innerHTML = `
+                        <div class="error">
+                            <strong>GeM API fetch failed</strong>
+                            <p>${escapeHtml(message)}</p>
+                        </div>
+                    `;
+                    els.meta.textContent = message;
+                }
             } finally {
                 isFetching = false;
                 els.btnFetch.textContent = previousLabel;

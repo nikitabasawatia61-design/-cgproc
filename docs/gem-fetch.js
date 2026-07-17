@@ -207,13 +207,30 @@ window.GemFetch = (() => {
         const stateName = config.state || "CHHATTISGARH";
         const cityName = config.city || "KORBA";
         const pageSize = config.pageSize || 10;
+        const proxyUrl = config.proxyUrl || localStorage.getItem("cgproc-gem-proxy") || "";
 
         let tenders = [];
-        const proxyUrl = config.proxyUrl || localStorage.getItem("cgproc-gem-proxy") || "";
+        let lastError = null;
+
         if (proxyUrl) {
-            tenders = await fetchViaProxy(proxyUrl, stateName, cityName);
-        } else {
-            tenders = await fetchDirectFromGem(stateName, cityName, pageSize);
+            try {
+                tenders = await fetchViaProxy(proxyUrl, stateName, cityName);
+            } catch (error) {
+                lastError = error;
+            }
+        }
+
+        if (!tenders.length) {
+            try {
+                tenders = await fetchDirectFromGem(stateName, cityName, pageSize);
+            } catch (error) {
+                if (lastError) throw lastError;
+                throw error;
+            }
+        }
+
+        if (!tenders.length) {
+            throw lastError || new Error("No GeM bids returned from BidPlus API");
         }
 
         tenders = mergeFirstSeen(tenders, existingTenders);
