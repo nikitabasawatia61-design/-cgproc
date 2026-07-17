@@ -4,6 +4,9 @@
   "functions": {
     "api/gem/fetch.js": {
       "maxDuration": 30
+    },
+    "api/gem/detail.js": {
+      "maxDuration": 30
     }
   }
 }

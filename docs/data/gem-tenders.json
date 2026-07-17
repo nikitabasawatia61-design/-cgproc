@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-07-18T02:37:36",
+  "exported_at": "2026-07-18T02:49:56",
   "source": "gem",
   "filters": {
     "state": "CHHATTISGARH",
@@ -8,7 +8,7 @@
   "stats": {
     "total": 62,
     "new_today": 0,
-    "last_scraped": "2026-07-18T02:37:36"
+    "last_scraped": "2026-07-18T02:49:56"
   },
   "tenders": [
     {
@@ -22,7 +22,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9622895",
       "url": "https://bidplus.gem.gov.in/showbidresult/9622895",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9622895",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "N/A",
+      "consignee": "Ajay Kumar Singh",
+      "consignees": [
+        {
+          "consignee": "Ajay Kumar Singh",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7801218",
@@ -35,7 +47,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9622791",
       "url": "https://bidplus.gem.gov.in/showbidresult/9622791",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9622791",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "3",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "3"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7797105",
@@ -48,7 +72,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9618149",
       "url": "https://bidplus.gem.gov.in/showbidresult/9618149",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9618149",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7795441",
@@ -61,7 +91,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9616306",
       "url": "https://bidplus.gem.gov.in/showbidresult/9616306",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9616306",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7793791",
@@ -74,7 +110,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9614461",
       "url": "https://bidplus.gem.gov.in/showbidresult/9614461",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9614461",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7791812",
@@ -87,7 +129,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9612208",
       "url": "https://bidplus.gem.gov.in/showbidresult/9612208",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9612208",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "मा ा",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "मा ा"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7784465",
@@ -100,7 +154,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9604046",
       "url": "https://bidplus.gem.gov.in/showbidresult/9604046",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9604046",
+      "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7780746",
@@ -113,7 +173,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9599769",
       "url": "https://bidplus.gem.gov.in/showbidresult/9599769",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9599769",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7779406",
@@ -126,7 +192,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9598245",
       "url": "https://bidplus.gem.gov.in/showbidresult/9598245",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9598245",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7778316",
@@ -139,7 +211,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9596962",
       "url": "https://bidplus.gem.gov.in/showbidresult/9596962",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9596962",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7777868",
@@ -152,7 +230,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9596400",
       "url": "https://bidplus.gem.gov.in/showbidresult/9596400",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9596400",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7777668",
@@ -165,7 +249,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9596116",
       "url": "https://bidplus.gem.gov.in/showbidresult/9596116",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9596116",
+      "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7777158",
@@ -178,7 +268,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9595517",
       "url": "https://bidplus.gem.gov.in/showbidresult/9595517",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9595517",
+      "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7775071",
@@ -191,7 +287,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9593149",
       "url": "https://bidplus.gem.gov.in/showbidresult/9593149",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9593149",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "2",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "2"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7773380",
@@ -204,7 +312,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9591174",
       "url": "https://bidplus.gem.gov.in/showbidresult/9591174",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9591174",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "100",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "100"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7773141",
@@ -217,7 +337,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9590905",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590905",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590905",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7772615",
@@ -230,7 +356,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9590332",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590332",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590332",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7772539",
@@ -243,7 +375,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9590247",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590247",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590247",
+      "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "Manual Pitch Roller ( 1 pieces ) (7मशः 7मशः (ेणी (ेणी 1 और और (ेणी (ेणी 2 के के 'थानीय 'थानीय आपूित%कता% आपूित%कता% के के hप hप म> म> अह%ता अह%ता 6ाi 6ाi करने करने के के िलए िलए आवLयक आवLयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
+      "additional_requirement": "तकनीक\u0010",
+      "consignee": "30",
+      "consignees": [
+        {
+          "consignee": "30",
+          "address": "Manual Pitch Roller ( 1 pieces ) (7मशः 7मशः (ेणी (ेणी 1 और और (ेणी (ेणी 2 के के 'थानीय 'थानीय आपूित%कता% आपूित%कता% के के hप hप म> म> अह%ता अह%ता 6ाi 6ाi करने करने के के िलए िलए आवLयक आवLयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
+          "additional_requirement": "तकनीक\u0010"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7772353",
@@ -256,7 +400,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9590043",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590043",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590043",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7768140",
@@ -269,7 +419,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9585141",
       "url": "https://bidplus.gem.gov.in/showbidresult/9585141",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9585141",
+      "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7763898",
@@ -282,7 +438,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9580553",
       "url": "https://bidplus.gem.gov.in/showbidresult/9580553",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9580553",
+      "documents_required_from_seller": "Certificate (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7762454",
@@ -295,7 +457,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9578909",
       "url": "https://bidplus.gem.gov.in/showbidresult/9578909",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9578909",
+      "documents_required_from_seller": "Certificate (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7762452",
@@ -308,7 +476,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9578906",
       "url": "https://bidplus.gem.gov.in/showbidresult/9578906",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9578906",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7761821",
@@ -321,7 +495,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9578220",
       "url": "https://bidplus.gem.gov.in/showbidresult/9578220",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9578220",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7758585",
@@ -334,7 +514,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9574705",
       "url": "https://bidplus.gem.gov.in/showbidresult/9574705",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9574705",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7758523",
@@ -347,7 +533,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9574638",
       "url": "https://bidplus.gem.gov.in/showbidresult/9574638",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9574638",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7755722",
@@ -360,7 +552,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9571506",
       "url": "https://bidplus.gem.gov.in/showbidresult/9571506",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9571506",
+      "documents_required_from_seller": "Certificate (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7749514",
@@ -373,7 +571,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9564369",
       "url": "https://bidplus.gem.gov.in/showbidresult/9564369",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9564369",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7749394",
@@ -386,7 +590,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9564217",
       "url": "https://bidplus.gem.gov.in/showbidresult/9564217",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9564217",
+      "documents_required_from_seller": "",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7745895",
@@ -399,7 +609,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9560129",
       "url": "https://bidplus.gem.gov.in/showbidresult/9560129",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9560129",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7745799",
@@ -412,7 +628,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9560020",
       "url": "https://bidplus.gem.gov.in/showbidresult/9560020",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9560020",
+      "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7745608",
@@ -425,7 +647,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9559800",
       "url": "https://bidplus.gem.gov.in/showbidresult/9559800",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9559800",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7744639",
@@ -438,7 +666,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9558685",
       "url": "https://bidplus.gem.gov.in/showbidresult/9558685",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9558685",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7743002",
@@ -451,7 +685,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9556773",
       "url": "https://bidplus.gem.gov.in/showbidresult/9556773",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9556773",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7742417",
@@ -464,7 +704,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9556129",
       "url": "https://bidplus.gem.gov.in/showbidresult/9556129",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9556129",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7738406",
@@ -477,7 +723,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9551599",
       "url": "https://bidplus.gem.gov.in/showbidresult/9551599",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9551599",
+      "documents_required_from_seller": "Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7726017",
@@ -490,7 +742,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9537768",
       "url": "https://bidplus.gem.gov.in/showbidresult/9537768",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9537768",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "40",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "40"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7725483",
@@ -503,7 +767,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9537144",
       "url": "https://bidplus.gem.gov.in/showbidresult/9537144",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9537144",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7721524",
@@ -516,7 +786,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9532588",
       "url": "https://bidplus.gem.gov.in/showbidresult/9532588",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9532588",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7719241",
@@ -529,7 +805,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9529781",
       "url": "https://bidplus.gem.gov.in/showbidresult/9529781",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9529781",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7716972",
@@ -542,7 +824,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9527201",
       "url": "https://bidplus.gem.gov.in/showbidresult/9527201",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9527201",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7712657",
@@ -555,7 +843,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9522284",
       "url": "https://bidplus.gem.gov.in/showbidresult/9522284",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9522284",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7709028",
@@ -568,7 +862,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9518245",
       "url": "https://bidplus.gem.gov.in/showbidresult/9518245",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9518245",
+      "documents_required_from_seller": "Certificate (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7707073",
@@ -581,7 +881,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9516042",
       "url": "https://bidplus.gem.gov.in/showbidresult/9516042",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9516042",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7706517",
@@ -594,7 +900,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9515445",
       "url": "https://bidplus.gem.gov.in/showbidresult/9515445",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9515445",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7704280",
@@ -607,7 +919,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9512977",
       "url": "https://bidplus.gem.gov.in/showbidresult/9512977",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9512977",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "2885",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "2885"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7702386",
@@ -620,7 +944,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9510864",
       "url": "https://bidplus.gem.gov.in/showbidresult/9510864",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9510864",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "END OF LINE RESISTOR UNIT SE53799 (Gमशः Gमशः 1ेणी 1ेणी 1 और और 1ेणी 1ेणी 2 के के /थानीय /थानीय आपूित%कता% आपूित%कता% के के kप kप म3 म3 अह%ता अह%ता >ाF >ाF करने करने के के िलए िलए आवOयक आवOयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
+      "additional_requirement": "तकनीक\u0010",
+      "consignee": "60",
+      "consignees": [
+        {
+          "consignee": "60",
+          "address": "END OF LINE RESISTOR UNIT SE53799 (Gमशः Gमशः 1ेणी 1ेणी 1 और और 1ेणी 1ेणी 2 के के /थानीय /थानीय आपूित%कता% आपूित%कता% के के kप kप म3 म3 अह%ता अह%ता >ाF >ाF करने करने के के िलए िलए आवOयक आवOयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
+          "additional_requirement": "तकनीक\u0010"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7694345",
@@ -633,7 +969,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9501876",
       "url": "https://bidplus.gem.gov.in/showbidresult/9501876",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9501876",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7694292",
@@ -646,7 +988,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9501808",
       "url": "https://bidplus.gem.gov.in/showbidresult/9501808",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9501808",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7693891",
@@ -659,7 +1007,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9501344",
       "url": "https://bidplus.gem.gov.in/showbidresult/9501344",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9501344",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7692871",
@@ -672,7 +1026,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9500106",
       "url": "https://bidplus.gem.gov.in/showbidresult/9500106",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9500106",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "4",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "4"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7681380",
@@ -685,7 +1051,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9487262",
       "url": "https://bidplus.gem.gov.in/showbidresult/9487262",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9487262",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7680213",
@@ -698,7 +1070,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9485965",
       "url": "https://bidplus.gem.gov.in/showbidresult/9485965",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9485965",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7653542",
@@ -711,7 +1089,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9456025",
       "url": "https://bidplus.gem.gov.in/showbidresult/9456025",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9456025",
+      "documents_required_from_seller": "Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7647377",
@@ -724,7 +1108,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9449249",
       "url": "https://bidplus.gem.gov.in/showbidresult/9449249",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9449249",
+      "documents_required_from_seller": "Certificate (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7642077",
@@ -737,7 +1127,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9443440",
       "url": "https://bidplus.gem.gov.in/showbidresult/9443440",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9443440",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7626654",
@@ -750,7 +1146,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9426089",
       "url": "https://bidplus.gem.gov.in/showbidresult/9426089",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9426089",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "4",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "4"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7612602",
@@ -763,7 +1171,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9410593",
       "url": "https://bidplus.gem.gov.in/showbidresult/9410593",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9410593",
+      "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7609749",
@@ -776,7 +1190,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9407448",
       "url": "https://bidplus.gem.gov.in/showbidresult/9407448",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9407448",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7584115",
@@ -789,7 +1209,19 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9378528",
       "url": "https://bidplus.gem.gov.in/showbidresult/9378528",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9378528",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "3",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "3"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7495888",
@@ -802,7 +1234,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9280367",
       "url": "https://bidplus.gem.gov.in/showbidresult/9280367",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9280367",
+      "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     },
     {
       "tender_no": "GEM/2026/B/7396759",
@@ -815,7 +1253,13 @@
       "last_updated_at": "2026-07-18T02:37:36",
       "gem_id": "9169089",
       "url": "https://bidplus.gem.gov.in/showbidresult/9169089",
-      "source": "gem"
+      "source": "gem",
+      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9169089",
+      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
+      "address": "",
+      "additional_requirement": "",
+      "consignee": "",
+      "consignees": []
     }
   ]
 }

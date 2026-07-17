@@ -10,7 +10,7 @@ if (-not (Test-Path $PythonExe)) {
 }
 
 Write-Host "Fetching GeM Korba bids locally..."
-& $PythonExe run_gem.py --export-json
+& $PythonExe run_gem.py --export-json --enrich-pdf
 if ($LASTEXITCODE -ne 0) {
     Write-Host "GeM fetch failed."
     exit 1

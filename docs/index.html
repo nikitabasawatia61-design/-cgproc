@@ -493,6 +493,42 @@
 
         .tender-link:hover { text-decoration: underline; }
 
+        .tender-link-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+        }
+
+        .detail-item.full { grid-column: 1 / -1; }
+
+        .detail-label {
+            color: var(--muted);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            font-size: 0.92rem;
+            line-height: 1.45;
+            word-break: break-word;
+        }
+
+        .detail-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
             table { min-width: 920px; }
@@ -633,8 +669,21 @@
         </div>
     </div>
 
+    <div class="modal-backdrop" id="gem-tender-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-labelledby="gem-tender-modal-title" style="width:min(640px,100%);">
+            <div class="modal-header">
+                <h2 id="gem-tender-modal-title">GeM Bid Details</h2>
+                <button class="btn" id="btn-close-gem-tender-modal" type="button" aria-label="Close">Close</button>
+            </div>
+            <div class="modal-body" id="gem-tender-modal-body">
+                <div class="loading">Reading bid PDF...</div>
+            </div>
+        </div>
+    </div>
+
     <script src="gem-config.js"></script>
     <script src="gem-fetch.js"></script>
+    <script src="gem-detail.js"></script>
     <script src="firebase-config.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -677,8 +726,8 @@
                 footerLabel: "GeM BidPlus Advance Search",
                 footerNote: "Live fetch from GeM BidPlus API",
                 fetchLabel: "Fetch GeM Tenders",
-                runHint: "Click <strong>Fetch GeM Tenders</strong> to call the BidPlus API and refresh all Korba bids.",
-                emptyHint: "No GeM bids yet. Click Fetch GeM Tenders to pull from the BidPlus API.",
+                runHint: "Click a <strong>tender number</strong> to read the bid PDF and view seller documents, address, and requirements.",
+                emptyHint: "No GeM bids yet. Run run_gem.py locally to load data.",
             },
         };
 
@@ -714,6 +763,9 @@
             footerNote: document.getElementById("footer-note"),
             btnFetch: document.getElementById("btn-fetch"),
             runHint: document.getElementById("run-hint"),
+            gemTenderModal: document.getElementById("gem-tender-modal"),
+            gemTenderModalBody: document.getElementById("gem-tender-modal-body"),
+            btnCloseGemTenderModal: document.getElementById("btn-close-gem-tender-modal"),
         };
 
         function getSourceConfig() {
@@ -733,6 +785,7 @@
             els.footerNote.textContent = config.footerNote;
             els.btnFetch.textContent = config.fetchLabel;
             els.btnFetch.disabled = isFetching;
+            els.btnFetch.style.display = dataSource === "gem" ? "none" : "";
             els.runHint.innerHTML = config.runHint;
             els.btnSwitchCg.classList.toggle("active", dataSource === "cg");
             els.btnSwitchGem.classList.toggle("active", dataSource === "gem");
@@ -750,6 +803,45 @@
             els.gemModal.classList.add("open");
             els.gemModal.setAttribute("aria-hidden", "false");
             els.gemProxyUrl.value = localStorage.getItem("cgproc-gem-proxy") || "";
+        }
+
+        function closeGemTenderModal() {
+            els.gemTenderModal.classList.remove("open");
+            els.gemTenderModal.setAttribute("aria-hidden", "true");
+        }
+
+        async function openGemTenderDetail(gemId, tenderNo) {
+            const tender = allTenders.find((item) => item.gem_id === gemId || item.tender_no === tenderNo);
+            if (!tender) return;
+
+            els.gemTenderModal.classList.add("open");
+            els.gemTenderModal.setAttribute("aria-hidden", "false");
+            document.getElementById("gem-tender-modal-title").textContent = tender.tender_no || "GeM Bid Details";
+            els.gemTenderModalBody.innerHTML = `<div class="loading">Reading bid PDF for ${escapeHtml(tender.tender_no)}...</div>`;
+
+            if (tender.documents_required_from_seller || tender.address) {
+                GemDetail.renderFields(els.gemTenderModalBody, tender);
+                return;
+            }
+
+            try {
+                const detail = await GemDetail.fetchLiveDetail(gemId);
+                if (detail) {
+                    Object.assign(tender, detail);
+                    GemDetail.renderFields(els.gemTenderModalBody, tender, detail);
+                    return;
+                }
+            } catch (error) {
+                // fall through to PDF-only view
+            }
+
+            GemDetail.renderFields(els.gemTenderModalBody, {
+                ...tender,
+                documents_required_from_seller: "Run: python run_gem.py --enrich-only",
+                address: tender.area_city || "—",
+                additional_requirement: "—",
+                pdf_url: GemDetail.pdfUrl(gemId),
+            });
         }
 
         function closeGemModal() {
@@ -892,9 +984,20 @@
             const rows = tenders.map((t) => {
                 const starred = isShortlisted(t.tender_no);
                 const tenderLabel = escapeHtml(t.tender_no);
-                const tenderCell = t.url
-                    ? `<a class="tender-link" href="${escapeHtml(t.url)}" target="_blank" rel="noopener">${tenderLabel}</a>`
-                    : `<span class="tender-no">${tenderLabel}</span>`;
+                let tenderCell;
+                if (dataSource === "gem" && t.gem_id) {
+                    tenderCell = `
+                        <button
+                            type="button"
+                            class="tender-link tender-link-btn gem-tender-open"
+                            data-gem-id="${escapeHtml(t.gem_id)}"
+                            data-tender-no="${escapeHtml(t.tender_no)}"
+                        >${tenderLabel}</button>`;
+                } else if (t.url) {
+                    tenderCell = `<a class="tender-link" href="${escapeHtml(t.url)}" target="_blank" rel="noopener">${tenderLabel}</a>`;
+                } else {
+                    tenderCell = `<span class="tender-no">${tenderLabel}</span>`;
+                }
                 return `
                 <tr>
                     <td>
@@ -1081,9 +1184,19 @@
         });
 
         els.table.addEventListener("click", (event) => {
+            const gemBtn = event.target.closest(".gem-tender-open");
+            if (gemBtn) {
+                openGemTenderDetail(gemBtn.dataset.gemId, gemBtn.dataset.tenderNo);
+                return;
+            }
             const button = event.target.closest(".btn-star");
             if (!button) return;
             toggleShortlist(button.dataset.tenderNo);
+        });
+
+        els.btnCloseGemTenderModal.addEventListener("click", closeGemTenderModal);
+        els.gemTenderModal.addEventListener("click", (event) => {
+            if (event.target === els.gemTenderModal) closeGemTenderModal();
         });
 
         els.btnSearch.addEventListener("click", () => {

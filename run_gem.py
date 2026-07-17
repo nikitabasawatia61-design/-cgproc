@@ -15,6 +15,7 @@ from pathlib import Path
 
 from scraper.dates import is_tender_closed
 from scraper.gem import DEFAULT_CITY, DEFAULT_STATE, fetch_gem_tenders
+from scraper.gem_pdf import enrich_tender
 
 GEM_JSON = Path(__file__).parent / "docs" / "data" / "gem-tenders.json"
 
@@ -37,6 +38,16 @@ def merge_tenders(existing: dict, fresh: list[dict]) -> list[dict]:
         old = previous.get(tender["tender_no"])
         if old:
             tender["first_seen_at"] = old.get("first_seen_at") or tender["first_seen_at"]
+            for key in (
+                "documents_required_from_seller",
+                "address",
+                "additional_requirement",
+                "consignee",
+                "consignees",
+                "pdf_url",
+            ):
+                if old.get(key) and not tender.get(key):
+                    tender[key] = old[key]
         merged.append(tender)
     return merged
 
@@ -89,12 +100,43 @@ def export_gem_json(
     return path
 
 
+def enrich_tenders(tenders: list[dict]) -> list[dict]:
+    import requests
+
+    session = requests.Session()
+    enriched = []
+    total = len(tenders)
+    for index, tender in enumerate(tenders, start=1):
+        print(f"PDF {index}/{total}: {tender.get('tender_no', 'unknown')}")
+        enriched.append(enrich_tender(dict(tender), session=session))
+    return enriched
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fetch GeM BidPlus tenders")
     parser.add_argument("--export-json", action="store_true", help="Write docs/data/gem-tenders.json")
+    parser.add_argument("--enrich-pdf", action="store_true", help="Download bid PDFs and extract seller docs/address")
+    parser.add_argument("--enrich-only", action="store_true", help="Only enrich existing gem-tenders.json (no list fetch)")
     parser.add_argument("--state", default=DEFAULT_STATE, help="State filter for GeM search")
     parser.add_argument("--city", default=DEFAULT_CITY, help="City filter for GeM search")
     args = parser.parse_args()
+
+    if args.enrich_only:
+        existing = load_existing(GEM_JSON)
+        tenders = existing.get("tenders", [])
+        if not tenders:
+            print("No tenders in gem-tenders.json")
+            sys.exit(1)
+        print(f"Enriching {len(tenders)} tenders from PDFs...")
+        enriched = enrich_tenders(tenders)
+        filters = existing.get("filters", {"state": args.state, "city": args.city})
+        path = export_gem_json(
+            enriched,
+            state_name=filters.get("state", args.state),
+            city_name=filters.get("city", args.city),
+        )
+        print(f"Exported enriched data to {path}")
+        return
 
     print(f"Fetching GeM tenders for {args.state} / {args.city}...")
     try:
@@ -104,6 +146,10 @@ def main():
         sys.exit(1)
 
     print(f"Fetched {len(fresh)} bids from GeM")
+
+    if args.enrich_pdf:
+        print("Reading bid PDFs for document/address details...")
+        fresh = enrich_tenders(fresh)
 
     if args.export_json:
         existing = load_existing(GEM_JSON)

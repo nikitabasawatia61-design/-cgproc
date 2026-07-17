@@ -24,6 +24,18 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+    if (url.pathname === "/api/gem/detail") {
+        const detail = await import("./api/gem/detail.js");
+        await detail.default(
+            {
+                method: req.method,
+                query: Object.fromEntries(url.searchParams.entries()),
+            },
+            res
+        );
+        return;
+    }
+
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ error: "Not found" }));
 });
