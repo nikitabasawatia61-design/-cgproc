@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: cgproc-gem-proxy
+    runtime: node
+    rootDir: gem-proxy
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_VERSION
+        value: 20

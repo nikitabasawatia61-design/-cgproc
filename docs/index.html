@@ -607,15 +607,24 @@
                 </div>
                 <div class="modal-section">
                     <strong>Live GeM fetch</strong>
-                    <p>On GeM view, click <strong>Fetch GeM Tenders</strong> to call the BidPlus API and refresh the table instantly.</p>
+                    <p>Click <strong>Fetch GeM Tenders</strong> to pull from the BidPlus API.</p>
+                    <p>Optional: deploy <code>gem-proxy</code> on Render (free) and paste the API URL below for instant fetch.</p>
+                    <input
+                        class="sync-code-box"
+                        type="text"
+                        id="gem-proxy-url"
+                        placeholder="https://your-app.onrender.com/api/gem/fetch"
+                        style="width:100%;margin-top:0.65rem;padding:0.7rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);"
+                    >
                     <div class="modal-actions">
+                        <button class="btn btn-gem" id="btn-save-gem-proxy" type="button">Save API URL</button>
                         <a
                             class="btn"
-                            href="https://bidplus.gem.gov.in/advance-search"
+                            href="https://dashboard.render.com/select-repo?type=web"
                             target="_blank"
                             rel="noopener"
                         >
-                            Open GeM Advance Search
+                            Deploy on Render
                         </a>
                     </div>
                 </div>
@@ -698,6 +707,8 @@
             btnCloseGemModal: document.getElementById("btn-close-gem-modal"),
             btnSwitchCg: document.getElementById("btn-switch-cg"),
             btnSwitchGem: document.getElementById("btn-switch-gem"),
+            gemProxyUrl: document.getElementById("gem-proxy-url"),
+            btnSaveGemProxy: document.getElementById("btn-save-gem-proxy"),
             footerLink: document.getElementById("footer-link"),
             footerNote: document.getElementById("footer-note"),
             btnFetch: document.getElementById("btn-fetch"),
@@ -737,6 +748,7 @@
         function openGemModal() {
             els.gemModal.classList.add("open");
             els.gemModal.setAttribute("aria-hidden", "false");
+            els.gemProxyUrl.value = localStorage.getItem("cgproc-gem-proxy") || "";
         }
 
         function closeGemModal() {
@@ -952,7 +964,7 @@
                 if (response.ok) {
                     const payload = await response.json();
                     const stamp = payload.exported_at || payload.stats?.last_scraped;
-                    if (stamp && stamp !== previousStamp) {
+                    if (!previousStamp || (stamp && stamp !== previousStamp)) {
                         allTenders = payload.tenders || [];
                         stats = {
                             ...(payload.stats || {}),
@@ -960,11 +972,25 @@
                         };
                         updateStats();
                         renderTable();
-                        return true;
+                        if (stamp && stamp !== previousStamp) return true;
+                        if (!previousStamp && allTenders.length) return true;
                     }
                 }
                 await sleep(5000);
             }
+            return false;
+        }
+
+        async function runCloudGemFetch() {
+            const previousStamp = stats.last_scraped || stats.exported_at || "";
+            window.open(GEM_FETCH_URL, "_blank", "noopener");
+            els.meta.textContent = "On GitHub: click Run workflow → Run workflow. Waiting for GeM API data...";
+            const updated = await pollGemData(previousStamp, 180000);
+            if (updated) {
+                els.meta.textContent = `Updated ${allTenders.length} GeM bids from cloud API.`;
+                return true;
+            }
+            els.meta.textContent = "Cloud fetch still running. Finish Run workflow on GitHub, then click Fetch again.";
             return false;
         }
 
@@ -980,39 +1006,42 @@
             const previousLabel = els.btnFetch.textContent;
             els.btnFetch.textContent = "Fetching from GeM API...";
             els.btnFetch.disabled = true;
-            els.meta.textContent = "Calling GeM BidPlus API for Chhattisgarh / Korba...";
+
+            const proxyUrl = localStorage.getItem("cgproc-gem-proxy") || window.GEM_API?.proxyUrl || "";
 
             try {
-                const payload = await GemFetch.pullLive(allTenders);
-                allTenders = payload.tenders || [];
-                stats = {
-                    ...(payload.stats || {}),
-                    total: getActiveTenders().length,
-                    last_scraped: payload.fetched_at || payload.stats?.last_scraped,
-                };
-                updateStats();
-                renderTable();
-                els.meta.textContent = `Fetched ${allTenders.length} GeM bids just now.`;
-            } catch (error) {
-                const message = error?.message || "GeM fetch failed";
-                const corsBlocked = /failed to fetch|cors|networkerror/i.test(message);
-                if (corsBlocked) {
-                    const previousStamp = stats.last_scraped || "";
-                    window.open(GEM_FETCH_URL, "_blank", "noopener");
-                    els.meta.textContent = "Cloud GeM fetch started. Waiting for updated data...";
-                    const updated = await pollGemData(previousStamp);
-                    if (!updated) {
-                        els.meta.textContent = "Cloud fetch still running. Click Run workflow on GitHub, then try Fetch again.";
-                    }
+                if (proxyUrl) {
+                    els.meta.textContent = "Calling GeM BidPlus API via cloud proxy...";
+                    window.GEM_API = { ...(window.GEM_API || {}), proxyUrl };
+                    const payload = await GemFetch.pullLive(allTenders);
+                    allTenders = payload.tenders || [];
+                    stats = {
+                        ...(payload.stats || {}),
+                        total: getActiveTenders().length,
+                        last_scraped: payload.fetched_at || payload.stats?.last_scraped,
+                    };
+                    updateStats();
+                    renderTable();
+                    els.meta.textContent = `Fetched ${allTenders.length} GeM bids just now.`;
                     return;
                 }
-                els.table.innerHTML = `
-                    <div class="error">
-                        <strong>GeM fetch failed</strong>
-                        <p>${escapeHtml(message)}</p>
-                    </div>
-                `;
+
+                els.meta.textContent = "No API proxy set. Starting GitHub cloud fetch...";
+                await runCloudGemFetch();
+            } catch (error) {
+                const message = error?.message || "GeM fetch failed";
                 els.meta.textContent = message;
+                try {
+                    await runCloudGemFetch();
+                } catch (fallbackError) {
+                    els.table.innerHTML = `
+                        <div class="error">
+                            <strong>GeM fetch failed</strong>
+                            <p>${escapeHtml(message)}</p>
+                            <p>${escapeHtml(fallbackError.message || "")}</p>
+                        </div>
+                    `;
+                }
             } finally {
                 isFetching = false;
                 els.btnFetch.textContent = previousLabel;
@@ -1058,6 +1087,18 @@
         els.btnSwitchGem.addEventListener("click", () => {
             setDataSource("gem");
             closeGemModal();
+        });
+
+        els.btnSaveGemProxy.addEventListener("click", () => {
+            const url = els.gemProxyUrl.value.trim();
+            if (!url) {
+                localStorage.removeItem("cgproc-gem-proxy");
+                els.meta.textContent = "Cleared GeM API URL. Fetch will use GitHub cloud workflow.";
+                return;
+            }
+            localStorage.setItem("cgproc-gem-proxy", url);
+            window.GEM_API = { ...(window.GEM_API || {}), proxyUrl: url };
+            els.meta.textContent = "Saved GeM API URL. Click Fetch GeM Tenders to pull live data.";
         });
 
         document.addEventListener("keydown", (event) => {
