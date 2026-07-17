@@ -1,0 +1,14 @@
+app.py
+web/
+scraper/
+scripts/
+.venv/
+venv/
+__pycache__/
+*.db
+docs/
+.github/
+run_*.py
+database.py
+requirements*.txt
+tender_results.xlsx
