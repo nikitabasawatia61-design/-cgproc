@@ -363,6 +363,136 @@
 
         .footer a { color: var(--accent); }
 
+        .header-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .source-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .source-pill.gem {
+            border-color: rgba(251, 146, 60, 0.45);
+            color: #fdba74;
+            background: rgba(251, 146, 60, 0.1);
+        }
+
+        .btn-gem {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            border-color: #ea580c;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-gem:hover {
+            background: linear-gradient(135deg, #ea580c, #c2410c);
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 12, 22, 0.72);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .modal-backdrop.open { display: flex; }
+
+        .modal {
+            width: min(520px, 100%);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-header h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .modal-body {
+            padding: 1.25rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .modal-section {
+            background: rgba(0, 0, 0, 0.16);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .modal-section p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            margin-top: 0.35rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.85rem;
+        }
+
+        .modal-code {
+            display: block;
+            margin-top: 0.65rem;
+            padding: 0.65rem 0.75rem;
+            border-radius: 8px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: #cbd5e1;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.82rem;
+            word-break: break-word;
+        }
+
+        .tender-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .tender-link:hover { text-decoration: underline; }
+
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
             table { min-width: 920px; }
@@ -372,12 +502,20 @@
 <body>
     <div class="container">
         <header>
-            <div class="eyebrow">Chhattisgarh E-Procurement</div>
-            <h1>Open Tenders Dashboard</h1>
-            <p class="subtitle">
-                Automatically fetches new tenders daily from the CG government portal.
-                Hosted free on GitHub Pages.
-            </p>
+            <div class="header-row">
+                <div>
+                    <div class="eyebrow" id="header-eyebrow">Chhattisgarh E-Procurement</div>
+                    <h1 id="header-title">Open Tenders Dashboard</h1>
+                    <p class="subtitle" id="header-subtitle">
+                        Automatically fetches new tenders daily from the CG government portal.
+                        Hosted free on GitHub Pages.
+                    </p>
+                </div>
+                <div class="header-actions">
+                    <span class="source-pill" id="source-pill">CG Portal</span>
+                    <button class="btn btn-gem" id="btn-open-gem-modal" type="button">GeM</button>
+                </div>
+            </div>
         </header>
 
         <div class="stats">
@@ -430,6 +568,7 @@
             <button class="btn" id="btn-search">Search</button>
             <a
                 class="btn btn-run"
+                id="btn-fetch"
                 href="https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml"
                 target="_blank"
                 rel="noopener"
@@ -438,7 +577,7 @@
             </a>
         </div>
 
-        <p class="run-hint">
+        <p class="run-hint" id="run-hint">
             Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.
         </p>
 
@@ -448,13 +587,47 @@
             <div class="loading">Loading tender data...</div>
         </div>
 
-        <p class="footer">
+        <p class="footer" id="footer-source">
             Data source:
-            <a href="https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do" target="_blank" rel="noopener">
+            <a id="footer-link" href="https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do" target="_blank" rel="noopener">
                 CG E-Procurement Portal
             </a>
-            · Updated daily by GitHub Actions
+            · <span id="footer-note">Updated daily by GitHub Actions</span>
         </p>
+    </div>
+
+    <div class="modal-backdrop" id="gem-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-labelledby="gem-modal-title">
+            <div class="modal-header">
+                <h2 id="gem-modal-title">GeM BidPlus — Korba</h2>
+                <button class="btn" id="btn-close-gem-modal" type="button" aria-label="Close">Close</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <strong>Switch data source</strong>
+                    <p>View CG e-procurement tenders or GeM bids filtered for Chhattisgarh / Korba.</p>
+                    <div class="modal-actions">
+                        <button class="btn" id="btn-switch-cg" type="button">Switch to CG Portal</button>
+                        <button class="btn btn-gem" id="btn-switch-gem" type="button">Switch to GeM</button>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <strong>Pull GeM tenders locally</strong>
+                    <p>GeM blocks direct browser calls from GitHub Pages. Run this on your PC, then push the JSON update.</p>
+                    <code class="modal-code">python run_gem.py --export-json</code>
+                    <div class="modal-actions">
+                        <a
+                            class="btn"
+                            href="https://bidplus.gem.gov.in/advance-search"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Open GeM Advance Search
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="firebase-config.js"></script>
@@ -466,7 +639,41 @@
         let stats = {};
         let filterMode = "all";
         let searchTerm = "";
+        let dataSource = localStorage.getItem("cgproc-source") || "cg";
         const today = new Date().toISOString().slice(0, 10);
+
+        const SOURCE_CONFIG = {
+            cg: {
+                dataFile: "data/tenders.json",
+                eyebrow: "Chhattisgarh E-Procurement",
+                title: "Open Tenders Dashboard",
+                subtitle: "Automatically fetches new tenders daily from the CG government portal. Hosted free on GitHub Pages.",
+                pill: "CG Portal",
+                pillClass: "",
+                footerLink: "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do",
+                footerLabel: "CG E-Procurement Portal",
+                footerNote: "Updated daily by GitHub Actions",
+                fetchHref: "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml",
+                fetchLabel: "Fetch Tenders Now",
+                runHint: 'Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.',
+                emptyHint: "Try another search, or wait for the daily GitHub Action to fetch data.",
+            },
+            gem: {
+                dataFile: "data/gem-tenders.json",
+                eyebrow: "GeM BidPlus",
+                title: "Korba GeM Bids",
+                subtitle: "Open bids on Government e Marketplace filtered for Chhattisgarh / Korba. Pull locally with run_gem.py.",
+                pill: "GeM Korba",
+                pillClass: "gem",
+                footerLink: "https://bidplus.gem.gov.in/advance-search",
+                footerLabel: "GeM BidPlus Advance Search",
+                footerNote: "Updated when you run run_gem.py locally",
+                fetchHref: "https://github.com/nikitabasawatia61-design/-cgproc/blob/main/run_gem.py",
+                fetchLabel: "View Pull Script",
+                runHint: "Run <strong>python run_gem.py --export-json</strong> on your PC, then push <strong>docs/data/gem-tenders.json</strong>.",
+                emptyHint: "No GeM bids loaded yet. Run run_gem.py locally and push gem-tenders.json.",
+            },
+        };
 
         const els = {
             total: document.getElementById("stat-total"),
@@ -485,7 +692,60 @@
             syncStatus: document.getElementById("sync-status"),
             btnSyncConnect: document.getElementById("btn-sync-connect"),
             btnSyncGenerate: document.getElementById("btn-sync-generate"),
+            headerEyebrow: document.getElementById("header-eyebrow"),
+            headerTitle: document.getElementById("header-title"),
+            headerSubtitle: document.getElementById("header-subtitle"),
+            sourcePill: document.getElementById("source-pill"),
+            btnOpenGemModal: document.getElementById("btn-open-gem-modal"),
+            gemModal: document.getElementById("gem-modal"),
+            btnCloseGemModal: document.getElementById("btn-close-gem-modal"),
+            btnSwitchCg: document.getElementById("btn-switch-cg"),
+            btnSwitchGem: document.getElementById("btn-switch-gem"),
+            footerLink: document.getElementById("footer-link"),
+            footerNote: document.getElementById("footer-note"),
+            btnFetch: document.getElementById("btn-fetch"),
+            runHint: document.getElementById("run-hint"),
         };
+
+        function getSourceConfig() {
+            return SOURCE_CONFIG[dataSource] || SOURCE_CONFIG.cg;
+        }
+
+        function applySourceUi() {
+            const config = getSourceConfig();
+            document.title = config.title;
+            els.headerEyebrow.textContent = config.eyebrow;
+            els.headerTitle.textContent = config.title;
+            els.headerSubtitle.textContent = config.subtitle;
+            els.sourcePill.textContent = config.pill;
+            els.sourcePill.className = `source-pill ${config.pillClass}`.trim();
+            els.footerLink.href = config.footerLink;
+            els.footerLink.textContent = config.footerLabel;
+            els.footerNote.textContent = config.footerNote;
+            els.btnFetch.href = config.fetchHref;
+            els.btnFetch.textContent = config.fetchLabel;
+            els.runHint.innerHTML = config.runHint;
+            els.btnSwitchCg.classList.toggle("active", dataSource === "cg");
+            els.btnSwitchGem.classList.toggle("active", dataSource === "gem");
+        }
+
+        function setDataSource(source) {
+            if (!SOURCE_CONFIG[source]) return;
+            dataSource = source;
+            localStorage.setItem("cgproc-source", source);
+            applySourceUi();
+            loadData();
+        }
+
+        function openGemModal() {
+            els.gemModal.classList.add("open");
+            els.gemModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeGemModal() {
+            els.gemModal.classList.remove("open");
+            els.gemModal.setAttribute("aria-hidden", "true");
+        }
 
         function updateShortlistStats() {
             const count = ShortlistSync.getAll().size;
@@ -537,7 +797,7 @@
 
         function parseLastDate(value) {
             if (!value) return null;
-            const cleaned = String(value).replace(/\s+/g, " ").trim();
+            const cleaned = String(value).replace(/\s+IST$/i, "").replace(/\s+/g, " ").trim();
             const match = cleaned.match(
                 /^(\d{1,2})\s+([A-Za-z]{3}),?\s+(\d{4})\s+(\d{1,2}):(\d{2}):(\d{2})\s+(AM|PM)/i
             );
@@ -606,9 +866,10 @@
             els.meta.textContent = meta;
 
             if (!tenders.length) {
+                const config = getSourceConfig();
                 const emptyMessage = filterMode === "shortlist"
                     ? "No shortlisted tenders yet. Click the star on any tender to add it here."
-                    : "Try another search, or wait for the daily GitHub Action to fetch data.";
+                    : config.emptyHint;
                 els.table.innerHTML = `
                     <div class="empty">
                         <strong>No tenders found</strong>
@@ -620,6 +881,10 @@
 
             const rows = tenders.map((t) => {
                 const starred = isShortlisted(t.tender_no);
+                const tenderLabel = escapeHtml(t.tender_no);
+                const tenderCell = t.url
+                    ? `<a class="tender-link" href="${escapeHtml(t.url)}" target="_blank" rel="noopener">${tenderLabel}</a>`
+                    : `<span class="tender-no">${tenderLabel}</span>`;
                 return `
                 <tr>
                     <td>
@@ -631,7 +896,7 @@
                             aria-label="${starred ? "Remove from shortlist" : "Add to shortlist"}"
                         >${starred ? "★" : "☆"}</button>
                     </td>
-                    <td><span class="tender-no">${escapeHtml(t.tender_no)}</span></td>
+                    <td>${tenderCell}</td>
                     <td>${escapeHtml(t.area_city || "—")}</td>
                     <td class="name-cell">${escapeHtml(t.name || "—")}</td>
                     <td>${escapeHtml(t.department || "—")}</td>
@@ -680,8 +945,9 @@
         }
 
         async function loadData() {
+            const config = getSourceConfig();
             try {
-                const response = await fetch("data/tenders.json?" + Date.now());
+                const response = await fetch(config.dataFile + "?" + Date.now());
                 if (!response.ok) throw new Error("Could not load tender data");
 
                 const payload = await response.json();
@@ -701,6 +967,24 @@
                 `;
             }
         }
+
+        els.btnOpenGemModal.addEventListener("click", openGemModal);
+        els.btnCloseGemModal.addEventListener("click", closeGemModal);
+        els.gemModal.addEventListener("click", (event) => {
+            if (event.target === els.gemModal) closeGemModal();
+        });
+        els.btnSwitchCg.addEventListener("click", () => {
+            setDataSource("cg");
+            closeGemModal();
+        });
+        els.btnSwitchGem.addEventListener("click", () => {
+            setDataSource("gem");
+            closeGemModal();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeGemModal();
+        });
 
         els.table.addEventListener("click", (event) => {
             const button = event.target.closest(".btn-star");
@@ -762,6 +1046,7 @@
 
         ShortlistSync.init();
         updateSyncStatus();
+        applySourceUi();
         loadData();
     </script>
 </body>
