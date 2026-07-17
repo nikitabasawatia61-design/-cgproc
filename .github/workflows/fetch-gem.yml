@@ -1,9 +1,6 @@
 name: Fetch GeM Tenders
 
 on:
-  schedule:
-    # Every 6 hours
-    - cron: "30 2,8,14,20 * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,14 +25,30 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-core.txt
 
+      - name: Test GeM connectivity
+        continue-on-error: true
+        run: |
+          curl -I --max-time 30 "https://bidplus.gem.gov.in/advance-search" || echo "GeM may block GitHub cloud servers"
+
       - name: Fetch GeM Korba bids
+        continue-on-error: true
+        id: fetch
         env:
           PYTHONUNBUFFERED: "1"
         run: python run_gem.py --export-json
 
       - name: Commit updated GeM data
+        if: steps.fetch.outcome == 'success'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update GeM tender data [skip ci]"
           file_pattern: docs/data/gem-tenders.json
           skip_dirty_check: true
+
+      - name: Local fetch required
+        if: steps.fetch.outcome != 'success'
+        run: |
+          echo "::warning::GeM blocked this GitHub runner (connection refused)."
+          echo "Run locally instead: python run_gem.py --export-json"
+          echo "Or use: .\\run_gem_and_push.ps1"
+          exit 1

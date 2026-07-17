@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-07-18T01:59:36",
+  "exported_at": "2026-07-18T02:33:23",
   "source": "gem",
   "filters": {
     "state": "CHHATTISGARH",
@@ -8,7 +8,7 @@
   "stats": {
     "total": 62,
     "new_today": 0,
-    "last_scraped": "2026-07-18T01:59:36"
+    "last_scraped": "2026-07-18T02:33:23"
   },
   "tenders": [
     {
@@ -19,7 +19,7 @@
       "last_date": "29 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9622895",
       "url": "https://bidplus.gem.gov.in/showbidresult/9622895",
       "source": "gem"
@@ -32,7 +32,7 @@
       "last_date": "07 Aug, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9622791",
       "url": "https://bidplus.gem.gov.in/showbidresult/9622791",
       "source": "gem"
@@ -45,7 +45,7 @@
       "last_date": "07 Aug, 2026 09:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9618149",
       "url": "https://bidplus.gem.gov.in/showbidresult/9618149",
       "source": "gem"
@@ -58,7 +58,7 @@
       "last_date": "27 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9616306",
       "url": "https://bidplus.gem.gov.in/showbidresult/9616306",
       "source": "gem"
@@ -71,7 +71,7 @@
       "last_date": "31 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9614461",
       "url": "https://bidplus.gem.gov.in/showbidresult/9614461",
       "source": "gem"
@@ -84,7 +84,7 @@
       "last_date": "07 Aug, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9612208",
       "url": "https://bidplus.gem.gov.in/showbidresult/9612208",
       "source": "gem"
@@ -97,7 +97,7 @@
       "last_date": "24 Jul, 2026 06:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9604046",
       "url": "https://bidplus.gem.gov.in/showbidresult/9604046",
       "source": "gem"
@@ -110,7 +110,7 @@
       "last_date": "28 Jul, 2026 10:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9599769",
       "url": "https://bidplus.gem.gov.in/showbidresult/9599769",
       "source": "gem"
@@ -123,7 +123,7 @@
       "last_date": "06 Aug, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9598245",
       "url": "https://bidplus.gem.gov.in/showbidresult/9598245",
       "source": "gem"
@@ -136,7 +136,7 @@
       "last_date": "24 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9596962",
       "url": "https://bidplus.gem.gov.in/showbidresult/9596962",
       "source": "gem"
@@ -149,7 +149,7 @@
       "last_date": "28 Jul, 2026 05:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9596400",
       "url": "https://bidplus.gem.gov.in/showbidresult/9596400",
       "source": "gem"
@@ -162,7 +162,7 @@
       "last_date": "29 Jul, 2026 08:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9596116",
       "url": "https://bidplus.gem.gov.in/showbidresult/9596116",
       "source": "gem"
@@ -175,7 +175,7 @@
       "last_date": "28 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9595517",
       "url": "https://bidplus.gem.gov.in/showbidresult/9595517",
       "source": "gem"
@@ -188,7 +188,7 @@
       "last_date": "03 Aug, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9593149",
       "url": "https://bidplus.gem.gov.in/showbidresult/9593149",
       "source": "gem"
@@ -201,7 +201,7 @@
       "last_date": "01 Aug, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9591174",
       "url": "https://bidplus.gem.gov.in/showbidresult/9591174",
       "source": "gem"
@@ -214,7 +214,7 @@
       "last_date": "23 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9590905",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590905",
       "source": "gem"
@@ -227,7 +227,7 @@
       "last_date": "25 Jul, 2026 10:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9590332",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590332",
       "source": "gem"
@@ -240,7 +240,7 @@
       "last_date": "25 Jul, 2026 10:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9590247",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590247",
       "source": "gem"
@@ -253,7 +253,7 @@
       "last_date": "31 Jul, 2026 10:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9590043",
       "url": "https://bidplus.gem.gov.in/showbidresult/9590043",
       "source": "gem"
@@ -266,7 +266,7 @@
       "last_date": "25 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9585141",
       "url": "https://bidplus.gem.gov.in/showbidresult/9585141",
       "source": "gem"
@@ -279,7 +279,7 @@
       "last_date": "27 Jul, 2026 06:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9580553",
       "url": "https://bidplus.gem.gov.in/showbidresult/9580553",
       "source": "gem"
@@ -292,7 +292,7 @@
       "last_date": "20 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9578909",
       "url": "https://bidplus.gem.gov.in/showbidresult/9578909",
       "source": "gem"
@@ -305,7 +305,7 @@
       "last_date": "20 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9578906",
       "url": "https://bidplus.gem.gov.in/showbidresult/9578906",
       "source": "gem"
@@ -318,7 +318,7 @@
       "last_date": "20 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9578220",
       "url": "https://bidplus.gem.gov.in/showbidresult/9578220",
       "source": "gem"
@@ -331,7 +331,7 @@
       "last_date": "30 Jul, 2026 01:30:00 AM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9574705",
       "url": "https://bidplus.gem.gov.in/showbidresult/9574705",
       "source": "gem"
@@ -344,7 +344,7 @@
       "last_date": "19 Jul, 2026 02:30:00 AM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9574638",
       "url": "https://bidplus.gem.gov.in/showbidresult/9574638",
       "source": "gem"
@@ -357,7 +357,7 @@
       "last_date": "20 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9571506",
       "url": "https://bidplus.gem.gov.in/showbidresult/9571506",
       "source": "gem"
@@ -370,7 +370,7 @@
       "last_date": "23 Jul, 2026 10:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9564369",
       "url": "https://bidplus.gem.gov.in/showbidresult/9564369",
       "source": "gem"
@@ -383,7 +383,7 @@
       "last_date": "20 Jul, 2026 05:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9564217",
       "url": "https://bidplus.gem.gov.in/showbidresult/9564217",
       "source": "gem"
@@ -396,7 +396,7 @@
       "last_date": "26 Jul, 2026 01:30:00 AM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9560129",
       "url": "https://bidplus.gem.gov.in/showbidresult/9560129",
       "source": "gem"
@@ -409,7 +409,7 @@
       "last_date": "25 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9560020",
       "url": "https://bidplus.gem.gov.in/showbidresult/9560020",
       "source": "gem"
@@ -422,7 +422,7 @@
       "last_date": "20 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9559800",
       "url": "https://bidplus.gem.gov.in/showbidresult/9559800",
       "source": "gem"
@@ -435,7 +435,7 @@
       "last_date": "27 Jul, 2026 06:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9558685",
       "url": "https://bidplus.gem.gov.in/showbidresult/9558685",
       "source": "gem"
@@ -448,7 +448,7 @@
       "last_date": "27 Jul, 2026 11:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9556773",
       "url": "https://bidplus.gem.gov.in/showbidresult/9556773",
       "source": "gem"
@@ -461,7 +461,7 @@
       "last_date": "27 Jul, 2026 11:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9556129",
       "url": "https://bidplus.gem.gov.in/showbidresult/9556129",
       "source": "gem"
@@ -474,7 +474,7 @@
       "last_date": "27 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9551599",
       "url": "https://bidplus.gem.gov.in/showbidresult/9551599",
       "source": "gem"
@@ -487,7 +487,7 @@
       "last_date": "31 Jul, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9537768",
       "url": "https://bidplus.gem.gov.in/showbidresult/9537768",
       "source": "gem"
@@ -500,7 +500,7 @@
       "last_date": "23 Jul, 2026 06:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9537144",
       "url": "https://bidplus.gem.gov.in/showbidresult/9537144",
       "source": "gem"
@@ -513,7 +513,7 @@
       "last_date": "20 Jul, 2026 09:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9532588",
       "url": "https://bidplus.gem.gov.in/showbidresult/9532588",
       "source": "gem"
@@ -526,7 +526,7 @@
       "last_date": "23 Jul, 2026 09:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9529781",
       "url": "https://bidplus.gem.gov.in/showbidresult/9529781",
       "source": "gem"
@@ -539,7 +539,7 @@
       "last_date": "22 Jul, 2026 08:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9527201",
       "url": "https://bidplus.gem.gov.in/showbidresult/9527201",
       "source": "gem"
@@ -552,7 +552,7 @@
       "last_date": "24 Jul, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9522284",
       "url": "https://bidplus.gem.gov.in/showbidresult/9522284",
       "source": "gem"
@@ -565,7 +565,7 @@
       "last_date": "27 Jul, 2026 06:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9518245",
       "url": "https://bidplus.gem.gov.in/showbidresult/9518245",
       "source": "gem"
@@ -578,7 +578,7 @@
       "last_date": "21 Jul, 2026 11:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9516042",
       "url": "https://bidplus.gem.gov.in/showbidresult/9516042",
       "source": "gem"
@@ -591,7 +591,7 @@
       "last_date": "24 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9515445",
       "url": "https://bidplus.gem.gov.in/showbidresult/9515445",
       "source": "gem"
@@ -604,7 +604,7 @@
       "last_date": "21 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9512977",
       "url": "https://bidplus.gem.gov.in/showbidresult/9512977",
       "source": "gem"
@@ -617,7 +617,7 @@
       "last_date": "21 Jul, 2026 12:30:00 AM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9510864",
       "url": "https://bidplus.gem.gov.in/showbidresult/9510864",
       "source": "gem"
@@ -630,7 +630,7 @@
       "last_date": "31 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9501876",
       "url": "https://bidplus.gem.gov.in/showbidresult/9501876",
       "source": "gem"
@@ -643,7 +643,7 @@
       "last_date": "31 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9501808",
       "url": "https://bidplus.gem.gov.in/showbidresult/9501808",
       "source": "gem"
@@ -656,7 +656,7 @@
       "last_date": "31 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9501344",
       "url": "https://bidplus.gem.gov.in/showbidresult/9501344",
       "source": "gem"
@@ -669,7 +669,7 @@
       "last_date": "20 Jul, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9500106",
       "url": "https://bidplus.gem.gov.in/showbidresult/9500106",
       "source": "gem"
@@ -682,7 +682,7 @@
       "last_date": "18 Jul, 2026 07:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9487262",
       "url": "https://bidplus.gem.gov.in/showbidresult/9487262",
       "source": "gem"
@@ -695,7 +695,7 @@
       "last_date": "23 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9485965",
       "url": "https://bidplus.gem.gov.in/showbidresult/9485965",
       "source": "gem"
@@ -708,7 +708,7 @@
       "last_date": "30 Jul, 2026 10:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9456025",
       "url": "https://bidplus.gem.gov.in/showbidresult/9456025",
       "source": "gem"
@@ -721,7 +721,7 @@
       "last_date": "28 Jul, 2026 09:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9449249",
       "url": "https://bidplus.gem.gov.in/showbidresult/9449249",
       "source": "gem"
@@ -734,7 +734,7 @@
       "last_date": "22 Jul, 2026 06:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9443440",
       "url": "https://bidplus.gem.gov.in/showbidresult/9443440",
       "source": "gem"
@@ -747,7 +747,7 @@
       "last_date": "22 Jul, 2026 03:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9426089",
       "url": "https://bidplus.gem.gov.in/showbidresult/9426089",
       "source": "gem"
@@ -760,7 +760,7 @@
       "last_date": "29 Jul, 2026 04:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9410593",
       "url": "https://bidplus.gem.gov.in/showbidresult/9410593",
       "source": "gem"
@@ -773,7 +773,7 @@
       "last_date": "22 Jul, 2026 08:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9407448",
       "url": "https://bidplus.gem.gov.in/showbidresult/9407448",
       "source": "gem"
@@ -786,7 +786,7 @@
       "last_date": "21 Jul, 2026 05:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9378528",
       "url": "https://bidplus.gem.gov.in/showbidresult/9378528",
       "source": "gem"
@@ -799,7 +799,7 @@
       "last_date": "18 Jul, 2026 09:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9280367",
       "url": "https://bidplus.gem.gov.in/showbidresult/9280367",
       "source": "gem"
@@ -812,7 +812,7 @@
       "last_date": "18 Jul, 2026 02:30:00 PM IST",
       "area_city": "KORBA",
       "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T01:59:36",
+      "last_updated_at": "2026-07-18T02:33:23",
       "gem_id": "9169089",
       "url": "https://bidplus.gem.gov.in/showbidresult/9169089",
       "source": "gem"
