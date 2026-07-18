@@ -46,6 +46,8 @@ def main():
             "skipped": 0,
             "portal_total": 0,
             "removed_stale": 0,
+            "scan_completed": False,
+            "missing_after_scan": 0,
             "error": str(error),
         }
 
@@ -57,9 +59,20 @@ def main():
         if removed:
             print(f"Removed {removed} closed tenders")
         path = db.export_to_json()
+        if result.get("portal_total"):
+            import json
+
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["stats"]["portal_listing_total"] = result["portal_total"]
+            payload["stats"]["missing_on_portal"] = result.get("missing_after_scan", 0)
+            payload["stats"]["listing_scan_completed"] = result.get("scan_completed", False)
+            path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
         print(f"Exported data to {path}")
         stats = db.get_stats()
         print(f"Active tenders in dashboard: {stats['total']}")
+        if result.get("portal_total"):
+            print(f"Portal listing total: {result['portal_total']}")
+            print(f"Still missing from portal: {result.get('missing_after_scan', 0)}")
 
     if result.get("error"):
         print(f"Scraper finished with error: {result['error']}")
@@ -67,7 +80,8 @@ def main():
 
     print(
         f"Done. {result['new']} new tenders added. "
-        f"Portal listing: {result.get('portal_total', 0)}."
+        f"Portal listing: {result.get('portal_total', 0)}. "
+        f"Still missing: {result.get('missing_after_scan', 0)}."
     )
 
 

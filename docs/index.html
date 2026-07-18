@@ -1109,7 +1109,15 @@
         }
 
         function updateStats() {
-            els.total.textContent = stats.total ?? 0;
+            const savedTotal = stats.total ?? 0;
+            const portalTotal = stats.portal_listing_total;
+            if (dataSource === "cg" && portalTotal && portalTotal > savedTotal) {
+                els.total.textContent = `${savedTotal} / ${portalTotal}`;
+                els.total.title = `${savedTotal} saved locally, ${portalTotal} live on CG portal`;
+            } else {
+                els.total.textContent = savedTotal;
+                els.total.title = "";
+            }
             els.newToday.textContent = stats.new_today ?? 0;
             els.updated.textContent = formatDateTime(stats.last_scraped || null);
             updateShortlistStats();
