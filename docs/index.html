@@ -346,6 +346,15 @@
 
         .name-cell { max-width: 340px; }
 
+        .docs-cell, .address-cell {
+            max-width: 280px;
+            font-size: 0.84rem;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .address-cell { max-width: 240px; }
+
         .empty, .loading, .error {
             text-align: center;
             padding: 3.5rem 1rem;
@@ -532,6 +541,7 @@
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
             table { min-width: 920px; }
+            table.gem-table { min-width: 1480px; }
         }
     </style>
 </head>
@@ -726,7 +736,7 @@
                 footerLabel: "GeM BidPlus Advance Search",
                 footerNote: "Live fetch from GeM BidPlus API",
                 fetchLabel: "Fetch GeM Tenders",
-                runHint: "Click a <strong>tender number</strong> to read the bid PDF and view seller documents, address, and requirements.",
+                runHint: "Seller documents and address are shown in the table. Click a <strong>tender number</strong> for full PDF details.",
                 emptyHint: "No GeM bids yet. Run run_gem.py locally to load data.",
             },
         };
@@ -943,12 +953,19 @@
 
         function getFilteredTenders() {
             const filtered = getActiveTenders().filter((t) => {
-                const matchesSearch = !searchTerm || [
+                const searchFields = [
                     t.tender_no,
                     t.name,
                     t.department,
                     t.area_city,
-                ].some((field) => (field || "").toLowerCase().includes(searchTerm));
+                ];
+                if (dataSource === "gem") {
+                    searchFields.push(t.documents_required_from_seller, t.address);
+                }
+
+                const matchesSearch = !searchTerm || searchFields.some(
+                    (field) => (field || "").toLowerCase().includes(searchTerm)
+                );
 
                 const matchesNew = filterMode !== "new" || (t.first_seen_at || "").startsWith(today);
                 const matchesShortlist = filterMode !== "shortlist" || isShortlisted(t.tender_no);
@@ -981,11 +998,13 @@
                 return;
             }
 
+            const isGemView = dataSource === "gem";
+
             const rows = tenders.map((t) => {
                 const starred = isShortlisted(t.tender_no);
                 const tenderLabel = escapeHtml(t.tender_no);
                 let tenderCell;
-                if (dataSource === "gem" && t.gem_id) {
+                if (isGemView && t.gem_id) {
                     tenderCell = `
                         <button
                             type="button"
@@ -998,6 +1017,32 @@
                 } else {
                     tenderCell = `<span class="tender-no">${tenderLabel}</span>`;
                 }
+
+                if (isGemView) {
+                    return `
+                <tr>
+                    <td>
+                        <button
+                            class="btn-star ${starred ? "active" : ""}"
+                            type="button"
+                            data-tender-no="${escapeHtml(t.tender_no)}"
+                            title="${starred ? "Remove from shortlist" : "Add to shortlist"}"
+                            aria-label="${starred ? "Remove from shortlist" : "Add to shortlist"}"
+                        >${starred ? "★" : "☆"}</button>
+                    </td>
+                    <td>${tenderCell}</td>
+                    <td class="name-cell">${escapeHtml(t.name || "—")}</td>
+                    <td class="docs-cell">${escapeHtml(t.documents_required_from_seller || "—")}</td>
+                    <td class="address-cell">${escapeHtml(t.address || "—")}</td>
+                    <td>${escapeHtml(t.last_date || "—")}</td>
+                    <td>
+                        ${escapeHtml((t.first_seen_at || "").slice(0, 10) || "—")}
+                        ${(t.first_seen_at || "").startsWith(today) ? '<span class="badge-new">New</span>' : ""}
+                    </td>
+                </tr>
+            `;
+                }
+
                 return `
                 <tr>
                     <td>
@@ -1023,9 +1068,19 @@
             `;
             }).join("");
 
-            els.table.innerHTML = `
-                <table>
-                    <thead>
+            const tableClass = isGemView ? "gem-table" : "";
+            const tableHead = isGemView
+                ? `
+                        <tr>
+                            <th></th>
+                            <th>Tender No</th>
+                            <th>Description</th>
+                            <th>Document Required from Seller</th>
+                            <th>Address</th>
+                            <th>Bid Due Date</th>
+                            <th>Added</th>
+                        </tr>`
+                : `
                         <tr>
                             <th></th>
                             <th>Tender No</th>
@@ -1035,8 +1090,11 @@
                             <th>Amount</th>
                             <th>Bid Due Date</th>
                             <th>Added</th>
-                        </tr>
-                    </thead>
+                        </tr>`;
+
+            els.table.innerHTML = `
+                <table class="${tableClass}">
+                    <thead>${tableHead}</thead>
                     <tbody>${rows}</tbody>
                 </table>
             `;
