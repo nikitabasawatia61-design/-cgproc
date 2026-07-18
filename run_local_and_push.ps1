@@ -23,6 +23,36 @@ if (-not $status) {
 
 git add docs/data/tenders.json
 git commit -m "chore: update tender data from local scraper"
-git push
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Commit failed."
+    exit 1
+}
 
-Write-Host "Done. Dashboard will update after GitHub Pages refreshes."
+Write-Host "Syncing with GitHub before push..."
+git fetch origin main
+$behind = git rev-list --count HEAD..origin/main
+if ([int]$behind -gt 0) {
+    Write-Host "Remote has $behind new commit(s). Pulling with rebase..."
+    git pull --rebase origin main
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host ""
+        Write-Host "PUSH BLOCKED: merge conflict (usually in docs/data/tenders.json)."
+        Write-Host "Keep YOUR local file, then run:"
+        Write-Host "  git checkout --ours docs/data/tenders.json"
+        Write-Host "  git add docs/data/tenders.json"
+        Write-Host "  git rebase --continue"
+        Write-Host "  git push origin main"
+        exit 1
+    }
+}
+
+git push origin main
+if ($LASTEXITCODE -ne 0) {
+    Write-Host ""
+    Write-Host "PUSH FAILED. Your scrape is saved locally but the website was NOT updated."
+    Write-Host "Run: git pull --rebase origin main"
+    Write-Host "Then: git push origin main"
+    exit 1
+}
+
+Write-Host "Done. Dashboard will update after GitHub Pages refreshes (hard refresh: Ctrl+F5)."
