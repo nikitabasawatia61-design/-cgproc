@@ -1,11 +1,132 @@
 {
-  "exported_at": "2026-07-18T13:58:37",
+  "exported_at": "2026-07-18T23:56:57",
   "stats": {
-    "total": 786,
-    "new_today": 75,
-    "last_scraped": "2026-07-18T03:06:52"
+    "total": 790,
+    "new_today": 86,
+    "last_scraped": "2026-07-18T14:16:26"
   },
   "tenders": [
+    {
+      "id": 3404,
+      "tender_no": "194387",
+      "name": "BT Road topping from Mini garden to Jamtoli primary school, Ward no 6, Nagar Panchayat Kunkuri. (second CALL)",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "1119000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:16:26",
+      "last_updated_at": "2026-07-18T14:16:26",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3403,
+      "tender_no": "194388",
+      "name": "BT Road topping from Main road Isha Nursing to BSNL office, Ward no 7, Nagar Panchayat Kunkuri. (second CALL)",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "1155000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:15:54",
+      "last_updated_at": "2026-07-18T14:15:54",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3402,
+      "tender_no": "194389",
+      "name": "BT Road topping from Govt quarters to Rafeeq Ghar, Ward no 11, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "1203000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:15:24",
+      "last_updated_at": "2026-07-18T14:15:24",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3401,
+      "tender_no": "194390",
+      "name": "BT Road topping from CSEB office to Lambitoli Road, Ward no 7, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:13:40",
+      "last_updated_at": "2026-07-18T14:13:40",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3400,
+      "tender_no": "194391",
+      "name": "BT Road topping from Loyola School to Lazurus Minz ghar, Ward no 2, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "1668000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:13:13",
+      "last_updated_at": "2026-07-18T14:13:13",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3399,
+      "tender_no": "194392",
+      "name": "BT Road topping from Aadya Shankar Tripathi ghar to SLRM centre, Ward no 1, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "2336000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:12:43",
+      "last_updated_at": "2026-07-18T14:12:43",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3398,
+      "tender_no": "194393",
+      "name": "BT Road topping at Azad basti, Ward no 9, Nagar Panchayat Kunkuri",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "2335000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:12:17",
+      "last_updated_at": "2026-07-18T14:12:17",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3397,
+      "tender_no": "194394",
+      "name": "BT Road topping from Talkies chowk to Lambitoli road Ward no 8, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "2404000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:11:50",
+      "last_updated_at": "2026-07-18T14:11:50",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3396,
+      "tender_no": "194395",
+      "name": "BT Road topping from Mangal Bhavan to Ginabahar Marg seema, Ward no 1, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "2881000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:11:22",
+      "last_updated_at": "2026-07-18T14:11:22",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3395,
+      "tender_no": "194396",
+      "name": "BT Road topping from Mahima school to Behratoli, Ward no 15, Nagar Panchayat Kunkuri.",
+      "department": "NAGAR PANCHAYAT KUNKURI",
+      "amount": "2918000.00",
+      "last_date": "24 Jul, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:10:56",
+      "last_updated_at": "2026-07-18T14:10:56",
+      "area_city": "Kunkuri"
+    },
+    {
+      "id": 3394,
+      "tender_no": "194551",
+      "name": "Construction of Nava Raipur Sports Complex-Phase-2 works at Sector-28, Nava Raipur Atal Nagar, District-Raipur, Chhattisgarh(1ST CALL)",
+      "department": "CHIEF ENGINEER OFFICE",
+      "amount": "730502000.68",
+      "last_date": "6 Aug, 2026 3:00:00 PM IST",
+      "first_seen_at": "2026-07-18T14:08:27",
+      "last_updated_at": "2026-07-18T14:08:27",
+      "area_city": "Raipur"
+    },
     {
       "id": 3393,
       "tender_no": "194684",
@@ -4748,17 +4869,6 @@
       "area_city": "Bilaspur"
     },
     {
-      "id": 2722,
-      "tender_no": "194209",
-      "name": "Construction of Stopdam across local Nalla at Village Mundrethi in Block Dharsiwa, District Raipur",
-      "department": "CHIEF ENGINEER, MAHANADI PROJECT, RAIPUR",
-      "amount": "18055508.32",
-      "last_date": "21 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:30",
-      "last_updated_at": "2026-07-13T18:56:30",
-      "area_city": "Raipur"
-    },
-    {
       "id": 2054,
       "tender_no": "194838",
       "name": "Strengthening of Mohda Lukaukapa Tikaitpendri Road Length 2.50 km.",
@@ -5007,17 +5117,6 @@
       "department": "PWD Div No2 Raipur",
       "amount": "5000000.00",
       "last_date": "27 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:29",
-      "last_updated_at": "2026-07-13T18:56:29",
-      "area_city": "Raipur"
-    },
-    {
-      "id": 2077,
-      "tender_no": "194815",
-      "name": "Supply of Liquefied chlorine gas in Tonner (Gas weight 900 Kg in each tonner) including Loading unloading & Tonner rent - 500 Nos",
-      "department": "COMMISSINOR, MUNICIPAL CORPORATION, RAIPUR",
-      "amount": "",
-      "last_date": "18 Jul, 2026 5:30:30 PM IST",
       "first_seen_at": "2026-07-13T18:56:29",
       "last_updated_at": "2026-07-13T18:56:29",
       "area_city": "Raipur"
@@ -7740,28 +7839,6 @@
       "area_city": "Raigarh"
     },
     {
-      "id": 3278,
-      "tender_no": "194246",
-      "name": "revamping of material recovery facility(MRF) including installation of machinery and construction of compost plant in municipal areas of dondilohara",
-      "department": "NAGAR PANCHAYAT DONDILOHARA",
-      "amount": "",
-      "last_date": "18 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:15",
-      "last_updated_at": "2026-07-13T18:56:15",
-      "area_city": "Dondilohara"
-    },
-    {
-      "id": 3279,
-      "tender_no": "194239",
-      "name": "Construction of development work of garden at ward no 12 at gunderdehi",
-      "department": "NAGAR PANCHAYAT GUNDARDEHI",
-      "amount": "",
-      "last_date": "18 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:15",
-      "last_updated_at": "2026-07-13T18:56:15",
-      "area_city": "Gundardehi"
-    },
-    {
       "id": 3281,
       "tender_no": "194217",
       "name": "वार्ड क्रमांक 01 उरला क्षेत्र में एकीकृत विकास कार्य (नवीन सड़क एवं नाली )",
@@ -7782,28 +7859,6 @@
       "first_seen_at": "2026-07-13T18:56:15",
       "last_updated_at": "2026-07-13T18:56:15",
       "area_city": "Birgaon"
-    },
-    {
-      "id": 3285,
-      "tender_no": "194211",
-      "name": "revamping of material recovery facility(MRF) including installation of machinery and construction of compost plant in municipal areas of gunderdehi",
-      "department": "NAGAR PANCHAYAT GUNDARDEHI",
-      "amount": "",
-      "last_date": "18 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:15",
-      "last_updated_at": "2026-07-13T18:56:15",
-      "area_city": "Gundardehi"
-    },
-    {
-      "id": 3287,
-      "tender_no": "194202",
-      "name": "CONSTRUCTION OF HIGH LEVEL BRIDGE I/C APPROACH ROAD ACROSS PHOOL RIVER IN KM. 5/6 ON KUNNA TO MICHWAR ROAD. (UNDER DEPOSIT WORK) (Without Escalation and Bonus)",
-      "department": "Bridge Division Jagdalpur",
-      "amount": "67862000.00",
-      "last_date": "21 Jul, 2026 5:00:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:15",
-      "last_updated_at": "2026-07-13T18:56:15",
-      "area_city": "Jagdalpur"
     },
     {
       "id": 52,
@@ -8343,17 +8398,6 @@
       "first_seen_at": "2026-07-13T18:56:13",
       "last_updated_at": "2026-07-13T18:56:13",
       "area_city": "Durg"
-    },
-    {
-      "id": 17,
-      "tender_no": "194711",
-      "name": "Completion work of incomplete TOWN HALL at ward no 01 of Nagar Palika Balrampur(c.g.)",
-      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, BALRAMPUR",
-      "amount": "34698000.00",
-      "last_date": "18 Jul, 2026 5:30:00 PM IST",
-      "first_seen_at": "2026-07-13T18:56:13",
-      "last_updated_at": "2026-07-13T18:56:13",
-      "area_city": "Balrampur"
     },
     {
       "id": 18,
