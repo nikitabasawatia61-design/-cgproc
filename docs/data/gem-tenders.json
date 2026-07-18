@@ -1,14 +1,14 @@
 {
-  "exported_at": "2026-07-18T02:49:56",
+  "exported_at": "2026-07-18T14:40:21",
   "source": "gem",
   "filters": {
     "state": "CHHATTISGARH",
     "city": "KORBA"
   },
   "stats": {
-    "total": 62,
+    "total": 61,
     "new_today": 0,
-    "last_scraped": "2026-07-18T02:49:56"
+    "last_scraped": "2026-07-18T14:40:21"
   },
   "tenders": [
     {
@@ -51,13 +51,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9622791",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "3",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "3"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -75,10 +75,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9618149",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,NTPC Korba, Jamnipali, District Korba, Chattisgarh",
+      "additional_requirement": "N/A",
+      "consignee": "Priyanshu Srivastava",
+      "consignees": [
+        {
+          "consignee": "Priyanshu Srivastava",
+          "address": "495450,NTPC Korba, Jamnipali, District Korba, Chattisgarh",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7795441",
@@ -94,10 +100,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9616306",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SECL CWS KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Kameshwar Kumar Rao",
+      "consignees": [
+        {
+          "consignee": "Kameshwar Kumar Rao",
+          "address": "495677,SECL CWS KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7793791",
@@ -113,10 +125,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9614461",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,Education Hub,Syahimudi, Korba",
+      "additional_requirement": "N/A",
+      "consignee": "Rajiv Kumar Lilhare",
+      "consignees": [
+        {
+          "consignee": "Rajiv Kumar Lilhare",
+          "address": "495450,Education Hub,Syahimudi, Korba",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7791812",
@@ -157,10 +175,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9604046",
       "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,PM SHRI Kendriya Vidyalaya Korba No. 4 CHORBHATTI GOPALPUR, IN FRONT OF IOCL, KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Bhagwan Singh Ahire",
+      "consignees": [
+        {
+          "consignee": "Bhagwan Singh Ahire",
+          "address": "495450,PM SHRI Kendriya Vidyalaya Korba No. 4 CHORBHATTI GOPALPUR, IN FRONT OF IOCL, KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7780746",
@@ -176,10 +200,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9599769",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SITAMANI KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Homlal",
+      "consignees": [
+        {
+          "consignee": "Homlal",
+          "address": "495677,SITAMANI KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7779406",
@@ -195,10 +225,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9598245",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,CENTRAL STORES, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Akash Ramdas Ponde",
+      "consignees": [
+        {
+          "consignee": "Akash Ramdas Ponde",
+          "address": "495677,CENTRAL STORES, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7778316",
@@ -214,10 +250,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9596962",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Pramod.C",
+      "consignees": [
+        {
+          "consignee": "Pramod.C",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7777868",
@@ -233,10 +275,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9596400",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495454,CMPDI Exploration Camp, Near Kabir Chowk, Kusmunda Colliery",
+      "additional_requirement": "N/A",
+      "consignee": "Debtanu Banerjee",
+      "consignees": [
+        {
+          "consignee": "Debtanu Banerjee",
+          "address": "495454,CMPDI Exploration Camp, Near Kabir Chowk, Kusmunda Colliery",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7777668",
@@ -252,10 +300,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9596116",
       "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,Education Hub,Syahimudi, Korba",
+      "additional_requirement": "N/A",
+      "consignee": "Rajiv Kumar Lilhare",
+      "consignees": [
+        {
+          "consignee": "Rajiv Kumar Lilhare",
+          "address": "495450,Education Hub,Syahimudi, Korba",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7777158",
@@ -271,10 +325,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9595517",
       "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+      "additional_requirement": "N/A",
+      "consignee": "K S Chellam Naidu Boni",
+      "consignees": [
+        {
+          "consignee": "K S Chellam Naidu Boni",
+          "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7775071",
@@ -291,13 +351,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9593149",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "2",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "2"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -316,13 +376,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9591174",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "100",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "100"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -340,10 +400,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590905",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,CENTRAL STORES, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Akash Ramdas Ponde",
+      "consignees": [
+        {
+          "consignee": "Akash Ramdas Ponde",
+          "address": "495677,CENTRAL STORES, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7772615",
@@ -359,10 +425,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590332",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495454,SECL KUSMUNDA AREA",
+      "additional_requirement": "N/A",
+      "consignee": "Thirukumaran S",
+      "consignees": [
+        {
+          "consignee": "Thirukumaran S",
+          "address": "495454,SECL KUSMUNDA AREA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7772539",
@@ -378,14 +450,14 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590247",
       "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "Manual Pitch Roller ( 1 pieces ) (7मशः 7मशः (ेणी (ेणी 1 और और (ेणी (ेणी 2 के के 'थानीय 'थानीय आपूित%कता% आपूित%कता% के के hप hप म> म> अह%ता अह%ता 6ाi 6ाi करने करने के के िलए िलए आवLयक आवLयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
-      "additional_requirement": "तकनीक\u0010",
-      "consignee": "30",
+      "address": "495677,DIST SPORTS & YOUTH WELFARE KORBA KARYALAYA COLLECTOR COMMERCIAL TEX 1ST FLORE ROOM NO. 17",
+      "additional_requirement": "N/A",
+      "consignee": "Ramkripal Sahu",
       "consignees": [
         {
-          "consignee": "30",
-          "address": "Manual Pitch Roller ( 1 pieces ) (7मशः 7मशः (ेणी (ेणी 1 और और (ेणी (ेणी 2 के के 'थानीय 'थानीय आपूित%कता% आपूित%कता% के के hप hप म> म> अह%ता अह%ता 6ाi 6ाi करने करने के के िलए िलए आवLयक आवLयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
-          "additional_requirement": "तकनीक\u0010"
+          "consignee": "Ramkripal Sahu",
+          "address": "495677,DIST SPORTS & YOUTH WELFARE KORBA KARYALAYA COLLECTOR COMMERCIAL TEX 1ST FLORE ROOM NO. 17",
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -403,10 +475,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9590043",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495445,KATGORA DIVISION",
+      "additional_requirement": "N/A",
+      "consignee": "Rajendra Kumar Chandra",
+      "consignees": [
+        {
+          "consignee": "Rajendra Kumar Chandra",
+          "address": "495445,KATGORA DIVISION",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7768140",
@@ -422,10 +500,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9585141",
       "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SECL MM KORBA AREA",
+      "additional_requirement": "N/A",
+      "consignee": "S Babu Sankar",
+      "consignees": [
+        {
+          "consignee": "S Babu Sankar",
+          "address": "495677,SECL MM KORBA AREA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7763898",
@@ -441,10 +525,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9580553",
       "documents_required_from_seller": "Certificate (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+      "additional_requirement": "N/A",
+      "consignee": "Priyanshu Srivastava",
+      "consignees": [
+        {
+          "consignee": "Priyanshu Srivastava",
+          "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7762454",
@@ -460,10 +550,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9578909",
       "documents_required_from_seller": "Certificate (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+      "additional_requirement": "N/A",
+      "consignee": "Madhur Supriya Bara",
+      "consignees": [
+        {
+          "consignee": "Madhur Supriya Bara",
+          "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7762452",
@@ -479,10 +575,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9578906",
       "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Pramod.C",
+      "consignees": [
+        {
+          "consignee": "Pramod.C",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7761821",
@@ -498,10 +600,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9578220",
       "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Pramod.C",
+      "consignees": [
+        {
+          "consignee": "Pramod.C",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7758585",
@@ -517,10 +625,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9574705",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495449,Pali Janpad Panchayat",
+      "additional_requirement": "N/A",
+      "consignee": "Abhishek Kumar Shriwas",
+      "consignees": [
+        {
+          "consignee": "Abhishek Kumar Shriwas",
+          "address": "495449,Pali Janpad Panchayat",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7758523",
@@ -536,10 +650,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9574638",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495449,Pali Janpad Panchayat",
+      "additional_requirement": "N/A",
+      "consignee": "Abhishek Kumar Shriwas",
+      "consignees": [
+        {
+          "consignee": "Abhishek Kumar Shriwas",
+          "address": "495449,Pali Janpad Panchayat",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7755722",
@@ -555,10 +675,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9571506",
       "documents_required_from_seller": "Certificate (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495674,Power Grid Corporation of India Limited. 765/400kV Korba Substation Urga Bhaisma Road In front of Government College Bhaisma PO Bhaisma",
+      "additional_requirement": "N/A",
+      "consignee": "Ravi Pratap Singh",
+      "consignees": [
+        {
+          "consignee": "Ravi Pratap Singh",
+          "address": "495674,Power Grid Corporation of India Limited. 765/400kV Korba Substation Urga Bhaisma Road In front of Government College Bhaisma PO Bhaisma",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7749514",
@@ -574,10 +700,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9564369",
       "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,NTPC Korba, Jamnipali, District Korba, Chattisgarh",
+      "additional_requirement": "N/A",
+      "consignee": "Md Kaifi Ahmad",
+      "consignees": [
+        {
+          "consignee": "Md Kaifi Ahmad",
+          "address": "495450,NTPC Korba, Jamnipali, District Korba, Chattisgarh",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7749394",
@@ -593,10 +725,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9564217",
       "documents_required_from_seller": "",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+      "additional_requirement": "N/A",
+      "consignee": "Priyanshu Srivastava",
+      "consignees": [
+        {
+          "consignee": "Priyanshu Srivastava",
+          "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7745895",
@@ -612,10 +750,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9560129",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,KORBA JANPAD ITI Rampur Chowk",
+      "additional_requirement": "N/A",
+      "consignee": "Jayshri Agrawal",
+      "consignees": [
+        {
+          "consignee": "Jayshri Agrawal",
+          "address": "495677,KORBA JANPAD ITI Rampur Chowk",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7745799",
@@ -631,10 +775,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9560020",
       "documents_required_from_seller": "Experience Criteria,Bidder Turnover,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,Dean, Late Shri Bisahu Das Mahant Memorial, Medical College, Kosawadi, Korba",
+      "additional_requirement": "N/A",
+      "consignee": "Satya Prakash Yadaw",
+      "consignees": [
+        {
+          "consignee": "Satya Prakash Yadaw",
+          "address": "495677,Dean, Late Shri Bisahu Das Mahant Memorial, Medical College, Kosawadi, Korba",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7745608",
@@ -650,10 +800,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9559800",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SITAMANI KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Homlal",
+      "consignees": [
+        {
+          "consignee": "Homlal",
+          "address": "495677,SITAMANI KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7744639",
@@ -669,10 +825,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9558685",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SITAMANI KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Homlal",
+      "consignees": [
+        {
+          "consignee": "Homlal",
+          "address": "495677,SITAMANI KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7743002",
@@ -688,10 +850,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9556773",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SITAMANI KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Homlal",
+      "consignees": [
+        {
+          "consignee": "Homlal",
+          "address": "495677,SITAMANI KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7742417",
@@ -707,10 +875,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9556129",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,SITAMANI KORBA",
+      "additional_requirement": "N/A",
+      "consignee": "Homlal",
+      "consignees": [
+        {
+          "consignee": "Homlal",
+          "address": "495677,SITAMANI KORBA",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7738406",
@@ -726,10 +900,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9551599",
       "documents_required_from_seller": "Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,Jt Director cum Superintendent, Late BDMM College Associated Hospital, Korba",
+      "additional_requirement": "N/A",
+      "consignee": "Rakesh Kumar Verma",
+      "consignees": [
+        {
+          "consignee": "Rakesh Kumar Verma",
+          "address": "495677,Jt Director cum Superintendent, Late BDMM College Associated Hospital, Korba",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7726017",
@@ -746,13 +926,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9537768",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "40",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "40"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -770,10 +950,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9537144",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495445,KATGORA DIVISION",
+      "additional_requirement": "N/A",
+      "consignee": "Rajendra Kumar Chandra",
+      "consignees": [
+        {
+          "consignee": "Rajendra Kumar Chandra",
+          "address": "495445,KATGORA DIVISION",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7721524",
@@ -789,10 +975,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9532588",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Rabin Chandra Mridha",
+      "consignees": [
+        {
+          "consignee": "Rabin Chandra Mridha",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7719241",
@@ -808,10 +1000,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9529781",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Tarun Kumar Pandey",
+      "consignees": [
+        {
+          "consignee": "Tarun Kumar Pandey",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7716972",
@@ -827,10 +1025,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9527201",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Tarun Kumar Pandey",
+      "consignees": [
+        {
+          "consignee": "Tarun Kumar Pandey",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7712657",
@@ -846,10 +1050,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9522284",
       "documents_required_from_seller": "Certificate (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+      "additional_requirement": "N/A",
+      "consignee": "Priyanshu Srivastava",
+      "consignees": [
+        {
+          "consignee": "Priyanshu Srivastava",
+          "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7709028",
@@ -865,10 +1075,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9518245",
       "documents_required_from_seller": "Certificate (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495674,Power Grid Corporation of India Limited. 765/400kV Korba Substation Urga Bhaisma Road In front of Government College Bhaisma PO Bhaisma",
+      "additional_requirement": "N/A",
+      "consignee": "Suraj Kumar Patel",
+      "consignees": [
+        {
+          "consignee": "Suraj Kumar Patel",
+          "address": "495674,Power Grid Corporation of India Limited. 765/400kV Korba Substation Urga Bhaisma Road In front of Government College Bhaisma PO Bhaisma",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7707073",
@@ -884,10 +1100,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9516042",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,DDA Office ITI chowk Rampur Korba",
+      "additional_requirement": "N/A",
+      "consignee": "Murlimanohar Baghel",
+      "consignees": [
+        {
+          "consignee": "Murlimanohar Baghel",
+          "address": "495677,DDA Office ITI chowk Rampur Korba",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7706517",
@@ -903,10 +1125,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9515445",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Bhanu Pratap",
+      "consignees": [
+        {
+          "consignee": "Bhanu Pratap",
+          "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7704280",
@@ -923,13 +1151,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9512977",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC)",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "2885",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "2885"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -947,14 +1175,14 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9510864",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "END OF LINE RESISTOR UNIT SE53799 (Gमशः Gमशः 1ेणी 1ेणी 1 और और 1ेणी 1ेणी 2 के के /थानीय /थानीय आपूित%कता% आपूित%कता% के के kप kप म3 म3 अह%ता अह%ता >ाF >ाF करने करने के के िलए िलए आवOयक आवOयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
-      "additional_requirement": "तकनीक\u0010",
-      "consignee": "60",
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Tarun Kumar Pandey",
       "consignees": [
         {
-          "consignee": "60",
-          "address": "END OF LINE RESISTOR UNIT SE53799 (Gमशः Gमशः 1ेणी 1ेणी 1 और और 1ेणी 1ेणी 2 के के /थानीय /थानीय आपूित%कता% आपूित%कता% के के kप kप म3 म3 अह%ता अह%ता >ाF >ाF करने करने के के िलए िलए आवOयक आवOयक /Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively)",
-          "additional_requirement": "तकनीक\u0010"
+          "consignee": "Tarun Kumar Pandey",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -972,10 +1200,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9501876",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Bhanu Pratap",
+      "consignees": [
+        {
+          "consignee": "Bhanu Pratap",
+          "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7694292",
@@ -991,10 +1225,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9501808",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Bhanu Pratap",
+      "consignees": [
+        {
+          "consignee": "Bhanu Pratap",
+          "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7693891",
@@ -1010,10 +1250,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9501344",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover,Additional Doc 1 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Bhanu Pratap",
+      "consignees": [
+        {
+          "consignee": "Bhanu Pratap",
+          "address": "495677,ESIC HOSPITAL DINGAPUR, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7692871",
@@ -1030,13 +1276,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9500106",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "4",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "4"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -1054,10 +1300,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9487262",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Tarun Kumar Pandey",
+      "consignees": [
+        {
+          "consignee": "Tarun Kumar Pandey",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7680213",
@@ -1073,10 +1325,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9485965",
       "documents_required_from_seller": "Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495677,CENTRAL STORES, KORBA, CHHATTISGARH",
+      "additional_requirement": "N/A",
+      "consignee": "Akash Ramdas Ponde",
+      "consignees": [
+        {
+          "consignee": "Akash Ramdas Ponde",
+          "address": "495677,CENTRAL STORES, KORBA, CHHATTISGARH",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7653542",
@@ -1092,10 +1350,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9456025",
       "documents_required_from_seller": "Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,NTPC Korba, Jamnipali, District Korba, Chattisgarh",
+      "additional_requirement": "N/A",
+      "consignee": "Manish Agrawal",
+      "consignees": [
+        {
+          "consignee": "Manish Agrawal",
+          "address": "495450,NTPC Korba, Jamnipali, District Korba, Chattisgarh",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7647377",
@@ -1111,10 +1375,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9449249",
       "documents_required_from_seller": "Certificate (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+      "additional_requirement": "N/A",
+      "consignee": "Priyanshu Srivastava",
+      "consignees": [
+        {
+          "consignee": "Priyanshu Srivastava",
+          "address": "495450,GSTIN: 22AAACN0255D4Z5 NTPC Stores Korba Super Thermal Power Station P.O. VIKASH BHAWAN JAMNIPALI KORBA Chhattisgarh- 495450, India Telephone No. : 07759-237111 Fax No. : 07759-237199",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7642077",
@@ -1130,10 +1400,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9443440",
       "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4 (Requested in ATC)",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Regional Stores, Gevra, PO-Gevra, Dist-Korba, Chattisgarh",
+      "additional_requirement": "मा ा",
+      "consignee": "Aditya Paliwal",
+      "consignees": [
+        {
+          "consignee": "Aditya Paliwal",
+          "address": "495452,Regional Stores, Gevra, PO-Gevra, Dist-Korba, Chattisgarh",
+          "additional_requirement": "मा ा"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7626654",
@@ -1150,13 +1426,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9426089",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "4",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "4"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -1174,10 +1450,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9410593",
       "documents_required_from_seller": "Experience Criteria,Past Performance,Bidder Turnover,Certificate (Requested in ATC),OEM Authorization Certificate,OEM Annual Turnover",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "492010,E.S.I. Corporation, 107, Ramnagar Road, Kota",
+      "additional_requirement": "N/A",
+      "consignee": "Kundan Kumar Jha",
+      "consignees": [
+        {
+          "consignee": "Kundan Kumar Jha",
+          "address": "492010,E.S.I. Corporation, 107, Ramnagar Road, Kota",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7609749",
@@ -1193,10 +1475,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9407448",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Tarun Kumar Pandey",
+      "consignees": [
+        {
+          "consignee": "Tarun Kumar Pandey",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     },
     {
       "tender_no": "GEM/2026/B/7584115",
@@ -1213,13 +1501,13 @@
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9378528",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Additional Doc 2 (Requested in ATC),Compliance of BoQ specification and supporting document",
       "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-      "additional_requirement": "3",
+      "additional_requirement": "N/A",
       "consignee": "Aditya Paliwal",
       "consignees": [
         {
           "consignee": "Aditya Paliwal",
           "address": "495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)",
-          "additional_requirement": "3"
+          "additional_requirement": "N/A"
         }
       ]
     },
@@ -1237,29 +1525,16 @@
       "source": "gem",
       "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9280367",
       "documents_required_from_seller": "Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
-    },
-    {
-      "tender_no": "GEM/2026/B/7396759",
-      "name": "Life Jacket as per IS 6685",
-      "department": "COAL INDIA LIMITED · Ministry of Coal",
-      "amount": "",
-      "last_date": "18 Jul, 2026 02:30:00 PM IST",
-      "area_city": "KORBA",
-      "first_seen_at": "2026-07-17T19:58:21",
-      "last_updated_at": "2026-07-18T02:37:36",
-      "gem_id": "9169089",
-      "url": "https://bidplus.gem.gov.in/showbidresult/9169089",
-      "source": "gem",
-      "pdf_url": "https://bidplus.gem.gov.in/showbidDocument/9169089",
-      "documents_required_from_seller": "Experience Criteria,Certificate (Requested in ATC),OEM Authorization Certificate,Additional Doc 1 (Requested in ATC),Compliance of BoQ specification and supporting document",
-      "address": "",
-      "additional_requirement": "",
-      "consignee": "",
-      "consignees": []
+      "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+      "additional_requirement": "N/A",
+      "consignee": "Tarun Kumar Pandey",
+      "consignees": [
+        {
+          "consignee": "Tarun Kumar Pandey",
+          "address": "495452,Dipka Area SECL ,PO- Dipka, Dist-Korba, CHHATTISGARH-495452, India",
+          "additional_requirement": "N/A"
+        }
+      ]
     }
   ]
 }

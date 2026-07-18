@@ -63,6 +63,82 @@ def extract_documents_required(text: str) -> str:
     return ""
 
 
+def _is_stop_footer(line: str) -> bool:
+    low = line.lower()
+    markers = (
+        "buyer added",
+        "option clause",
+        "number of covers",
+        "checklist of the documents",
+        "generic",
+        "जोड़",
+    )
+    return any(marker in low for marker in markers)
+
+
+def _is_quantity_line(line: str) -> bool:
+    return bool(re.fullmatch(r"\d+", line))
+
+
+def _is_address_start(line: str) -> bool:
+    return bool(re.match(r"^\d{6},", line))
+
+
+def _is_gst_line(line: str) -> bool:
+    return bool(re.match(r"^\(GST-", line, re.IGNORECASE))
+
+
+def _continues_address(line: str) -> bool:
+    if not line or _is_stop_footer(line):
+        return False
+    if _is_quantity_line(line):
+        return False
+    if line.upper() in {"N/A", "PROJECT /", "LUMPSUM", "BASED"}:
+        return False
+    if re.match(r"^(Project|Lumpsum|Based)\s*/?\s*$", line, re.IGNORECASE):
+        return False
+    return bool(re.search(r"[A-Za-z]", line))
+
+
+def _parse_consignee_row(lines: list[str]) -> dict[str, str] | None:
+    if not lines:
+        return None
+
+    addr_start = next((i for i, line in enumerate(lines) if _is_address_start(line)), None)
+    if addr_start is None:
+        return None
+
+    name = _clean(" ".join(lines[:addr_start]))
+    address_parts: list[str] = []
+    extra = "N/A"
+
+    for line in lines[addr_start:]:
+        if _is_stop_footer(line):
+            break
+        if address_parts and _is_quantity_line(line):
+            break
+        if address_parts and line.upper() == "N/A":
+            extra = "N/A"
+            break
+        if _is_address_start(line) or _is_gst_line(line) or (address_parts and _continues_address(line)):
+            address_parts.append(line)
+            continue
+        if address_parts:
+            if not re.match(r"^(Project|Lumpsum|Based)\s*/?\s*$", line, re.IGNORECASE):
+                extra = _clean(line) or extra
+            break
+
+    address = _clean(" ".join(address_parts))
+    if not name or not address:
+        return None
+
+    return {
+        "consignee": name,
+        "address": address,
+        "additional_requirement": extra or "N/A",
+    }
+
+
 def extract_consignee_blocks(text: str) -> list[dict[str, str]]:
     blocks = []
     section_match = re.search(
@@ -74,30 +150,42 @@ def extract_consignee_blocks(text: str) -> list[dict[str, str]]:
         return blocks
 
     section = section_match.group(1)
-    row_match = re.search(
+    row_match = re.search(r"(?:^|\n)1\n(.+)", section, re.DOTALL)
+    if not row_match:
+        return blocks
+
+    raw_lines = [line.strip() for line in row_match.group(1).split("\n") if line.strip()]
+    cleaned_lines: list[str] = []
+    for line in raw_lines:
+        if cleaned_lines and _is_stop_footer(line):
+            break
+        cleaned_lines.append(line)
+
+    parsed = _parse_consignee_row(cleaned_lines)
+    if parsed:
+        blocks.append(parsed)
+        return blocks
+
+    # Legacy layout: single-line name, address, GST in parentheses.
+    legacy_match = re.search(
         r"\n1\s*\n([^\n]+)\n([^\n]+)\n\(([^\)]+)\)\s*\n"
         r"(?:Project\s*/\s*\n)?(?:Lumpsum\s*\n)?(?:Based\s*\n)?"
         r"(N/A|[^\n]+)",
         section,
         re.IGNORECASE,
     )
-    if not row_match:
-        return blocks
-
-    name = _clean(row_match.group(1))
-    address_line = _clean(row_match.group(2))
-    gst = _clean(row_match.group(3) or "")
-    address = address_line
-    if gst:
-        address = f"{address_line} ({gst})"
-    extra = _clean(row_match.group(4) or "") or "N/A"
-
-    if name and address:
-        blocks.append({
-            "consignee": name,
-            "address": address,
-            "additional_requirement": extra,
-        })
+    if legacy_match:
+        name = _clean(legacy_match.group(1))
+        address_line = _clean(legacy_match.group(2))
+        gst = _clean(legacy_match.group(3) or "")
+        address = f"{address_line} ({gst})" if gst else address_line
+        extra = _clean(legacy_match.group(4) or "") or "N/A"
+        if name and address:
+            blocks.append({
+                "consignee": name,
+                "address": address,
+                "additional_requirement": extra,
+            })
     return blocks
 
 
