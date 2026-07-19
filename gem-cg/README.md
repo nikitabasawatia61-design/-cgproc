@@ -1,21 +1,12 @@
 # GeM CG — Korba Bid Tracker
 
-Separate project from **CG e-procurement** (`cgproc`). Tracks GeM BidPlus open bids for Chhattisgarh / Korba.
+**Separate GitHub repo:** https://github.com/nikitabasawatia61-design/gem-cg-korba
 
-## Projects
+Open bids on GeM BidPlus for Chhattisgarh / Korba. Independent from [CG e-proc (`-cgproc`)](https://github.com/nikitabasawatia61-design/-cgproc).
 
-| Project | Repo folder | Deploy |
-|---------|-------------|--------|
-| **CG e-proc** | parent `cgproc` repo | GitHub Pages + local scraper |
-| **GeM CG** | this folder (`gem-cg/`) | GitHub Pages (dashboard) + Vercel (API proxy) |
+## Dashboard
 
-## Dashboard (GitHub Pages)
-
-Push this folder to its own GitHub repo, enable Pages from `main` / `docs`.
-
-Or copy `gem-cg/` to a new repo: `gem-cg-korba`.
-
-Live data: `docs/data/gem-tenders.json`
+GitHub Pages: https://nikitabasawatia61-design.github.io/gem-cg-korba/
 
 ## Local fetch (recommended)
 
