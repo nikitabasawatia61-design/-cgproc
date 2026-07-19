@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korba GeM Bids</title>
+    <meta name="description" content="GeM BidPlus open bids for Chhattisgarh / Korba">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-row">
+                <div>
+                    <div class="eyebrow">GeM BidPlus</div>
+                    <h1>Korba GeM Bids</h1>
+                    <p class="subtitle">
+                        Open bids on Government e Marketplace for Chhattisgarh / Korba.
+                        <a href="https://nikitabasawatia61-design.github.io/-cgproc/" target="_blank" rel="noopener">CG e-proc dashboard →</a>
+                    </p>
+                </div>
+                <span class="source-pill gem">GeM Korba</span>
+            </div>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card"><div class="label">Total Bids</div><div class="value" id="stat-total">—</div></div>
+            <div class="stat-card highlight"><div class="label">New Today</div><div class="value" id="stat-new">—</div></div>
+            <div class="stat-card"><div class="label">Last Updated</div><div class="value" id="stat-updated">—</div></div>
+            <div class="stat-card shortlist"><div class="label">Shortlisted</div><div class="value" id="stat-shortlist">0</div></div>
+        </div>
+
+        <div class="tabs">
+            <button class="btn active" id="btn-all">All Bids</button>
+            <button class="btn" id="btn-new">New Today</button>
+            <button class="btn btn-shortlist-tab" id="btn-shortlist">Shortlist <span class="tab-count" id="shortlist-count">0</span></button>
+        </div>
+
+        <div class="sync-panel">
+            <div class="sync-copy">
+                <strong>Sync shortlist across devices</strong>
+                <span>Use the same sync code on phone, laptop, or tablet.</span>
+                <div class="sync-status" id="sync-status">Checking sync...</div>
+            </div>
+            <div class="sync-code-box"><input type="text" id="sync-code" placeholder="Sync code"></div>
+            <div class="sync-actions">
+                <button class="btn" id="btn-sync-connect" type="button">Connect</button>
+                <button class="btn" id="btn-sync-generate" type="button">Generate</button>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="search-box"><input type="text" id="search" placeholder="Search tender no, docs, address, description..."></div>
+            <button class="btn" id="btn-search">Search</button>
+            <button class="btn btn-run" id="btn-fetch" type="button">Fetch GeM Bids</button>
+        </div>
+
+        <p class="run-hint" id="run-hint">Seller documents and address are in the table. Click a <strong>tender number</strong> for PDF details.</p>
+        <div class="meta" id="result-meta"></div>
+        <div class="table-wrap" id="table-container"><div class="loading">Loading GeM data...</div></div>
+
+        <p class="footer">
+            Data source: <a href="https://bidplus.gem.gov.in/advance-search" target="_blank" rel="noopener">GeM BidPlus</a>
+            · Run <code>run_gem_and_push.ps1</code> locally or use Vercel proxy URL below
+        </p>
+    </div>
+
+    <div class="modal-backdrop" id="settings-modal" aria-hidden="true">
+        <div class="modal" role="dialog">
+            <div class="modal-header">
+                <h2>GeM API settings</h2>
+                <button class="btn" id="btn-close-settings" type="button">Close</button>
+            </div>
+            <div class="modal-body">
+                <p>Deploy this repo's <code>api/</code> folder on Vercel (Framework: Other, Root: repo root). Paste your proxy URL:</p>
+                <input type="url" id="gem-proxy-url" placeholder="https://your-app.vercel.app/api/gem/fetch" style="width:100%;margin:0.75rem 0;padding:0.65rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);">
+                <button class="btn btn-gem" id="btn-save-gem-proxy" type="button">Save API URL</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="gem-tender-modal" aria-hidden="true">
+        <div class="modal" role="dialog" style="width:min(640px,100%);">
+            <div class="modal-header">
+                <h2 id="gem-tender-modal-title">GeM Bid Details</h2>
+                <button class="btn" id="btn-close-gem-tender-modal" type="button">Close</button>
+            </div>
+            <div class="modal-body" id="gem-tender-modal-body"><div class="loading">Reading bid PDF...</div></div>
+        </div>
+    </div>
+
+    <script src="gem-config.js"></script>
+    <script src="gem-fetch.js"></script>
+    <script src="gem-detail.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="shortlist-sync.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

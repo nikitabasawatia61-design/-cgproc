@@ -554,13 +554,10 @@
                     <h1 id="header-title">Open Tenders Dashboard</h1>
                     <p class="subtitle" id="header-subtitle">
                         Automatically fetches new tenders daily from the CG government portal.
-                        Hosted free on GitHub Pages.
+                        Hosted free on GitHub Pages. GeM Korba bids live in the separate <code>gem-cg/</code> project.
                     </p>
                 </div>
-                <div class="header-actions">
-                    <span class="source-pill" id="source-pill">CG Portal</span>
-                    <button class="btn btn-gem" id="btn-open-gem-modal" type="button">GeM</button>
-                </div>
+                <span class="source-pill" id="source-pill">CG Portal</span>
             </div>
         </header>
 
@@ -636,64 +633,6 @@
         </p>
     </div>
 
-    <div class="modal-backdrop" id="gem-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-labelledby="gem-modal-title">
-            <div class="modal-header">
-                <h2 id="gem-modal-title">GeM BidPlus — Korba</h2>
-                <button class="btn" id="btn-close-gem-modal" type="button" aria-label="Close">Close</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-section">
-                    <strong>Switch data source</strong>
-                    <p>View CG e-procurement tenders or GeM bids filtered for Chhattisgarh / Korba.</p>
-                    <div class="modal-actions">
-                        <button class="btn" id="btn-switch-cg" type="button">Switch to CG Portal</button>
-                        <button class="btn btn-gem" id="btn-switch-gem" type="button">Switch to GeM</button>
-                    </div>
-                </div>
-                <div class="modal-section">
-                    <strong>Live GeM fetch</strong>
-                    <p>Click <strong>Fetch GeM Tenders</strong> to pull from the BidPlus API.</p>
-                    <p>Optional: deploy <code>gem-proxy</code> on Render and save the API URL below for instant live Fetch.</p>
-                    <p>Otherwise run <code>.\\run_gem_and_push.ps1</code> on your PC (GeM blocks GitHub cloud).</p>
-                    <input
-                        class="sync-code-box"
-                        type="text"
-                        id="gem-proxy-url"
-                        placeholder="https://your-app.onrender.com/api/gem/fetch"
-                        style="width:100%;margin-top:0.65rem;padding:0.7rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);"
-                    >
-                    <div class="modal-actions">
-                        <button class="btn btn-gem" id="btn-save-gem-proxy" type="button">Save API URL</button>
-                        <a
-                            class="btn"
-                            href="https://dashboard.render.com/select-repo?type=web"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Deploy on Render
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-backdrop" id="gem-tender-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-labelledby="gem-tender-modal-title" style="width:min(640px,100%);">
-            <div class="modal-header">
-                <h2 id="gem-tender-modal-title">GeM Bid Details</h2>
-                <button class="btn" id="btn-close-gem-tender-modal" type="button" aria-label="Close">Close</button>
-            </div>
-            <div class="modal-body" id="gem-tender-modal-body">
-                <div class="loading">Reading bid PDF...</div>
-            </div>
-        </div>
-    </div>
-
-    <script src="gem-config.js"></script>
-    <script src="gem-fetch.js"></script>
-    <script src="gem-detail.js"></script>
     <script src="firebase-config.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -703,11 +642,9 @@
         let stats = {};
         let filterMode = "all";
         let searchTerm = "";
-        let dataSource = localStorage.getItem("cgproc-source") || "cg";
         const today = new Date().toISOString().slice(0, 10);
 
         const CG_FETCH_URL = "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml";
-        const GEM_FETCH_URL = "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/fetch-gem.yml";
         let isFetching = false;
 
         const SOURCE_CONFIG = {
@@ -715,7 +652,7 @@
                 dataFile: "data/tenders.json",
                 eyebrow: "Chhattisgarh E-Procurement",
                 title: "Open Tenders Dashboard",
-                subtitle: "Automatically fetches new tenders daily from the CG government portal. Hosted free on GitHub Pages.",
+                subtitle: "Automatically fetches new tenders daily from the CG government portal. Hosted free on GitHub Pages. GeM Korba bids live in the separate <code>gem-cg/</code> project.",
                 pill: "CG Portal",
                 pillClass: "",
                 footerLink: "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do",
@@ -724,21 +661,7 @@
                 fetchLabel: "Fetch Tenders Now",
                 runHint: 'Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.',
                 emptyHint: "Try another search, or wait for the daily GitHub Action to fetch data.",
-            },
-            gem: {
-                dataFile: "data/gem-tenders.json",
-                eyebrow: "GeM BidPlus",
-                title: "Korba GeM Bids",
-                subtitle: "Open bids on Government e Marketplace filtered for Chhattisgarh / Korba. Click Fetch to pull live from the GeM API.",
-                pill: "GeM Korba",
-                pillClass: "gem",
-                footerLink: "https://bidplus.gem.gov.in/advance-search",
-                footerLabel: "GeM BidPlus Advance Search",
-                footerNote: "Live fetch from GeM BidPlus API",
-                fetchLabel: "Fetch GeM Tenders",
-                runHint: "Seller documents and address are shown in the table. Click a <strong>tender number</strong> for full PDF details.",
-                emptyHint: "No GeM bids yet. Run run_gem.py locally to load data.",
-            },
+            }
         };
 
         const els = {
@@ -762,104 +685,29 @@
             headerTitle: document.getElementById("header-title"),
             headerSubtitle: document.getElementById("header-subtitle"),
             sourcePill: document.getElementById("source-pill"),
-            btnOpenGemModal: document.getElementById("btn-open-gem-modal"),
-            gemModal: document.getElementById("gem-modal"),
-            btnCloseGemModal: document.getElementById("btn-close-gem-modal"),
-            btnSwitchCg: document.getElementById("btn-switch-cg"),
-            btnSwitchGem: document.getElementById("btn-switch-gem"),
-            gemProxyUrl: document.getElementById("gem-proxy-url"),
-            btnSaveGemProxy: document.getElementById("btn-save-gem-proxy"),
             footerLink: document.getElementById("footer-link"),
             footerNote: document.getElementById("footer-note"),
             btnFetch: document.getElementById("btn-fetch"),
             runHint: document.getElementById("run-hint"),
-            gemTenderModal: document.getElementById("gem-tender-modal"),
-            gemTenderModalBody: document.getElementById("gem-tender-modal-body"),
-            btnCloseGemTenderModal: document.getElementById("btn-close-gem-tender-modal"),
         };
 
-        function getSourceConfig() {
-            return SOURCE_CONFIG[dataSource] || SOURCE_CONFIG.cg;
-        }
+                const config = SOURCE_CONFIG.cg;
 
         function applySourceUi() {
-            const config = getSourceConfig();
             document.title = config.title;
             els.headerEyebrow.textContent = config.eyebrow;
             els.headerTitle.textContent = config.title;
             els.headerSubtitle.textContent = config.subtitle;
             els.sourcePill.textContent = config.pill;
-            els.sourcePill.className = `source-pill ${config.pillClass}`.trim();
             els.footerLink.href = config.footerLink;
             els.footerLink.textContent = config.footerLabel;
             els.footerNote.textContent = config.footerNote;
             els.btnFetch.textContent = config.fetchLabel;
             els.btnFetch.disabled = isFetching;
-            els.btnFetch.style.display = dataSource === "gem" ? "none" : "";
             els.runHint.innerHTML = config.runHint;
-            els.btnSwitchCg.classList.toggle("active", dataSource === "cg");
-            els.btnSwitchGem.classList.toggle("active", dataSource === "gem");
         }
 
-        function setDataSource(source) {
-            if (!SOURCE_CONFIG[source]) return;
-            dataSource = source;
-            localStorage.setItem("cgproc-source", source);
-            applySourceUi();
-            loadData();
-        }
-
-        function openGemModal() {
-            els.gemModal.classList.add("open");
-            els.gemModal.setAttribute("aria-hidden", "false");
-            els.gemProxyUrl.value = localStorage.getItem("cgproc-gem-proxy") || "";
-        }
-
-        function closeGemTenderModal() {
-            els.gemTenderModal.classList.remove("open");
-            els.gemTenderModal.setAttribute("aria-hidden", "true");
-        }
-
-        async function openGemTenderDetail(gemId, tenderNo) {
-            const tender = allTenders.find((item) => item.gem_id === gemId || item.tender_no === tenderNo);
-            if (!tender) return;
-
-            els.gemTenderModal.classList.add("open");
-            els.gemTenderModal.setAttribute("aria-hidden", "false");
-            document.getElementById("gem-tender-modal-title").textContent = tender.tender_no || "GeM Bid Details";
-            els.gemTenderModalBody.innerHTML = `<div class="loading">Reading bid PDF for ${escapeHtml(tender.tender_no)}...</div>`;
-
-            if (tender.documents_required_from_seller || tender.address) {
-                GemDetail.renderFields(els.gemTenderModalBody, tender);
-                return;
-            }
-
-            try {
-                const detail = await GemDetail.fetchLiveDetail(gemId);
-                if (detail) {
-                    Object.assign(tender, detail);
-                    GemDetail.renderFields(els.gemTenderModalBody, tender, detail);
-                    return;
-                }
-            } catch (error) {
-                // fall through to PDF-only view
-            }
-
-            GemDetail.renderFields(els.gemTenderModalBody, {
-                ...tender,
-                documents_required_from_seller: "Run: python run_gem.py --enrich-only",
-                address: tender.area_city || "—",
-                additional_requirement: "—",
-                pdf_url: GemDetail.pdfUrl(gemId),
-            });
-        }
-
-        function closeGemModal() {
-            els.gemModal.classList.remove("open");
-            els.gemModal.setAttribute("aria-hidden", "true");
-        }
-
-        function updateShortlistStats() {
+function updateShortlistStats() {
             const count = ShortlistSync.getAll().size;
             els.shortlistStat.textContent = count;
             els.shortlistCount.textContent = count;
@@ -959,10 +807,6 @@
                     t.department,
                     t.area_city,
                 ];
-                if (dataSource === "gem") {
-                    searchFields.push(t.documents_required_from_seller, t.address);
-                }
-
                 const matchesSearch = !searchTerm || searchFields.some(
                     (field) => (field || "").toLowerCase().includes(searchTerm)
                 );
@@ -985,10 +829,9 @@
             els.meta.textContent = meta;
 
             if (!tenders.length) {
-                const config = getSourceConfig();
                 const emptyMessage = filterMode === "shortlist"
                     ? "No shortlisted tenders yet. Click the star on any tender to add it here."
-                    : config.emptyHint;
+                    : "Try another search, or wait for the daily GitHub Action to fetch data.";
                 els.table.innerHTML = `
                     <div class="empty">
                         <strong>No tenders found</strong>
@@ -998,51 +841,7 @@
                 return;
             }
 
-            const isGemView = dataSource === "gem";
-
             const rows = tenders.map((t) => {
-                const starred = isShortlisted(t.tender_no);
-                const tenderLabel = escapeHtml(t.tender_no);
-                let tenderCell;
-                if (isGemView && t.gem_id) {
-                    tenderCell = `
-                        <button
-                            type="button"
-                            class="tender-link tender-link-btn gem-tender-open"
-                            data-gem-id="${escapeHtml(t.gem_id)}"
-                            data-tender-no="${escapeHtml(t.tender_no)}"
-                        >${tenderLabel}</button>`;
-                } else if (t.url) {
-                    tenderCell = `<a class="tender-link" href="${escapeHtml(t.url)}" target="_blank" rel="noopener">${tenderLabel}</a>`;
-                } else {
-                    tenderCell = `<span class="tender-no">${tenderLabel}</span>`;
-                }
-
-                if (isGemView) {
-                    return `
-                <tr>
-                    <td>
-                        <button
-                            class="btn-star ${starred ? "active" : ""}"
-                            type="button"
-                            data-tender-no="${escapeHtml(t.tender_no)}"
-                            title="${starred ? "Remove from shortlist" : "Add to shortlist"}"
-                            aria-label="${starred ? "Remove from shortlist" : "Add to shortlist"}"
-                        >${starred ? "★" : "☆"}</button>
-                    </td>
-                    <td>${tenderCell}</td>
-                    <td class="name-cell">${escapeHtml(t.name || "—")}</td>
-                    <td class="docs-cell">${escapeHtml(t.documents_required_from_seller || "—")}</td>
-                    <td class="address-cell">${escapeHtml(t.address || "—")}</td>
-                    <td>${escapeHtml(t.last_date || "—")}</td>
-                    <td>
-                        ${escapeHtml((t.first_seen_at || "").slice(0, 10) || "—")}
-                        ${(t.first_seen_at || "").startsWith(today) ? '<span class="badge-new">New</span>' : ""}
-                    </td>
-                </tr>
-            `;
-                }
-
                 return `
                 <tr>
                     <td>
@@ -1068,19 +867,7 @@
             `;
             }).join("");
 
-            const tableClass = isGemView ? "gem-table" : "";
-            const tableHead = isGemView
-                ? `
-                        <tr>
-                            <th></th>
-                            <th>Tender No</th>
-                            <th>Description</th>
-                            <th>Document Required from Seller</th>
-                            <th>Address</th>
-                            <th>Bid Due Date</th>
-                            <th>Added</th>
-                        </tr>`
-                : `
+            const tableHead = `
                         <tr>
                             <th></th>
                             <th>Tender No</th>
@@ -1093,7 +880,7 @@
                         </tr>`;
 
             els.table.innerHTML = `
-                <table class="${tableClass}">
+                <table>
                     <thead>${tableHead}</thead>
                     <tbody>${rows}</tbody>
                 </table>
@@ -1111,7 +898,7 @@
         function updateStats() {
             const savedTotal = stats.total ?? 0;
             const portalTotal = stats.portal_listing_total;
-            if (dataSource === "cg" && portalTotal && portalTotal > savedTotal) {
+            if (portalTotal && portalTotal > savedTotal) {
                 els.total.textContent = `${savedTotal} / ${portalTotal}`;
                 els.total.title = `${savedTotal} saved locally, ${portalTotal} live on CG portal`;
             } else {
@@ -1123,80 +910,13 @@
             updateShortlistStats();
         }
 
-        function applyGemPayload(payload) {
-            allTenders = payload.tenders || [];
-            stats = {
-                ...(payload.stats || {}),
-                total: getActiveTenders().length,
-                last_scraped: payload.fetched_at || payload.stats?.last_scraped,
-            };
-            updateStats();
-            renderTable();
-        }
-
-        async function runCloudGemFetch() {
-            els.meta.textContent = "GeM blocks GitHub cloud servers. Use local fetch or a Render proxy URL in the GeM modal.";
-            els.table.innerHTML = `
-                <div class="error">
-                    <strong>GeM API blocked from GitHub cloud</strong>
-                    <p>GeM BidPlus refuses connections from GitHub Actions (same as the CG portal).</p>
-                    <p><strong>On your PC, run:</strong></p>
-                    <p><code>python run_gem.py --export-json</code></p>
-                    <p>Or: <code>.\\run_gem_and_push.ps1</code></p>
-                    <p>For instant Fetch in the browser, deploy <code>gem-proxy</code> on Render and save the API URL in the GeM modal.</p>
-                </div>
-            `;
-            return false;
-        }
-
-        async function handleFetchClick() {
-            if (isFetching) return;
-
-            if (dataSource === "cg") {
-                window.open(CG_FETCH_URL, "_blank", "noopener");
-                return;
-            }
-
-            isFetching = true;
-            const previousLabel = els.btnFetch.textContent;
-            els.btnFetch.textContent = "Fetching from GeM API...";
-            els.btnFetch.disabled = true;
-            els.meta.textContent = "Calling GeM BidPlus API for all Korba bids...";
-
-            const proxyUrl = localStorage.getItem("cgproc-gem-proxy") || window.GEM_API?.proxyUrl || "";
-            if (proxyUrl) {
-                window.GEM_API = { ...(window.GEM_API || {}), proxyUrl };
-            }
-
-            try {
-                const payload = await GemFetch.pullLive(allTenders);
-                applyGemPayload(payload);
-                els.meta.textContent = `Fetched ${allTenders.length} GeM bids from BidPlus API just now.`;
-            } catch (error) {
-                const message = error?.message || "GeM API fetch failed";
-                const blocked = /failed to fetch|cors|networkerror|502|503|504/i.test(message);
-                if (blocked || !proxyUrl) {
-                    await runCloudGemFetch();
-                } else {
-                    els.table.innerHTML = `
-                        <div class="error">
-                            <strong>GeM API fetch failed</strong>
-                            <p>${escapeHtml(message)}</p>
-                        </div>
-                    `;
-                    els.meta.textContent = message;
-                }
-            } finally {
-                isFetching = false;
-                els.btnFetch.textContent = previousLabel;
-                applySourceUi();
-            }
+        function handleFetchClick() {
+            window.open(CG_FETCH_URL, "_blank", "noopener");
         }
 
         async function loadData() {
-            const config = getSourceConfig();
             try {
-                const response = await fetch(config.dataFile + "?" + Date.now());
+                const response = await fetch("data/tenders.json?" + Date.now());
                 if (!response.ok) throw new Error("Could not load tender data");
 
                 const payload = await response.json();
@@ -1218,52 +938,6 @@
         }
 
         els.btnFetch.addEventListener("click", handleFetchClick);
-
-        els.btnOpenGemModal.addEventListener("click", openGemModal);
-        els.btnCloseGemModal.addEventListener("click", closeGemModal);
-        els.gemModal.addEventListener("click", (event) => {
-            if (event.target === els.gemModal) closeGemModal();
-        });
-        els.btnSwitchCg.addEventListener("click", () => {
-            setDataSource("cg");
-            closeGemModal();
-        });
-        els.btnSwitchGem.addEventListener("click", () => {
-            setDataSource("gem");
-            closeGemModal();
-        });
-
-        els.btnSaveGemProxy.addEventListener("click", () => {
-            const url = els.gemProxyUrl.value.trim();
-            if (!url) {
-                localStorage.removeItem("cgproc-gem-proxy");
-                els.meta.textContent = "Cleared GeM API URL. Fetch will use GitHub cloud workflow.";
-                return;
-            }
-            localStorage.setItem("cgproc-gem-proxy", url);
-            window.GEM_API = { ...(window.GEM_API || {}), proxyUrl: url };
-            els.meta.textContent = "Saved GeM API URL. Click Fetch GeM Tenders to pull live data.";
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") closeGemModal();
-        });
-
-        els.table.addEventListener("click", (event) => {
-            const gemBtn = event.target.closest(".gem-tender-open");
-            if (gemBtn) {
-                openGemTenderDetail(gemBtn.dataset.gemId, gemBtn.dataset.tenderNo);
-                return;
-            }
-            const button = event.target.closest(".btn-star");
-            if (!button) return;
-            toggleShortlist(button.dataset.tenderNo);
-        });
-
-        els.btnCloseGemTenderModal.addEventListener("click", closeGemTenderModal);
-        els.gemTenderModal.addEventListener("click", (event) => {
-            if (event.target === els.gemTenderModal) closeGemTenderModal();
-        });
 
         els.btnSearch.addEventListener("click", () => {
             searchTerm = els.search.value.trim().toLowerCase();

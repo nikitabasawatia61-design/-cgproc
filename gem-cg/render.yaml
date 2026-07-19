@@ -1,8 +1,7 @@
 services:
   - type: web
-    name: cgproc-gem-proxy
+    name: gem-cg-proxy
     runtime: node
-    rootDir: gem-proxy
     buildCommand: npm install
     startCommand: npm start
     plan: free
