@@ -1,4 +1,0 @@
-# Block Python scraper files if parent repo is included in the build
-*.py
-**/*.py
-requirements*.txt

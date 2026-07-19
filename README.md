@@ -8,25 +8,21 @@ Free, automated tracker for Chhattisgarh government open tenders.
 
 ## Live site
 
-After deployment, your site will be at:
-
-```
-https://<your-github-username>.github.io/cgproc/
-```
+https://nikitabasawatia61-design.github.io/-cgproc/
 
 ## How it works
 
 ```mermaid
 flowchart LR
-    A[GitHub Actions daily cron] --> B[Selenium scraper]
+    A[run_local_and_push.ps1 on your PC] --> B[Selenium scraper]
     B --> C[CG e-procurement portal]
     B --> D[docs/data/tenders.json]
-    D --> E[GitHub Pages UI]
+    D --> E[GitHub Pages dashboard]
 ```
 
-1. GitHub Actions runs the scraper every day at 6:00 AM IST
-2. New tenders are saved to `docs/data/tenders.json`
-3. The static UI in `docs/index.html` reads that JSON and displays tenders
+1. Run `.\run_local_and_push.ps1` on your PC (recommended — portal works from India)
+2. Scraper saves tenders to `docs/data/tenders.json` and pushes to GitHub
+3. GitHub Pages deploys the dashboard automatically
 
 ## Deploy to GitHub (one-time setup)
 

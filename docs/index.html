@@ -402,98 +402,6 @@
             letter-spacing: 0.05em;
         }
 
-        .source-pill.gem {
-            border-color: rgba(251, 146, 60, 0.45);
-            color: #fdba74;
-            background: rgba(251, 146, 60, 0.1);
-        }
-
-        .btn-gem {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-            border-color: #ea580c;
-            color: white;
-            font-weight: 600;
-        }
-
-        .btn-gem:hover {
-            background: linear-gradient(135deg, #ea580c, #c2410c);
-        }
-
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(7, 12, 22, 0.72);
-            backdrop-filter: blur(4px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            z-index: 1000;
-        }
-
-        .modal-backdrop.open { display: flex; }
-
-        .modal {
-            width: min(520px, 100%);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-            overflow: hidden;
-        }
-
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.1rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .modal-header h2 {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .modal-body {
-            padding: 1.25rem;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .modal-section {
-            background: rgba(0, 0, 0, 0.16);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-        }
-
-        .modal-section p {
-            color: var(--muted);
-            font-size: 0.88rem;
-            margin-top: 0.35rem;
-        }
-
-        .modal-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.85rem;
-        }
-
-        .modal-code {
-            display: block;
-            margin-top: 0.65rem;
-            padding: 0.65rem 0.75rem;
-            border-radius: 8px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            color: #cbd5e1;
-            font-family: Consolas, "Courier New", monospace;
-            font-size: 0.82rem;
-            word-break: break-word;
-        }
-
         .tender-link {
             color: var(--accent);
             text-decoration: none;
@@ -541,7 +449,6 @@
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
             table { min-width: 920px; }
-            table.gem-table { min-width: 1480px; }
         }
     </style>
 </head>
@@ -553,10 +460,8 @@
                     <div class="eyebrow" id="header-eyebrow">Chhattisgarh E-Procurement</div>
                     <h1 id="header-title">Open Tenders Dashboard</h1>
                     <p class="subtitle" id="header-subtitle">
-                        Automatically fetches new tenders daily from the CG government portal.
-                        Hosted free on GitHub Pages.
-                        GeM Korba bids:
-                        <a href="https://nikitabasawatia61-design.github.io/gem-cg-korba/" target="_blank" rel="noopener">GeM dashboard →</a>
+                        Automatically fetches new tenders from the CG government portal.
+                        Run <code>run_local_and_push.ps1</code> on your PC to update.
                     </p>
                 </div>
                 <span class="source-pill" id="source-pill">CG Portal</span>
@@ -654,14 +559,14 @@
                 dataFile: "data/tenders.json",
                 eyebrow: "Chhattisgarh E-Procurement",
                 title: "Open Tenders Dashboard",
-                subtitle: "Automatically fetches new tenders daily from the CG government portal. Hosted free on GitHub Pages. GeM Korba bids live in the separate <code>gem-cg/</code> project.",
+                subtitle: "Automatically fetches new tenders from the CG government portal. Run run_local_and_push.ps1 on your PC to update the dashboard.",
                 pill: "CG Portal",
                 pillClass: "",
                 footerLink: "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do",
                 footerLabel: "CG E-Procurement Portal",
-                footerNote: "Updated daily by GitHub Actions",
+                footerNote: "Updated when you run run_local_and_push.ps1",
                 fetchLabel: "Fetch Tenders Now",
-                runHint: 'Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.',
+                runHint: 'On your PC run <strong>run_local_and_push.ps1</strong> to scrape CG e-proc and push to this dashboard. The button below opens GitHub Actions (often blocked from cloud).',
                 emptyHint: "Try another search, or wait for the daily GitHub Action to fetch data.",
             }
         };
