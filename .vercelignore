@@ -1,0 +1,14 @@
+run_daily.py
+run_gem.py
+run_local_and_push.ps1
+run_gem_and_push.ps1
+database.py
+scraper/
+web/
+scripts/
+docs/
+.venv/
+requirements-core.txt
+tenders.db
+*.xlsx
+gem-proxy/
