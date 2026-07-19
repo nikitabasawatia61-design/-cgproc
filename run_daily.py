@@ -59,7 +59,9 @@ def main():
         path = db.export_to_json()
         print(f"Exported data to {path}")
         stats = db.get_stats()
-        print(f"Active tenders in dashboard: {stats['total']}")
+        print(f"Open tenders in dashboard: {stats['total']}")
+        if stats.get("closed"):
+            print(f"Closed tenders in dashboard: {stats['closed']}")
 
     if result.get("error"):
         print(f"Scraper finished with error: {result['error']}")

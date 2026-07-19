@@ -85,7 +85,7 @@ def save_tender(data):
         conn.commit()
 
 
-def get_all_tenders(search=None, new_only=False, limit=500):
+def get_all_tenders(search=None, new_only=False, include_closed=True, limit=500):
     query = "SELECT * FROM tenders WHERE 1=1"
     params = []
 
@@ -106,6 +106,8 @@ def get_all_tenders(search=None, new_only=False, limit=500):
         rows = conn.execute(query, params).fetchall()
 
     tenders = [dict(row) for row in rows]
+    if include_closed:
+        return tenders
     return [t for t in tenders if not is_tender_closed(t.get("last_date"))]
 
 
@@ -123,6 +125,7 @@ def get_stats():
         rows = conn.execute("SELECT last_date, first_seen_at, last_updated_at FROM tenders").fetchall()
 
     active_rows = [row for row in rows if not is_tender_closed(row["last_date"])]
+    closed_rows = [row for row in rows if is_tender_closed(row["last_date"])]
     today = datetime.now().strftime("%Y-%m-%d")
     new_today = sum(
         1 for row in active_rows
@@ -135,23 +138,15 @@ def get_stats():
 
     return {
         "total": len(active_rows),
+        "closed": len(closed_rows),
         "new_today": new_today,
         "last_scraped": last_scraped,
     }
 
 
 def remove_closed_tenders():
-    """Delete tenders whose bid due date has passed."""
-    removed = 0
-    with get_connection() as conn:
-        rows = conn.execute("SELECT tender_no, last_date FROM tenders").fetchall()
-        for row in rows:
-            if not is_tender_closed(row["last_date"]):
-                continue
-            conn.execute("DELETE FROM tenders WHERE tender_no = ?", (row["tender_no"],))
-            removed += 1
-        conn.commit()
-    return removed
+    """Keep closed tenders in the database for the Closed tab."""
+    return 0
 
 
 def remove_tenders_not_on_portal(portal_numbers):
@@ -252,14 +247,14 @@ def import_tender_record(tender):
 
 
 def export_to_json(json_path=None):
-    """Export active tenders for GitHub Pages UI."""
+    """Export open and closed tenders for GitHub Pages UI."""
     path = Path(json_path or DATA_JSON)
     path.parent.mkdir(parents=True, exist_ok=True)
 
     payload = {
         "exported_at": datetime.now().isoformat(timespec="seconds"),
         "stats": get_stats(),
-        "tenders": get_all_tenders(limit=10000),
+        "tenders": get_all_tenders(limit=10000, include_closed=True),
     }
 
     with open(path, "w", encoding="utf-8") as f:

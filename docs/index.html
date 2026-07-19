@@ -18,6 +18,7 @@
             --new: #34d399;
             --new-bg: rgba(52, 211, 153, 0.12);
             --warn: #fbbf24;
+            --closed: #94a3b8;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -104,6 +105,13 @@
 
         .stat-card.shortlist .value { color: var(--warn); }
 
+        .stat-card.closed {
+            border-color: rgba(148, 163, 184, 0.35);
+            background: linear-gradient(180deg, rgba(148, 163, 184, 0.08), var(--surface));
+        }
+
+        .stat-card.closed .value { color: var(--closed); }
+
         .tabs {
             display: flex;
             flex-wrap: wrap;
@@ -171,6 +179,12 @@
         .btn-shortlist-tab.active {
             background: #d97706;
             border-color: #d97706;
+            color: white;
+        }
+
+        .btn-closed-tab.active {
+            background: #64748b;
+            border-color: #64748b;
             color: white;
         }
 
@@ -382,7 +396,7 @@
 
         <div class="stats">
             <div class="stat-card">
-                <div class="label">Total Tenders</div>
+                <div class="label">Open Tenders</div>
                 <div class="value" id="stat-total">—</div>
             </div>
             <div class="stat-card highlight">
@@ -397,14 +411,22 @@
                 <div class="label">Shortlisted</div>
                 <div class="value" id="stat-shortlist">0</div>
             </div>
+            <div class="stat-card closed">
+                <div class="label">Closed</div>
+                <div class="value" id="stat-closed">0</div>
+            </div>
         </div>
 
         <div class="tabs">
-            <button class="btn active" id="btn-all">All Tenders</button>
+            <button class="btn active" id="btn-all">Open Tenders</button>
             <button class="btn" id="btn-new">New Today</button>
             <button class="btn btn-shortlist-tab" id="btn-shortlist">
                 Shortlist
                 <span class="tab-count" id="shortlist-count">0</span>
+            </button>
+            <button class="btn btn-closed-tab" id="btn-closed">
+                Closed
+                <span class="tab-count" id="closed-count">0</span>
             </button>
         </div>
 
@@ -474,6 +496,8 @@
             updated: document.getElementById("stat-updated"),
             shortlistStat: document.getElementById("stat-shortlist"),
             shortlistCount: document.getElementById("shortlist-count"),
+            closedStat: document.getElementById("stat-closed"),
+            closedCount: document.getElementById("closed-count"),
             search: document.getElementById("search"),
             meta: document.getElementById("result-meta"),
             table: document.getElementById("table-container"),
@@ -481,6 +505,7 @@
             btnNew: document.getElementById("btn-new"),
             btnAll: document.getElementById("btn-all"),
             btnShortlist: document.getElementById("btn-shortlist"),
+            btnClosed: document.getElementById("btn-closed"),
             syncCode: document.getElementById("sync-code"),
             syncStatus: document.getElementById("sync-status"),
             btnSyncConnect: document.getElementById("btn-sync-connect"),
@@ -523,10 +548,11 @@
         }
 
         function setActiveTab(mode) {
-            [els.btnAll, els.btnNew, els.btnShortlist].forEach((btn) => btn.classList.remove("active"));
+            [els.btnAll, els.btnNew, els.btnShortlist, els.btnClosed].forEach((btn) => btn.classList.remove("active"));
             if (mode === "new") els.btnNew.classList.add("active");
             if (mode === "all") els.btnAll.classList.add("active");
             if (mode === "shortlist") els.btnShortlist.classList.add("active");
+            if (mode === "closed") els.btnClosed.classList.add("active");
         }
 
         function isTenderOpen(tender) {
@@ -570,6 +596,10 @@
             return allTenders.filter(isTenderOpen);
         }
 
+        function getClosedTenders() {
+            return allTenders.filter((tender) => !isTenderOpen(tender));
+        }
+
         function sortNewestFirst(tenders) {
             return [...tenders].sort((a, b) => {
                 const aSeen = a.first_seen_at || "";
@@ -580,7 +610,8 @@
         }
 
         function getFilteredTenders() {
-            const filtered = getActiveTenders().filter((t) => {
+            const pool = filterMode === "closed" ? getClosedTenders() : getActiveTenders();
+            const filtered = pool.filter((t) => {
                 const matchesSearch = !searchTerm || [
                     t.tender_no,
                     t.name,
@@ -602,12 +633,16 @@
             let meta = `${tenders.length} tender${tenders.length === 1 ? "" : "s"} shown`;
             if (filterMode === "shortlist") {
                 meta += " in shortlist";
+            } else if (filterMode === "closed") {
+                meta += " closed";
             }
             els.meta.textContent = meta;
 
             if (!tenders.length) {
                 const emptyMessage = filterMode === "shortlist"
                     ? "No shortlisted tenders yet. Click the star on any tender to add it here."
+                    : filterMode === "closed"
+                    ? "No closed tenders yet. Tenders move here after their bid due date passes."
                     : "Try another search, or wait for the daily GitHub Action to fetch data.";
                 els.table.innerHTML = `
                     <div class="empty">
@@ -673,7 +708,11 @@
         }
 
         function updateStats() {
-            els.total.textContent = stats.total ?? 0;
+            const openCount = getActiveTenders().length;
+            const closedCount = getClosedTenders().length;
+            els.total.textContent = openCount;
+            els.closedStat.textContent = closedCount;
+            els.closedCount.textContent = closedCount;
             els.newToday.textContent = stats.new_today ?? 0;
             els.updated.textContent = formatDateTime(stats.last_scraped || null);
             updateShortlistStats();
@@ -686,10 +725,7 @@
 
                 const payload = await response.json();
                 allTenders = payload.tenders || [];
-                stats = {
-                    ...(payload.stats || {}),
-                    total: getActiveTenders().length,
-                };
+                stats = payload.stats || {};
                 updateStats();
                 renderTable();
             } catch (error) {
@@ -737,6 +773,12 @@
         els.btnShortlist.addEventListener("click", () => {
             filterMode = "shortlist";
             setActiveTab("shortlist");
+            renderTable();
+        });
+
+        els.btnClosed.addEventListener("click", () => {
+            filterMode = "closed";
+            setActiveTab("closed");
             renderTable();
         });
 
