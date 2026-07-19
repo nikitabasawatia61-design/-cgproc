@@ -1,0 +1,320 @@
+=== EMPTY GEM/2026/B/7797105 9618149 ===
+consignee receipt-cum-acceptance certificate
+(CRAC) 
+and on-line submission of bills (This is in
+supersession of 10 days time as provided in clause 12 of
+GeM GTC)
+मूTयांकन
+मूTयांकन
+ 
+ 
+पXित
+पXित
+/Evaluation Method
+Total value wise evaluation
+व[ीय
+व[ीय
+ 
+ 
+द'तावेज
+द'तावेज
+ 
+ 
+क
+क
+ 
+ 
+आवPयकता
+आवPयकता
+ 
+ 
+है
+है
+ / Financial
+Document Required
+Yes
+म\य'थता
+म\य'थता
+ 
+खंड
+खंड
+/Arbitration Clause
+No
+सुलह
+सुलह
+ 
+खंड
+खंड
+/Mediation Clause
+No
+बड
+बड
+ 
+ 
+ववरण
+ववरण
+/
+/
+Bid
+ 
+ 
+Details
+ईएमड
+ईएमड
+ 
+ 
+ववरण
+ववरण
+/EMD Detail
+2 / 7
+एडवाईजर
+ 
+बLक
+/Advisory Bank
+ICICI
+ईएमड
+ 
+रािश
+/EMD Amount
+50000
+ईपीबीजी
+ईपीबीजी
+ 
+ 
+ववरण
+ववरण
+ 
+ 
+/ePBG Detail
+एडवाइजर
+ 
+बLक
+/Advisory Bank
+ICICI
+ईपीबीजी
+ 
+5ितशत
+ (%)
+/ePBG Percentage(%)
+5.00
+ईपीबीजी
+ 
+क
+ 
+आवPयक
+ 
+अविध
+ (
+माह
+) 
+/Duration of ePBG
+required (Months).
+27
+(a). 
+जेम
+ 
+क
+ 
+शत8
+ 
+के
+ 
+अनुसार
+ 
+ईएमड
+ 
+छूट
+ 
+के
+ 
+इ_छुक
+ 
+बडर
+ 
+को
+ 
+संबंिधत
+ 
+केटेगर
+ 
+blocks: []
+
+=== EMPTY2 GEM/2026/B/7795441 9616306 ===
+Consignees/Reporting Officer and Quantity
+5.सं.
+5.सं.
+/S.N
+o.
+परेषती
+परेषती
+/
+/
+Pरपो;ट`ग
+Pरपो;ट`ग
+अिधकार
+अिधकार
+ 
+ 
+/Consignee
+Reporting/Officer
+पता
+पता
+/Address
+संसाधन9
+संसाधन9
+ 
+क
+क
+ 
+मा ा
+मा ा
+/ Quantity
+अितPरZ
+अितPरZ
+ 
+आवJयकता
+आवJयकता
+/Additional
+Requirement
+1
+Kameshwar Kumar
+Rao
+495677,SECL CWS KORBA
+1
+N/A
+5ेता
+5ेता
+ 
+ 
+:ारा
+:ारा
+ 
+ 
+जोड़
+जोड़
+ 
+ 
+गई
+गई
+ 
+ 
+बड
+बड
+ 
+ 
+क
+क
+ 
+ 
+वशेष
+वशेष
+ 
+ 
+शतc
+शतc
+/Buyer Added Bid Specific Terms and Conditions
+1
+. 
+Generic
+OPTION CLAUSE 25% : The buyer can increase or decrease the contract quantity or contract duration up
+to 25 percent at the time of issue of the contract. However, once the contract is issued, the contract
+quantity or contract duration can only be increased up to 25 percent. Bidders are bound to accept the
+revised quantity or duration.
+For lumpsum-based service contracts, the buyer may increase the scope of work and contr
+blocks: []
+
+=== FILLED GEM/2026/B/7801304 9622895 ===
+Consignees/Reporting Officer and Quantity
+5.सं.
+5.सं.
+/S.N
+o.
+परेषती
+परेषती
+/
+/
+Pरपो;टgग
+Pरपो;टgग
+अिधकार
+अिधकार
+ 
+ 
+/Consignee
+Reporting/Officer
+पता
+पता
+/Address
+Quantity
+अितPरc
+अितPरc
+ 
+आवJयकता
+आवJयकता
+/Additional
+Requirement
+1
+Ajay Kumar Singh
+495452,SECL GEVRA AREA
+(GST- 22AADCS2066E9ZL)
+Project /
+Lumpsum
+Based
+N/A
+5ेता
+5ेता
+ 
+ 
+:ारा
+:ारा
+ 
+ 
+जोड़
+जोड़
+ 
+ 
+गई
+गई
+ 
+ 
+बड
+बड
+ 
+ 
+क
+क
+ 
+ 
+वशेष
+वशेष
+ 
+ 
+शतj
+शतj
+/Buyer Added Bid Specific Terms and Conditions
+1
+. 
+Buyer Added Bid Specific ATC
+Buyer Added text based ATC clauses
+4 / 7
+Checklist of the documents to be submitted in this tender:
+1
+Permanent Account 
+Nu
+mber,
+(Ref. Clause No.8(A) of 
+NIT)
+Upload 
+“PAN” against “Additional Doc 1 (Requested in ATC
+)” section available under 
+‘Documents required from seller
+’.
+2
+GST Status of the 
+Bidd
+er
+(Ref. Clause 8 (B) of NI
+T)
+Upload 
+“GST Certiﬁcate” against “Additional Doc 2 (Reque
+s
+blocks: [{'consignee': 'Ajay Kumar Singh', 'address': '495452,SECL GEVRA AREA (GST- 22AADCS2066E9ZL)', 'additional_requirement': 'N/A'}]
