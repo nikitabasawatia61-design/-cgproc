@@ -346,15 +346,6 @@
 
         .name-cell { max-width: 340px; }
 
-        .docs-cell, .address-cell {
-            max-width: 280px;
-            font-size: 0.84rem;
-            line-height: 1.4;
-            word-break: break-word;
-        }
-
-        .address-cell { max-width: 240px; }
-
         .empty, .loading, .error {
             text-align: center;
             padding: 3.5rem 1rem;
@@ -372,80 +363,6 @@
 
         .footer a { color: var(--accent); }
 
-        .header-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .header-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .source-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.35rem 0.7rem;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--muted);
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .tender-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .tender-link:hover { text-decoration: underline; }
-
-        .tender-link-btn {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            font: inherit;
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.85rem;
-        }
-
-        .detail-item.full { grid-column: 1 / -1; }
-
-        .detail-label {
-            color: var(--muted);
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.25rem;
-        }
-
-        .detail-value {
-            font-size: 0.92rem;
-            line-height: 1.45;
-            word-break: break-word;
-        }
-
-        .detail-actions {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
         @media (max-width: 768px) {
             .table-wrap { overflow-x: auto; }
             table { min-width: 920px; }
@@ -455,17 +372,12 @@
 <body>
     <div class="container">
         <header>
-            <div class="header-row">
-                <div>
-                    <div class="eyebrow" id="header-eyebrow">Chhattisgarh E-Procurement</div>
-                    <h1 id="header-title">Open Tenders Dashboard</h1>
-                    <p class="subtitle" id="header-subtitle">
-                        Automatically fetches new tenders from the CG government portal.
-                        Run <code>run_local_and_push.ps1</code> on your PC to update.
-                    </p>
-                </div>
-                <span class="source-pill" id="source-pill">CG Portal</span>
-            </div>
+            <div class="eyebrow">Chhattisgarh E-Procurement</div>
+            <h1>Open Tenders Dashboard</h1>
+            <p class="subtitle">
+                Automatically fetches new tenders daily from the CG government portal.
+                Hosted free on GitHub Pages.
+            </p>
         </header>
 
         <div class="stats">
@@ -516,12 +428,17 @@
                 <input type="text" id="search" placeholder="Search tender no, city, description, department...">
             </div>
             <button class="btn" id="btn-search">Search</button>
-            <button class="btn btn-run" id="btn-fetch" type="button">
+            <a
+                class="btn btn-run"
+                href="https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml"
+                target="_blank"
+                rel="noopener"
+            >
                 Fetch Tenders Now
-            </button>
+            </a>
         </div>
 
-        <p class="run-hint" id="run-hint">
+        <p class="run-hint">
             Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.
         </p>
 
@@ -531,12 +448,12 @@
             <div class="loading">Loading tender data...</div>
         </div>
 
-        <p class="footer" id="footer-source">
+        <p class="footer">
             Data source:
-            <a id="footer-link" href="https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do" target="_blank" rel="noopener">
+            <a href="https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do" target="_blank" rel="noopener">
                 CG E-Procurement Portal
             </a>
-            · <span id="footer-note">Updated daily by GitHub Actions</span>
+            · Updated daily by GitHub Actions
         </p>
     </div>
 
@@ -550,26 +467,6 @@
         let filterMode = "all";
         let searchTerm = "";
         const today = new Date().toISOString().slice(0, 10);
-
-        const CG_FETCH_URL = "https://github.com/nikitabasawatia61-design/-cgproc/actions/workflows/daily-scrape.yml";
-        let isFetching = false;
-
-        const SOURCE_CONFIG = {
-            cg: {
-                dataFile: "data/tenders.json",
-                eyebrow: "Chhattisgarh E-Procurement",
-                title: "Open Tenders Dashboard",
-                subtitle: "Automatically fetches new tenders from the CG government portal. Run run_local_and_push.ps1 on your PC to update the dashboard.",
-                pill: "CG Portal",
-                pillClass: "",
-                footerLink: "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do",
-                footerLabel: "CG E-Procurement Portal",
-                footerNote: "Updated when you run run_local_and_push.ps1",
-                fetchLabel: "Fetch Tenders Now",
-                runHint: 'On your PC run <strong>run_local_and_push.ps1</strong> to scrape CG e-proc and push to this dashboard. The button below opens GitHub Actions (often blocked from cloud).',
-                emptyHint: "Try another search, or wait for the daily GitHub Action to fetch data.",
-            }
-        };
 
         const els = {
             total: document.getElementById("stat-total"),
@@ -588,33 +485,9 @@
             syncStatus: document.getElementById("sync-status"),
             btnSyncConnect: document.getElementById("btn-sync-connect"),
             btnSyncGenerate: document.getElementById("btn-sync-generate"),
-            headerEyebrow: document.getElementById("header-eyebrow"),
-            headerTitle: document.getElementById("header-title"),
-            headerSubtitle: document.getElementById("header-subtitle"),
-            sourcePill: document.getElementById("source-pill"),
-            footerLink: document.getElementById("footer-link"),
-            footerNote: document.getElementById("footer-note"),
-            btnFetch: document.getElementById("btn-fetch"),
-            runHint: document.getElementById("run-hint"),
         };
 
-                const config = SOURCE_CONFIG.cg;
-
-        function applySourceUi() {
-            document.title = config.title;
-            els.headerEyebrow.textContent = config.eyebrow;
-            els.headerTitle.textContent = config.title;
-            els.headerSubtitle.textContent = config.subtitle;
-            els.sourcePill.textContent = config.pill;
-            els.footerLink.href = config.footerLink;
-            els.footerLink.textContent = config.footerLabel;
-            els.footerNote.textContent = config.footerNote;
-            els.btnFetch.textContent = config.fetchLabel;
-            els.btnFetch.disabled = isFetching;
-            els.runHint.innerHTML = config.runHint;
-        }
-
-function updateShortlistStats() {
+        function updateShortlistStats() {
             const count = ShortlistSync.getAll().size;
             els.shortlistStat.textContent = count;
             els.shortlistCount.textContent = count;
@@ -664,7 +537,7 @@ function updateShortlistStats() {
 
         function parseLastDate(value) {
             if (!value) return null;
-            const cleaned = String(value).replace(/\s+IST$/i, "").replace(/\s+/g, " ").trim();
+            const cleaned = String(value).replace(/\s+/g, " ").trim();
             const match = cleaned.match(
                 /^(\d{1,2})\s+([A-Za-z]{3}),?\s+(\d{4})\s+(\d{1,2}):(\d{2}):(\d{2})\s+(AM|PM)/i
             );
@@ -708,15 +581,12 @@ function updateShortlistStats() {
 
         function getFilteredTenders() {
             const filtered = getActiveTenders().filter((t) => {
-                const searchFields = [
+                const matchesSearch = !searchTerm || [
                     t.tender_no,
                     t.name,
                     t.department,
                     t.area_city,
-                ];
-                const matchesSearch = !searchTerm || searchFields.some(
-                    (field) => (field || "").toLowerCase().includes(searchTerm)
-                );
+                ].some((field) => (field || "").toLowerCase().includes(searchTerm));
 
                 const matchesNew = filterMode !== "new" || (t.first_seen_at || "").startsWith(today);
                 const matchesShortlist = filterMode !== "shortlist" || isShortlisted(t.tender_no);
@@ -749,6 +619,7 @@ function updateShortlistStats() {
             }
 
             const rows = tenders.map((t) => {
+                const starred = isShortlisted(t.tender_no);
                 return `
                 <tr>
                     <td>
@@ -760,7 +631,7 @@ function updateShortlistStats() {
                             aria-label="${starred ? "Remove from shortlist" : "Add to shortlist"}"
                         >${starred ? "★" : "☆"}</button>
                     </td>
-                    <td>${tenderCell}</td>
+                    <td><span class="tender-no">${escapeHtml(t.tender_no)}</span></td>
                     <td>${escapeHtml(t.area_city || "—")}</td>
                     <td class="name-cell">${escapeHtml(t.name || "—")}</td>
                     <td>${escapeHtml(t.department || "—")}</td>
@@ -774,7 +645,9 @@ function updateShortlistStats() {
             `;
             }).join("");
 
-            const tableHead = `
+            els.table.innerHTML = `
+                <table>
+                    <thead>
                         <tr>
                             <th></th>
                             <th>Tender No</th>
@@ -784,11 +657,8 @@ function updateShortlistStats() {
                             <th>Amount</th>
                             <th>Bid Due Date</th>
                             <th>Added</th>
-                        </tr>`;
-
-            els.table.innerHTML = `
-                <table>
-                    <thead>${tableHead}</thead>
+                        </tr>
+                    </thead>
                     <tbody>${rows}</tbody>
                 </table>
             `;
@@ -803,22 +673,10 @@ function updateShortlistStats() {
         }
 
         function updateStats() {
-            const savedTotal = stats.total ?? 0;
-            const portalTotal = stats.portal_listing_total;
-            if (portalTotal && portalTotal > savedTotal) {
-                els.total.textContent = `${savedTotal} / ${portalTotal}`;
-                els.total.title = `${savedTotal} saved locally, ${portalTotal} live on CG portal`;
-            } else {
-                els.total.textContent = savedTotal;
-                els.total.title = "";
-            }
+            els.total.textContent = stats.total ?? 0;
             els.newToday.textContent = stats.new_today ?? 0;
             els.updated.textContent = formatDateTime(stats.last_scraped || null);
             updateShortlistStats();
-        }
-
-        function handleFetchClick() {
-            window.open(CG_FETCH_URL, "_blank", "noopener");
         }
 
         async function loadData() {
@@ -844,7 +702,11 @@ function updateShortlistStats() {
             }
         }
 
-        els.btnFetch.addEventListener("click", handleFetchClick);
+        els.table.addEventListener("click", (event) => {
+            const button = event.target.closest(".btn-star");
+            if (!button) return;
+            toggleShortlist(button.dataset.tenderNo);
+        });
 
         els.btnSearch.addEventListener("click", () => {
             searchTerm = els.search.value.trim().toLowerCase();
@@ -900,7 +762,6 @@ function updateShortlistStats() {
 
         ShortlistSync.init();
         updateSyncStatus();
-        applySourceUi();
         loadData();
     </script>
 </body>
