@@ -1,5 +1,7 @@
-run_daily.py
-run_gem.py
+# Python scraper (not deployed to Vercel — GeM proxy is Node only)
+*.py
+**/*.py
+requirements*.txt
 run_local_and_push.ps1
 run_gem_and_push.ps1
 database.py
@@ -8,7 +10,9 @@ web/
 scripts/
 docs/
 .venv/
-requirements-core.txt
 tenders.db
 *.xlsx
 gem-proxy/
+.github/
+render.yaml
+README.md
