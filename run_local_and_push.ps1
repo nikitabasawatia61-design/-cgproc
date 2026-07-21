@@ -23,6 +23,18 @@ if (-not $status) {
 
 git add docs/data/tenders.json
 git commit -m "chore: update tender data from local scraper"
-git push
+Write-Host "Syncing with GitHub before push..."
+git fetch origin main
+$behind = git rev-list --count HEAD..origin/main
+if ([int]$behind -gt 0) {
+    Write-Host "Remote has $behind new commit(s). Pulling with rebase..."
+    git pull --rebase origin main
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "PUSH BLOCKED: merge conflict. Resolve, then push again."
+        exit 1
+    }
+}
+
+git push origin main
 
 Write-Host "Done. Dashboard will update after GitHub Pages refreshes."

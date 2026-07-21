@@ -11,3 +11,4 @@ logs/
 Thumbs.db
 chromedriver*
 .wdm/
+.scraper_listing_checkpoint.json

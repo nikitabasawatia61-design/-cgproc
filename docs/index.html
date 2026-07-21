@@ -398,6 +398,7 @@
             <div class="stat-card">
                 <div class="label">Open Tenders</div>
                 <div class="value" id="stat-total">—</div>
+                <div class="label" id="stat-portal-note" style="margin-top:0.45rem;font-size:0.72rem;text-transform:none;letter-spacing:0;"></div>
             </div>
             <div class="stat-card highlight">
                 <div class="label">New Today</div>
@@ -492,6 +493,7 @@
 
         const els = {
             total: document.getElementById("stat-total"),
+            portalNote: document.getElementById("stat-portal-note"),
             newToday: document.getElementById("stat-new"),
             updated: document.getElementById("stat-updated"),
             shortlistStat: document.getElementById("stat-shortlist"),
@@ -710,7 +712,18 @@
         function updateStats() {
             const openCount = getActiveTenders().length;
             const closedCount = getClosedTenders().length;
-            els.total.textContent = openCount;
+            const portalTotal = stats.portal_listing_total;
+            const missingOnPortal = stats.missing_on_portal;
+
+            els.total.textContent = portalTotal ? `${openCount} / ${portalTotal}` : openCount;
+            if (portalTotal) {
+                const scanNote = stats.listing_scan_completed === false
+                    ? "Portal scan incomplete — re-run local scraper"
+                    : `${missingOnPortal || 0} live portal tenders not saved yet`;
+                els.portalNote.textContent = scanNote;
+            } else {
+                els.portalNote.textContent = "";
+            }
             els.closedStat.textContent = closedCount;
             els.closedCount.textContent = closedCount;
             els.newToday.textContent = stats.new_today ?? 0;
