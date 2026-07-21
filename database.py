@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 from scraper.location import extract_area_city
-from scraper.dates import is_tender_closed, parse_last_date
+from scraper.dates import IST, is_tender_closed, parse_last_date
 
 DB_PATH = Path(__file__).parent / "tenders.db"
 DATA_JSON = Path(__file__).parent / "docs" / "data" / "tenders.json"
@@ -51,7 +51,7 @@ def get_existing_tender_numbers():
 
 
 def save_tender(data):
-    now = datetime.now().isoformat(timespec="seconds")
+    now = datetime.now(IST).replace(tzinfo=None).isoformat(timespec="seconds")
     area_city = data.get("area_city") or extract_area_city(
         name=data.get("name", ""),
         department=data.get("department", ""),
@@ -95,7 +95,7 @@ def get_all_tenders(search=None, new_only=False, include_closed=True, limit=500)
         params.extend([term, term, term, term])
 
     if new_only:
-        today = datetime.now().strftime("%Y-%m-%d")
+        today = datetime.now(IST).strftime("%Y-%m-%d")
         query += " AND first_seen_at LIKE ?"
         params.append(f"{today}%")
 
@@ -126,10 +126,10 @@ def get_stats():
 
     active_rows = [row for row in rows if not is_tender_closed(row["last_date"])]
     closed_rows = [row for row in rows if is_tender_closed(row["last_date"])]
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now(IST).strftime("%Y-%m-%d")
     new_today = sum(
         1 for row in active_rows
-        if (row["first_seen_at"] or "").startswith(today)
+        if (row["first_seen_at"] or "")[:10] == today
     )
     last_scraped = max(
         (row["last_updated_at"] for row in active_rows if row["last_updated_at"]),

@@ -489,7 +489,14 @@
         let stats = {};
         let filterMode = "all";
         let searchTerm = "";
-        const today = new Date().toISOString().slice(0, 10);
+
+        function getTodayIST() {
+            return new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" });
+        }
+
+        function isFirstSeenToday(tender) {
+            return (tender.first_seen_at || "").slice(0, 10) === getTodayIST();
+        }
 
         const els = {
             total: document.getElementById("stat-total"),
@@ -621,7 +628,7 @@
                     t.area_city,
                 ].some((field) => (field || "").toLowerCase().includes(searchTerm));
 
-                const matchesNew = filterMode !== "new" || (t.first_seen_at || "").startsWith(today);
+                const matchesNew = filterMode !== "new" || isFirstSeenToday(t);
                 const matchesShortlist = filterMode !== "shortlist" || isShortlisted(t.tender_no);
                 return matchesSearch && matchesNew && matchesShortlist;
             });
@@ -676,7 +683,7 @@
                     <td>${escapeHtml(t.last_date || "—")}</td>
                     <td>
                         ${escapeHtml((t.first_seen_at || "").slice(0, 10) || "—")}
-                        ${(t.first_seen_at || "").startsWith(today) ? '<span class="badge-new">New</span>' : ""}
+                        ${isFirstSeenToday(t) ? '<span class="badge-new">New</span>' : ""}
                     </td>
                 </tr>
             `;
@@ -726,7 +733,7 @@
             }
             els.closedStat.textContent = closedCount;
             els.closedCount.textContent = closedCount;
-            els.newToday.textContent = stats.new_today ?? 0;
+            els.newToday.textContent = getActiveTenders().filter(isFirstSeenToday).length;
             els.updated.textContent = formatDateTime(stats.last_scraped || null);
             updateShortlistStats();
         }
