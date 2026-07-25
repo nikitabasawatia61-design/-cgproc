@@ -10,6 +10,17 @@ if (-not (Test-Path $PythonExe)) {
 }
 
 Write-Host "Running local scraper..."
+
+if (Test-Path ".git/rebase-merge") {
+    Write-Host "WARNING: Stuck git rebase detected. Aborting it so push can proceed..."
+    git rebase --abort
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Could not abort rebase. Run: git rebase --abort"
+        exit 1
+    }
+    git checkout main 2>$null
+}
+
 & $PythonExe run_daily.py --headless --import-json --export-json
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Scraper finished with errors. Continuing to push if data changed."

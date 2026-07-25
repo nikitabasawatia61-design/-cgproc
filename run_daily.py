@@ -29,8 +29,12 @@ def main():
     db.init_db()
 
     if args.import_json:
-        count = db.import_from_json()
-        print(f"Imported {count} tenders from JSON")
+        try:
+            count = db.import_from_json()
+            print(f"Imported {count} tenders from JSON")
+        except ValueError as error:
+            print(f"ERROR: {error}")
+            sys.exit(1)
 
     if args.import_excel and EXCEL_FILE.exists():
         count = db.import_from_excel(EXCEL_FILE)

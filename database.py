@@ -186,8 +186,17 @@ def import_from_json(json_path=None):
     if not path.exists():
         return 0
 
-    with open(path, encoding="utf-8") as f:
-        payload = json.load(f)
+    try:
+        with open(path, encoding="utf-8") as f:
+            payload = json.load(f)
+    except json.JSONDecodeError as error:
+        text = path.read_text(encoding="utf-8")
+        if "<<<<<<<" in text or "=======" in text or ">>>>>>>" in text:
+            raise ValueError(
+                f"{path} has unresolved git merge conflict markers. "
+                "Fix the file or restore it from git before running the scraper."
+            ) from error
+        raise
 
     imported = 0
     for tender in payload.get("tenders", []):
