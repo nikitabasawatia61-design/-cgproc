@@ -20,7 +20,7 @@ if (-not (Test-Path $LogDir)) {
 $TaskName = "CGProcDailyTenderFetch"
 $Action = New-ScheduledTaskAction `
     -Execute $PythonExe `
-    -Argument "`"$Script`" --headless" `
+    -Argument "`"$Script`" --headless --import-json --export-json" `
     -WorkingDirectory $ProjectDir
 
 $Trigger = New-ScheduledTaskTrigger -Daily -At "6:00AM"
@@ -41,7 +41,7 @@ Register-ScheduledTask `
 Write-Host ""
 Write-Host "Scheduled task '$TaskName' created."
 Write-Host "  Runs daily at 6:00 AM"
-Write-Host "  Command: $PythonExe `"$Script`" --headless"
+Write-Host "  Command: $PythonExe `"$Script`" --headless --import-json --export-json"
 Write-Host ""
 Write-Host "To run manually now:"
 Write-Host "  Start-ScheduledTask -TaskName '$TaskName'"

@@ -1,14 +1,15 @@
 """
 Daily tender fetch script.
 
-Run manually:
-    python run_daily.py
+Manual scrape (visible browser — recommended):
+    python run_daily.py --import-json --export-json
 
-Run headless (for scheduled tasks):
-    python run_daily.py --headless
+Scheduled / background:
+    python run_daily.py --headless --import-json --export-json
 """
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -18,9 +19,18 @@ from scraper.runner import run_scraper
 EXCEL_FILE = Path(__file__).parent / "tender_results.xlsx"
 
 
+def write_export_stats(path, result):
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    payload["stats"]["portal_listing_total"] = result.get("portal_total", 0)
+    payload["stats"]["missing_on_portal"] = result.get("missing_after_scan", 0)
+    payload["stats"]["listing_scan_completed"] = result.get("scan_completed", False)
+    payload["stats"]["open_saved"] = result.get("open_saved", payload["stats"].get("total", 0))
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fetch new tenders from CG e-procurement")
-    parser.add_argument("--headless", action="store_true", help="Run browser in headless mode")
+    parser.add_argument("--headless", action="store_true", help="Run browser headless (for scheduled tasks)")
     parser.add_argument("--import-excel", action="store_true", help="Import existing Excel data first")
     parser.add_argument("--import-json", action="store_true", help="Import existing JSON data first")
     parser.add_argument("--export-json", action="store_true", help="Export results to docs/data/tenders.json")
@@ -40,21 +50,18 @@ def main():
         count = db.import_from_excel(EXCEL_FILE)
         print(f"Imported {count} tenders from {EXCEL_FILE}")
 
-    print("Starting daily tender fetch...")
+    print("Starting tender fetch...")
     try:
         result = run_scraper(headless=args.headless)
     except Exception as error:
         print(f"Scraper crashed: {error}")
-        from scraper.checkpoint import load_listing_checkpoint
-
-        checkpoint_numbers, _, checkpoint_done = load_listing_checkpoint()
-        saved_count = len(db.get_existing_tender_numbers())
         result = {
             "new": 0,
             "skipped": 0,
-            "portal_total": len(checkpoint_numbers),
-            "scan_completed": checkpoint_done,
-            "missing_after_scan": max(len(checkpoint_numbers) - saved_count, 0),
+            "portal_total": 0,
+            "scan_completed": False,
+            "missing_after_scan": 0,
+            "open_saved": db.get_stats()["total"],
             "error": str(error),
         }
 
@@ -64,33 +71,17 @@ def main():
             print(f"Refreshed area/city for {updated} tenders")
         path = db.export_to_json()
         if result.get("portal_total"):
-            import json
-
-            payload = json.loads(path.read_text(encoding="utf-8"))
-            payload["stats"]["portal_listing_total"] = result["portal_total"]
-            payload["stats"]["missing_on_portal"] = result.get("missing_after_scan", 0)
-            payload["stats"]["listing_scan_completed"] = result.get("scan_completed", False)
-            path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+            write_export_stats(path, result)
         print(f"Exported data to {path}")
-        stats = db.get_stats()
-        print(f"Open tenders in dashboard: {stats['total']}")
-        if stats.get("closed"):
-            print(f"Closed tenders in dashboard: {stats['closed']}")
-        if result.get("portal_total"):
-            print(f"Portal listing total: {result['portal_total']}")
-            print(f"Still missing from portal: {result.get('missing_after_scan', 0)}")
 
     if result.get("error"):
         print(f"Scraper finished with error: {result['error']}")
-        if result.get("portal_total") or args.export_json:
-            print("Partial progress was saved. Re-run the same command to resume.")
-            sys.exit(0 if args.export_json else 1)
-        sys.exit(1)
+        sys.exit(1 if not args.export_json else 0)
 
     print(
-        f"Done. {result['new']} new tenders added. "
-        f"Portal listing: {result.get('portal_total', 0)}. "
-        f"Still missing: {result.get('missing_after_scan', 0)}."
+        f"Done. Open saved: {result.get('open_saved', 0)}. "
+        f"On portal: {result.get('portal_total', 0)}. "
+        f"Still to fetch: {result.get('missing_after_scan', 0)}."
     )
 
 

@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium import webdriver
@@ -10,27 +11,43 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 from scraper.auth import authenticate
-from scraper.checkpoint import (
-    clear_listing_checkpoint,
-    load_listing_checkpoint,
-    save_listing_checkpoint,
-)
 from scraper.listing import get_tender_list
 from scraper.detail import scrape_tender_details
 import database as db
 
 URL = "https://eproc.cgstate.gov.in/CHEPS/business/getOpenRfqListAction.do"
-PAGE_RETRIES = 3
+PAGE_RETRIES = 5
 MAX_PAGES = 250
 
 
+def page_sleep(page_no):
+    if page_no <= 10:
+        return 5
+    if page_no <= 20:
+        return 8
+    return 10
+
+
 def wait_for_listing(driver, page_no=1):
-    timeout = 45 if page_no <= 15 else 75
+    timeout = 60 if page_no <= 10 else 90
     WebDriverWait(driver, timeout).until(
         EC.presence_of_element_located(
             (By.XPATH, "//a[contains(@href,'viewRfq')]")
         )
     )
+
+
+def try_submit_page(driver, page_no):
+    sleep_seconds = page_sleep(page_no)
+    try:
+        driver.execute_script(f"submitPage({page_no});")
+        time.sleep(sleep_seconds)
+        wait_for_listing(driver, page_no)
+        print(f"Ready on Page {page_no}")
+        return True
+    except Exception as error:
+        print(f"submitPage({page_no}) failed: {error}")
+        return False
 
 
 def go_to_page(driver, page_no):
@@ -41,21 +58,29 @@ def go_to_page(driver, page_no):
         print("Ready on Page 1")
         return True
 
-    sleep_seconds = 5 if page_no <= 15 else 8
-    for attempt in range(1, PAGE_RETRIES + 1):
-        try:
-            driver.execute_script(f"submitPage({page_no});")
-            time.sleep(sleep_seconds)
-            wait_for_listing(driver, page_no)
-            print(f"Ready on Page {page_no}")
+    if try_submit_page(driver, page_no):
+        return True
+
+    if page_no > 5:
+        milestones = [step for step in (5, 10, 15, 20, 25, 30, 35, 40) if step < page_no]
+        milestones.append(page_no)
+        print(f"Trying stepped navigation via pages: {milestones}")
+        for step in milestones:
+            if not try_submit_page(driver, step):
+                break
+        else:
             return True
-        except Exception as error:
-            print(
-                f"Page {page_no} navigation failed "
-                f"(attempt {attempt}/{PAGE_RETRIES}): {error}"
-            )
-            time.sleep(5)
-    return False
+
+    print(f"Trying sequential navigation to page {page_no}...")
+    try:
+        wait_for_listing(driver, 1)
+    except Exception:
+        return False
+
+    for step in range(2, page_no + 1):
+        if not try_submit_page(driver, step):
+            return False
+    return True
 
 
 def recover_to_page(driver, page_no):
@@ -71,25 +96,10 @@ def recover_to_page(driver, page_no):
             print("Recovery authentication failed")
             return False
 
-        wait_for_listing(driver, page_no)
+        wait_for_listing(driver, 1)
 
-        if page_no > 1:
-            print(f"Going back to Page {page_no} after recovery")
-            sleep_seconds = 5 if page_no <= 15 else 8
-            for attempt in range(1, PAGE_RETRIES + 1):
-                try:
-                    driver.execute_script(f"submitPage({page_no});")
-                    time.sleep(sleep_seconds)
-                    wait_for_listing(driver, page_no)
-                    break
-                except Exception as error:
-                    print(
-                        f"Recovery page {page_no} failed "
-                        f"(attempt {attempt}/{PAGE_RETRIES}): {error}"
-                    )
-                    if attempt == PAGE_RETRIES:
-                        return False
-                    time.sleep(8)
+        if page_no > 1 and not go_to_page(driver, page_no):
+            return False
 
         print(f"Recovered to Page {page_no}")
         return True
@@ -171,33 +181,25 @@ def open_listing_page(driver, page_no):
     return False
 
 
-def collect_portal_listings(driver, start_page=1, resume=True):
-    """Phase 1: walk listing pages and collect tender numbers only."""
-    checkpoint_numbers, checkpoint_page, checkpoint_done = load_listing_checkpoint()
-    portal_numbers = set(checkpoint_numbers)
-    scan_completed = checkpoint_done
-
+def collect_portal_listings(driver, start_page=1):
+    """Phase 1: walk every listing page from page 1 and collect tender numbers."""
+    portal_numbers = set()
+    scan_completed = False
     page_no = start_page
-    if resume and start_page == 1 and not checkpoint_done and checkpoint_numbers:
-        page_no = checkpoint_page + 1
-        print(
-            f"Resuming listing scan from page {page_no} "
-            f"({len(portal_numbers)} tenders loaded from checkpoint)"
-        )
+
+    print("Listing scan always starts from page 1 (no resume jumps).")
 
     while page_no <= MAX_PAGES:
         print(f"\n========== LISTING PAGE {page_no} ==========")
 
         if not open_listing_page(driver, page_no):
             print(f"Listing scan stopped at page {page_no} after retries.")
-            save_listing_checkpoint(portal_numbers, max(page_no - 1, 1), False)
             break
 
         try:
             tenders = get_tender_list(driver)
         except Exception as error:
             print(f"Could not read tender list on page {page_no}: {error}")
-            save_listing_checkpoint(portal_numbers, max(page_no - 1, 1), False)
             break
 
         total = len(tenders)
@@ -209,19 +211,12 @@ def collect_portal_listings(driver, start_page=1, resume=True):
         if total == 0:
             scan_completed = True
             print("Reached end of portal listing.")
-            clear_listing_checkpoint()
             break
 
         for tender in tenders:
             portal_numbers.add(str(tender["number"]).strip())
 
-        save_listing_checkpoint(portal_numbers, page_no, False)
         page_no += 1
-
-    if scan_completed:
-        clear_listing_checkpoint()
-    elif portal_numbers:
-        save_listing_checkpoint(portal_numbers, max(page_no - 1, start_page), False)
 
     return portal_numbers, scan_completed
 
@@ -301,18 +296,23 @@ def scrape_new_tenders_on_page(driver, wait, page_no, existing_tenders):
     return new_count, skipped_count
 
 
-def run_scraper(start_page=1, headless=False, full_scan=True, resume=True):
+def run_scraper(start_page=1, headless=False, full_scan=True):
     """
     Scrape tenders from the CG e-procurement portal.
 
-    Phase 1 collects every tender number from listing pages (fast).
-    Phase 2 opens detail pages only for tenders missing from the database.
-    Nothing is deleted from the database.
+    Phase 1: listing pages 1..N (fast, collect tender numbers).
+    Phase 2: open details only for tenders missing from the database.
+    Nothing is ever deleted from the database.
     """
     db.init_db()
     existing_tenders = db.get_existing_tender_numbers()
 
     print(f"Already saved tenders: {len(existing_tenders)}")
+
+    checkpoint_file = Path(__file__).resolve().parent.parent / ".scraper_listing_checkpoint.json"
+    if checkpoint_file.exists():
+        checkpoint_file.unlink()
+        print("Removed old checkpoint file (simple mode: always scan from page 1).")
 
     driver = create_driver(headless=headless)
     wait = WebDriverWait(driver, 45)
@@ -326,43 +326,18 @@ def run_scraper(start_page=1, headless=False, full_scan=True, resume=True):
     try:
         if not open_url(driver, URL):
             print("Could not open portal")
-            return {
-                "new": 0,
-                "skipped": 0,
-                "portal_total": 0,
-                "scan_completed": False,
-                "missing_after_scan": 0,
-                "error": "portal timeout",
-            }
+            return _summary(0, 0, set(), False, existing_tenders, "portal timeout")
 
         time.sleep(3)
 
         if not authenticate(driver):
             print("Login/authentication failed")
-            return {
-                "new": 0,
-                "skipped": 0,
-                "portal_total": 0,
-                "scan_completed": False,
-                "missing_after_scan": 0,
-                "error": "authentication failed",
-            }
+            return _summary(0, 0, set(), False, existing_tenders, "authentication failed")
 
         wait_for_listing(driver)
 
         print("\n========== PHASE 1: LISTING SCAN ==========")
-        try:
-            portal_numbers, scan_completed = collect_portal_listings(
-                driver,
-                start_page=start_page,
-                resume=resume,
-            )
-        except Exception as error:
-            print(f"Listing scan error: {error}")
-            run_error = str(error)
-            checkpoint_numbers, _, checkpoint_done = load_listing_checkpoint()
-            portal_numbers = checkpoint_numbers or portal_numbers
-            scan_completed = checkpoint_done
+        portal_numbers, scan_completed = collect_portal_listings(driver, start_page=start_page)
 
         missing_on_portal = portal_numbers - existing_tenders
         print(f"Portal listing total: {len(portal_numbers)}")
@@ -412,33 +387,46 @@ def run_scraper(start_page=1, headless=False, full_scan=True, resume=True):
     except Exception as error:
         print(f"Scraper error: {error}")
         run_error = str(error)
-        checkpoint_numbers, _, checkpoint_done = load_listing_checkpoint()
-        if checkpoint_numbers:
-            portal_numbers = checkpoint_numbers
-            scan_completed = checkpoint_done
     finally:
         driver.quit()
 
+    return _summary(
+        new_count,
+        skipped_count,
+        portal_numbers,
+        scan_completed,
+        existing_tenders,
+        run_error,
+    )
+
+
+def _summary(new_count, skipped_count, portal_numbers, scan_completed, existing_tenders, run_error):
     saved_count = len(db.get_existing_tender_numbers())
     still_missing = len(portal_numbers - db.get_existing_tender_numbers()) if portal_numbers else 0
+    open_count = db.get_stats()["total"]
 
-    print("Keeping all saved tenders. Open/closed tabs use bid due date only.")
+    print("\nKeeping all saved tenders. Open/closed tabs use bid due date only.")
+    print("\n========== FINAL SUMMARY ==========")
+    print(f"Open saved: {open_count}")
+    print(f"On portal: {len(portal_numbers)}")
+    print(f"Still to fetch: {still_missing}")
+    print(f"Listing scan completed: {scan_completed}")
+    print(f"New tenders scraped this run: {new_count}")
+    print(f"Skipped existing tenders: {skipped_count}")
+    print(f"Total in database: {saved_count}")
+    if run_error:
+        print(f"Run finished with errors: {run_error}")
+    if still_missing and not scan_completed:
+        print("Tip: re-run .\\run_scrape.ps1 to continue fetching missing tenders.")
+    elif not still_missing and scan_completed:
+        print("Ready to publish. Run: .\\run_push.ps1")
 
-    summary = {
+    return {
         "new": new_count,
         "skipped": skipped_count,
         "portal_total": len(portal_numbers),
         "scan_completed": scan_completed,
         "missing_after_scan": still_missing,
+        "open_saved": open_count,
         "error": run_error,
     }
-    print("\n========== FINAL SUMMARY ==========")
-    print(f"Portal listing total: {summary['portal_total']}")
-    print(f"Listing scan completed: {scan_completed}")
-    print(f"Saved in database: {saved_count}")
-    print(f"New tenders scraped: {new_count}")
-    print(f"Skipped existing tenders: {skipped_count}")
-    print(f"Still missing from portal listing: {still_missing}")
-    if run_error:
-        print(f"Run finished with errors: {run_error}")
-    return summary

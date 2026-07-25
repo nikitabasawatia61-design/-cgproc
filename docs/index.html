@@ -392,13 +392,21 @@
                 Automatically fetches new tenders daily from the CG government portal.
                 Hosted free on GitHub Pages.
             </p>
+            <p class="subtitle" id="stat-summary" style="margin-top:0.75rem;color:var(--text);font-size:0.95rem;"></p>
         </header>
 
         <div class="stats">
             <div class="stat-card">
-                <div class="label">Open Tenders</div>
+                <div class="label">Open (saved)</div>
                 <div class="value" id="stat-total">—</div>
-                <div class="label" id="stat-portal-note" style="margin-top:0.45rem;font-size:0.72rem;text-transform:none;letter-spacing:0;"></div>
+            </div>
+            <div class="stat-card">
+                <div class="label">On Portal</div>
+                <div class="value" id="stat-portal">—</div>
+            </div>
+            <div class="stat-card highlight">
+                <div class="label">Still to Fetch</div>
+                <div class="value" id="stat-missing">—</div>
             </div>
             <div class="stat-card highlight">
                 <div class="label">New Today</div>
@@ -462,7 +470,8 @@
         </div>
 
         <p class="run-hint">
-            Manual fetch opens GitHub Actions. Click <strong>Run workflow</strong> → <strong>Run workflow</strong> to start scraping.
+            Update data on your PC: run <strong>run_scrape.ps1</strong>, then <strong>run_push.ps1</strong>.
+            GitHub Actions often fails from US servers — local scrape from India is recommended.
         </p>
 
         <div class="meta" id="result-meta"></div>
@@ -500,7 +509,9 @@
 
         const els = {
             total: document.getElementById("stat-total"),
-            portalNote: document.getElementById("stat-portal-note"),
+            portal: document.getElementById("stat-portal"),
+            missing: document.getElementById("stat-missing"),
+            summary: document.getElementById("stat-summary"),
             newToday: document.getElementById("stat-new"),
             updated: document.getElementById("stat-updated"),
             shortlistStat: document.getElementById("stat-shortlist"),
@@ -720,17 +731,14 @@
             const openCount = getActiveTenders().length;
             const closedCount = getClosedTenders().length;
             const portalTotal = stats.portal_listing_total;
-            const missingOnPortal = stats.missing_on_portal;
+            const stillToFetch = stats.missing_on_portal ?? 0;
 
-            els.total.textContent = portalTotal ? `${openCount} / ${portalTotal}` : openCount;
-            if (portalTotal) {
-                const scanNote = stats.listing_scan_completed === false
-                    ? "Portal scan incomplete — re-run local scraper"
-                    : `${missingOnPortal || 0} live portal tenders not saved yet`;
-                els.portalNote.textContent = scanNote;
-            } else {
-                els.portalNote.textContent = "";
-            }
+            els.total.textContent = openCount;
+            els.portal.textContent = portalTotal ?? "—";
+            els.missing.textContent = portalTotal != null ? stillToFetch : "—";
+            els.summary.textContent = portalTotal != null
+                ? `Open: ${openCount} | On portal: ${portalTotal} | Still to fetch: ${stillToFetch}`
+                : `Open: ${openCount} | Closed: ${closedCount} (see Closed tab)`;
             els.closedStat.textContent = closedCount;
             els.closedCount.textContent = closedCount;
             els.newToday.textContent = getActiveTenders().filter(isFirstSeenToday).length;
