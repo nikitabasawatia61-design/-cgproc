@@ -34,6 +34,11 @@ def main():
     parser.add_argument("--import-excel", action="store_true", help="Import existing Excel data first")
     parser.add_argument("--import-json", action="store_true", help="Import existing JSON data first")
     parser.add_argument("--export-json", action="store_true", help="Export results to docs/data/tenders.json")
+    parser.add_argument(
+        "--full-scan",
+        action="store_true",
+        help="Scan every listing page (slow). Default: stop at first page with no new tenders.",
+    )
     args = parser.parse_args()
 
     db.init_db()
@@ -52,7 +57,7 @@ def main():
 
     print("Starting tender fetch...")
     try:
-        result = run_scraper(headless=args.headless)
+        result = run_scraper(headless=args.headless, full_scan=args.full_scan)
     except Exception as error:
         print(f"Scraper crashed: {error}")
         result = {
