@@ -401,7 +401,7 @@
                 <div class="value" id="stat-total">—</div>
             </div>
             <div class="stat-card">
-                <div class="label">On Portal</div>
+                <div class="label">New This Run</div>
                 <div class="value" id="stat-portal">—</div>
             </div>
             <div class="stat-card highlight">
@@ -581,6 +581,10 @@
             return parsed.getTime() >= Date.now();
         }
 
+        function isTenderClosed(tender) {
+            return !isTenderOpen(tender);
+        }
+
         function parseLastDate(value) {
             if (!value) return null;
             const cleaned = String(value).replace(/\s+/g, " ").trim();
@@ -617,7 +621,7 @@
         }
 
         function getClosedTenders() {
-            return allTenders.filter((tender) => !isTenderOpen(tender));
+            return allTenders.filter(isTenderClosed);
         }
 
         function sortNewestFirst(tenders) {
@@ -730,15 +734,17 @@
         function updateStats() {
             const openCount = getActiveTenders().length;
             const closedCount = getClosedTenders().length;
-            const portalTotal = stats.portal_listing_total;
+            const newThisRun = stats.portal_listing_total;
             const stillToFetch = stats.missing_on_portal ?? 0;
 
             els.total.textContent = openCount;
-            els.portal.textContent = portalTotal ?? "—";
-            els.missing.textContent = portalTotal != null ? stillToFetch : "—";
-            els.summary.textContent = portalTotal != null
-                ? `Open: ${openCount} | On portal: ${portalTotal} | Still to fetch: ${stillToFetch}`
-                : `Open: ${openCount} | Closed: ${closedCount} (see Closed tab)`;
+            els.portal.textContent = newThisRun ?? "—";
+            els.missing.textContent = newThisRun != null ? stillToFetch : "—";
+            els.summary.textContent =
+                `Open: ${openCount} | Closed: ${closedCount} (auto by bid due date) | ` +
+                (newThisRun != null
+                    ? `New this run: ${newThisRun} | Still to fetch: ${stillToFetch}`
+                    : "All saved tenders shown — closed tab uses bid due date");
             els.closedStat.textContent = closedCount;
             els.closedCount.textContent = closedCount;
             els.newToday.textContent = getActiveTenders().filter(isFirstSeenToday).length;

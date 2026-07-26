@@ -49,7 +49,6 @@ def try_submit_page(driver, page_no):
 
 
 def go_to_page(driver, page_no):
-    """Jump to a page after recovery — may use stepped navigation."""
     print(f"Going to Page {page_no}")
 
     if page_no == 1:
@@ -73,7 +72,6 @@ def go_to_page(driver, page_no):
 
 
 def advance_to_next_page(driver, page_no):
-    """Move forward one listing page. New tenders appear on page 1, 2, 3..."""
     if page_no == 1:
         wait_for_listing(driver, 1)
         print("Ready on Page 1")
@@ -105,7 +103,6 @@ def recover_to_page(driver, page_no):
 
 
 def return_to_same_page(driver, page_no):
-    """Return to the listing after opening a tender detail — stay on the same page."""
     print(f"Returning to listing on page {page_no}")
 
     try:
@@ -165,111 +162,54 @@ def create_driver(headless=False):
     )
 
 
-def scrape_new_tenders_on_page(driver, wait, page_no, existing_tenders):
-    """Open detail pages only for tenders missing from the database."""
-    new_count = 0
-    skipped_count = 0
+def open_listing_page(driver, page_no):
+    for attempt in range(1, PAGE_RETRIES + 1):
+        if page_no == 1:
+            if advance_to_next_page(driver, 1):
+                return True
+        elif go_to_page(driver, page_no):
+            return True
 
-    tenders = get_tender_list(driver)
-    total = len(tenders)
-    index = 0
+        print(f"Retrying page {page_no} after recovery (attempt {attempt}/{PAGE_RETRIES})...")
+        if recover_to_page(driver, page_no):
+            return True
+        time.sleep(10)
 
-    while index < total:
-        try:
-            tenders = get_tender_list(driver, silent=True)
-
-            if index >= len(tenders):
-                print("Tender list changed. Moving to next page.")
-                break
-
-            tender = tenders[index]
-            tender_no = str(tender["number"]).strip()
-
-            if tender_no in existing_tenders:
-                skipped_count += 1
-                index += 1
-                continue
-
-            print(f"\nOpening Tender {index + 1}/{total} on Page {page_no}: {tender_no}")
-
-            link = wait.until(
-                EC.element_to_be_clickable(
-                    (By.XPATH, f"//a[normalize-space()='{tender_no}']")
-                )
-            )
-
-            driver.execute_script(
-                "arguments[0].scrollIntoView({block:'center'});",
-                link,
-            )
-            driver.execute_script("arguments[0].click();", link)
-            time.sleep(3)
-
-            details = scrape_tender_details(driver)
-
-            required_data = {
-                "tender_no": details.get("tender_no", tender_no),
-                "name": details.get("name", ""),
-                "department": details.get("department", ""),
-                "amount": details.get("amount", ""),
-                "last_date": details.get("last_date", ""),
-                "area_city": details.get("area_city", ""),
-            }
-
-            print(required_data)
-            db.save_tender(required_data)
-
-            existing_tenders.add(tender_no)
-            new_count += 1
-            print(f"Saved tender: {tender_no}")
-
-            if not return_to_same_page(driver, page_no):
-                if not recover_to_page(driver, page_no):
-                    print("Could not recover while scraping details.")
-                    break
-
-            index += 1
-
-        except Exception as error:
-            print(f"Error while scraping tender at index {index + 1}: {error}")
-            if not recover_to_page(driver, page_no):
-                print("Could not recover while scraping details.")
-                break
-            continue
-
-    return new_count, skipped_count
+    return False
 
 
-def scrape_listing_pages(driver, wait, existing_tenders, full_scan=False):
+def collect_new_tender_ids(driver, existing_tenders, full_scan=False):
     """
-    Walk listing pages forward from page 1 only.
+    Phase 1 — ID scan only (no detail pages).
 
-    Daily mode (default): stop when a page has no new tenders — new ones
-    are always on the first pages of the portal.
-
-    Full scan: walk every page until the listing is empty.
+    Daily flow:
+      Page 1 → read IDs top to bottom
+      If an ID is not in DB, queue it as new
+      If zero matches on the whole page → go to page 2 and repeat
+      Stop at the first ID that already exists in DB
     """
-    portal_numbers = set()
-    scan_completed = False
-    new_count = 0
-    skipped_count = 0
+    new_by_page = {}
     page_no = 1
+    scan_completed = False
+    total_new_ids = 0
 
-    mode_label = "FULL SCAN (all pages)" if full_scan else "DAILY (pages 1, 2, 3... until no new tenders)"
-    print(f"Scan mode: {mode_label}")
+    print(
+        "\n========== PHASE 1: ID SCAN =========="
+        "\nPage 1 → match IDs → if no match on page, page 2 → "
+        "stop at first existing tender ID."
+    )
 
     while page_no <= MAX_PAGES:
-        print(f"\n========== PAGE {page_no} ==========")
+        print(f"\n========== ID SCAN PAGE {page_no} ==========")
 
         if page_no == 1:
             if not advance_to_next_page(driver, page_no):
                 print("Could not load page 1.")
                 break
-        else:
-            if not advance_to_next_page(driver, page_no):
-                print(f"Could not go forward to page {page_no}.")
-                if not recover_to_page(driver, page_no):
-                    break
+        elif not advance_to_next_page(driver, page_no):
+            print(f"Could not go forward to page {page_no}.")
+            if not recover_to_page(driver, page_no):
+                break
 
         try:
             tenders = get_tender_list(driver)
@@ -282,42 +222,118 @@ def scrape_listing_pages(driver, wait, existing_tenders, full_scan=False):
             print("Reached end of portal listing.")
             break
 
+        page_new = []
+        hit_existing = False
+
         for tender in tenders:
-            portal_numbers.add(str(tender["number"]).strip())
+            tender_no = str(tender["number"]).strip()
+            if not tender_no:
+                continue
 
-        page_new, page_skipped = scrape_new_tenders_on_page(
-            driver,
-            wait,
-            page_no,
-            existing_tenders,
-        )
-        new_count += page_new
-        skipped_count += page_skipped
+            if full_scan:
+                if tender_no not in existing_tenders:
+                    page_new.append(tender_no)
+                continue
 
-        print(
-            f"Page {page_no}: {page_new} new, {page_skipped} already saved, "
-            f"{len(portal_numbers)} portal IDs collected so far"
-        )
+            if tender_no in existing_tenders:
+                print(f"Found existing tender {tender_no} — stopping ID scan.")
+                hit_existing = True
+                break
 
-        if not full_scan and page_new == 0:
-            print(
-                "No new tenders on this page. "
-                "Stopping here — new portal tenders appear on page 1, 2, 3..."
-            )
+            page_new.append(tender_no)
+
+        if page_new:
+            new_by_page[page_no] = page_new
+            total_new_ids += len(page_new)
+            print(f"Page {page_no}: {len(page_new)} new ID(s) queued")
+
+        if full_scan:
+            page_no += 1
+            continue
+
+        if hit_existing:
             break
 
+        print(f"Page {page_no}: zero matches — all IDs are new. Moving to page {page_no + 1}.")
         page_no += 1
 
-    return portal_numbers, scan_completed, new_count, skipped_count
+    print(f"\nID scan done. {total_new_ids} new tender ID(s) to fetch.")
+    return new_by_page, scan_completed, total_new_ids
 
 
-def run_scraper(start_page=1, headless=False, full_scan=False):
+def scrape_tender_detail(driver, wait, page_no, tender_no, existing_tenders):
+    print(f"\nFetching details: {tender_no} (page {page_no})")
+
+    link = wait.until(
+        EC.element_to_be_clickable(
+            (By.XPATH, f"//a[normalize-space()='{tender_no}']")
+        )
+    )
+
+    driver.execute_script(
+        "arguments[0].scrollIntoView({block:'center'});",
+        link,
+    )
+    driver.execute_script("arguments[0].click();", link)
+    time.sleep(3)
+
+    details = scrape_tender_details(driver)
+
+    required_data = {
+        "tender_no": details.get("tender_no", tender_no),
+        "name": details.get("name", ""),
+        "department": details.get("department", ""),
+        "amount": details.get("amount", ""),
+        "last_date": details.get("last_date", ""),
+        "area_city": details.get("area_city", ""),
+    }
+
+    print(required_data)
+    db.save_tender(required_data)
+    existing_tenders.add(tender_no)
+    print(f"Saved tender: {tender_no}")
+
+    if not return_to_same_page(driver, page_no):
+        if not recover_to_page(driver, page_no):
+            raise RuntimeError(f"Could not return to page {page_no} after saving {tender_no}")
+
+
+def fetch_new_tender_details(driver, wait, new_by_page, existing_tenders):
+    """Phase 2 — open detail pages only for queued new IDs."""
+    new_count = 0
+
+    if not new_by_page:
+        print("\nNo new tender IDs to fetch.")
+        return 0
+
+    print("\n========== PHASE 2: FETCH DETAILS ==========")
+
+    for page_no in sorted(new_by_page.keys()):
+        print(f"\n========== DETAIL PAGE {page_no} ==========")
+
+        if not open_listing_page(driver, page_no):
+            print(f"Could not open page {page_no} for detail fetch.")
+            break
+
+        for tender_no in new_by_page[page_no]:
+            try:
+                scrape_tender_detail(driver, wait, page_no, tender_no, existing_tenders)
+                new_count += 1
+            except Exception as error:
+                print(f"Error fetching {tender_no}: {error}")
+                if not recover_to_page(driver, page_no):
+                    print("Could not recover during detail fetch.")
+                    return new_count
+
+    return new_count
+
+
+def run_scraper(headless=False, full_scan=False):
     """
-    Scrape tenders from the CG e-procurement portal.
-
-    Default daily run: pages 1, 2, 3... forward until a page has no new tenders.
-    Full scan (--full-scan): every listing page until empty.
-    Nothing is ever deleted from the database.
+    Daily flow:
+      1. Scan listing IDs from page 1 forward until first existing tender ID
+      2. Fetch details for all new IDs only
+      3. Export everything — UI splits open vs closed by bid due date
     """
     db.init_db()
     existing_tenders = db.get_existing_tender_numbers()
@@ -330,29 +346,34 @@ def run_scraper(start_page=1, headless=False, full_scan=False):
 
     driver = create_driver(headless=headless)
     wait = WebDriverWait(driver, 45)
-
-    portal_numbers = set()
+    run_error = None
+    new_by_page = {}
     scan_completed = False
     new_count = 0
-    skipped_count = 0
-    run_error = None
+    total_new_ids = 0
 
     try:
         if not open_url(driver, URL):
             print("Could not open portal")
-            return _summary(0, 0, set(), False, "portal timeout")
+            return _summary(0, 0, 0, False, "portal timeout")
 
         time.sleep(3)
 
         if not authenticate(driver):
             print("Login/authentication failed")
-            return _summary(0, 0, set(), False, "authentication failed")
+            return _summary(0, 0, 0, False, "authentication failed")
 
-        portal_numbers, scan_completed, new_count, skipped_count = scrape_listing_pages(
+        new_by_page, scan_completed, total_new_ids = collect_new_tender_ids(
             driver,
-            wait,
             existing_tenders,
             full_scan=full_scan,
+        )
+
+        new_count = fetch_new_tender_details(
+            driver,
+            wait,
+            new_by_page,
+            existing_tenders,
         )
 
     except Exception as error:
@@ -361,39 +382,30 @@ def run_scraper(start_page=1, headless=False, full_scan=False):
     finally:
         driver.quit()
 
-    return _summary(
-        new_count,
-        skipped_count,
-        portal_numbers,
-        scan_completed,
-        run_error,
-    )
+    still_missing = max(total_new_ids - new_count, 0)
+    return _summary(new_count, total_new_ids, still_missing, scan_completed, run_error)
 
 
-def _summary(new_count, skipped_count, portal_numbers, scan_completed, run_error):
+def _summary(new_count, queued_ids, still_missing, scan_completed, run_error):
     saved_count = len(db.get_existing_tender_numbers())
-    still_missing = len(portal_numbers - db.get_existing_tender_numbers()) if portal_numbers else 0
     open_count = db.get_stats()["total"]
 
-    print("\nKeeping all saved tenders. Open/closed tabs use bid due date only.")
+    print("\nNothing deleted from database. Open/closed split is handled on the dashboard by bid due date.")
     print("\n========== FINAL SUMMARY ==========")
-    print(f"Open saved: {open_count}")
-    print(f"On portal (this run): {len(portal_numbers)}")
+    print(f"New IDs found: {queued_ids}")
+    print(f"Details saved this run: {new_count}")
     print(f"Still to fetch: {still_missing}")
-    print(f"Listing scan completed: {scan_completed}")
-    print(f"New tenders scraped this run: {new_count}")
-    print(f"Skipped existing tenders: {skipped_count}")
+    print(f"Open saved (DB): {open_count}")
     print(f"Total in database: {saved_count}")
+    print(f"ID scan completed: {scan_completed}")
     if run_error:
         print(f"Run finished with errors: {run_error}")
-    elif still_missing and not scan_completed:
-        print("Tip: run .\\run_scrape.ps1 -FullScan once to fetch older missing tenders.")
-    print("Run .\\run_push.ps1 when ready to update the website.")
+    print("Run .\\run_push.ps1 to update the website.")
 
     return {
         "new": new_count,
-        "skipped": skipped_count,
-        "portal_total": len(portal_numbers),
+        "skipped": max(queued_ids - new_count, 0),
+        "portal_total": queued_ids,
         "scan_completed": scan_completed,
         "missing_after_scan": still_missing,
         "open_saved": open_count,

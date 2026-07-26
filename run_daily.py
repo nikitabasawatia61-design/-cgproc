@@ -37,7 +37,7 @@ def main():
     parser.add_argument(
         "--full-scan",
         action="store_true",
-        help="Scan every listing page (slow). Default: stop at first page with no new tenders.",
+        help="Scan every listing page (first-time sync). Default: stop at first tender already in database.",
     )
     args = parser.parse_args()
 

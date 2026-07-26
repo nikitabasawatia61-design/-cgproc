@@ -138,6 +138,7 @@ def get_stats():
 
     return {
         "total": len(active_rows),
+        "total_all": len(rows),
         "closed": len(closed_rows),
         "new_today": new_today,
         "last_scraped": last_scraped,
