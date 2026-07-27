@@ -1,8 +1,9 @@
 {
-  "exported_at": "2026-07-26T09:10:55",
+  "exported_at": "2026-07-27T12:50:26",
   "stats": {
-    "total": 996,
-    "closed": 1136,
+    "total": 908,
+    "total_all": 2132,
+    "closed": 1224,
     "new_today": 0,
     "last_scraped": "2026-07-21T15:46:39"
   },
