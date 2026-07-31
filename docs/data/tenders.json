@@ -1,13 +1,127 @@
 {
-  "exported_at": "2026-07-30T11:31:04",
+  "exported_at": "2026-07-30T15:48:47",
   "stats": {
-    "total": 920,
-    "total_all": 2218,
+    "total": 930,
+    "total_all": 2228,
     "closed": 1298,
-    "new_today": 33,
-    "last_scraped": "2026-07-30T01:03:28"
+    "new_today": 43,
+    "last_scraped": "2026-07-30T15:46:56",
+    "portal_listing_total": 10,
+    "missing_on_portal": 10,
+    "listing_scan_completed": false,
+    "open_saved": 930
   },
   "tenders": [
+    {
+      "id": 4842,
+      "tender_no": "196412",
+      "name": "Construction of Aspirational Toilets 10 Seater & Installation of Machineries/ Equipments in Municipal Areas of Nagar Panchayat Rohansi (Lawan Main Road),",
+      "department": "NAGAR PANCHAYAT, ROHANSI",
+      "amount": "",
+      "last_date": "20 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:46:56",
+      "last_updated_at": "2026-07-30T15:46:56",
+      "area_city": "Rohansi"
+    },
+    {
+      "id": 4841,
+      "tender_no": "196413",
+      "name": "RENOVATION OF MUKTIDHAM AT WARD NO. 08, GARIYABAND",
+      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, GARIYABAND",
+      "amount": "",
+      "last_date": "24 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:44:59",
+      "last_updated_at": "2026-07-30T15:44:59",
+      "area_city": "Gariyaband"
+    },
+    {
+      "id": 4840,
+      "tender_no": "196414",
+      "name": "REQUEST FOR PROPOSAL (RFP) FOR SELECTION OF CONCESSIONAIRE FOR DESIGN, DEVELOPMENT, FINANCING, OPERATION, MANAGEMENT AND MAINTENANCE OF WATERBODY SHITALA TALAB, WARD-29 IN DURG NAGAR NIGAM OF CHHATTISGARH UNDER PPP BASIS ON DBFOT MODE.(2ND CALL)",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION,DURG",
+      "amount": "",
+      "last_date": "17 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:43:04",
+      "last_updated_at": "2026-07-30T15:43:04",
+      "area_city": "Durg"
+    },
+    {
+      "id": 4839,
+      "tender_no": "196416",
+      "name": "वार्ड क्र. 01 से 15 तक नाली/सड़क/भवन/पुलिया/विद्युत/पाईप लाईन (पी.एच.ई.) निर्माण/मरम्मत/विध्वंश कार्य तथा विभिन्न प्रकार के आवश्यकतानुसार अन्य कार्य",
+      "department": "NAGAR PANCHAYAT BHATGAON(B)",
+      "amount": "",
+      "last_date": "20 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:41:11",
+      "last_updated_at": "2026-07-30T15:41:11",
+      "area_city": ""
+    },
+    {
+      "id": 4838,
+      "tender_no": "196419",
+      "name": "CONSTRUCTION OF ASPIRATINAL TOILET AT HOSPITAL AT WARD NO. 01 GARIYABAND",
+      "department": "CHIEF MUNICIPAL OFFICER,MUNICIPAL COUNCIL, GARIYABAND",
+      "amount": "",
+      "last_date": "24 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:39:16",
+      "last_updated_at": "2026-07-30T15:39:16",
+      "area_city": "Gariyaband"
+    },
+    {
+      "id": 4837,
+      "tender_no": "196432",
+      "name": "Ward no. 07 Community cum public toilet construction work",
+      "department": "NAGAR PANCHAYAT BHATGAON(B)",
+      "amount": "",
+      "last_date": "14 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:37:24",
+      "last_updated_at": "2026-07-30T15:37:24",
+      "area_city": ""
+    },
+    {
+      "id": 4836,
+      "tender_no": "196433",
+      "name": "Ward No. 12 Public Toilet Construction Work",
+      "department": "NAGAR PANCHAYAT BHATGAON(B)",
+      "amount": "",
+      "last_date": "14 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:35:28",
+      "last_updated_at": "2026-07-30T15:35:28",
+      "area_city": ""
+    },
+    {
+      "id": 4835,
+      "tender_no": "196435",
+      "name": "CONSTRUCTION OF C.C. ROAD FROM SHITLA MANDIR GATE TO SHITLA TALAB AT WARD NO. 12",
+      "department": "NAGAR PANCHAYAT MAGARLOD",
+      "amount": "1076000.00",
+      "last_date": "21 Aug, 2026 5:30:00 PM IST",
+      "first_seen_at": "2026-07-30T15:33:33",
+      "last_updated_at": "2026-07-30T15:33:33",
+      "area_city": "Magarlod"
+    },
+    {
+      "id": 4834,
+      "tender_no": "196437",
+      "name": "Design, Construction, Testing, Commissioning of All The Components of Interception and Diversion Based Sewage Treatment Plant (STP) Work Including 05 Years of Operation and Maintenance of The Entire System in Nagar Panchayat,Lakhanpur under SBM 2.0",
+      "department": "NAGAR PANCHAYAT LAKHANPUR",
+      "amount": "22351000.00",
+      "last_date": "24 Aug, 2026 5:00:00 PM IST",
+      "first_seen_at": "2026-07-30T15:31:40",
+      "last_updated_at": "2026-07-30T15:31:40",
+      "area_city": "Lakhanpur"
+    },
+    {
+      "id": 4833,
+      "tender_no": "196457",
+      "name": "Construction of CC Road from anand nagar main road to mahendra house and CC Constraction of drain from navdha pandal to mahendra yadav house under ward no. 65",
+      "department": "COMMISSINOR, MUNICIPAL CORPORATION, KORBA",
+      "amount": "3999874.00",
+      "last_date": "24 Aug, 2026 5:30:30 PM IST",
+      "first_seen_at": "2026-07-30T15:29:47",
+      "last_updated_at": "2026-07-30T15:29:47",
+      "area_city": "Korba"
+    },
     {
       "id": 4832,
       "tender_no": "196329",
