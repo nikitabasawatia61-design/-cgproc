@@ -1,15 +1,11 @@
 {
-  "exported_at": "2026-07-30T15:48:47",
+  "exported_at": "2026-08-01T01:07:15",
   "stats": {
-    "total": 930,
+    "total": 816,
     "total_all": 2228,
-    "closed": 1298,
-    "new_today": 43,
-    "last_scraped": "2026-07-30T15:46:56",
-    "portal_listing_total": 10,
-    "missing_on_portal": 10,
-    "listing_scan_completed": false,
-    "open_saved": 930
+    "closed": 1412,
+    "new_today": 0,
+    "last_scraped": "2026-07-30T15:46:56"
   },
   "tenders": [
     {
