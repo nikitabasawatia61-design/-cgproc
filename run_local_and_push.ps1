@@ -1,19 +1,26 @@
-# Legacy wrapper: scrape first, then ask before pushing.
-# Prefer the two-step flow: .\run_scrape.ps1  then  .\run_push.ps1
+# Daily one-command flow: scrape -> push to web. No prompts.
+
+param(
+    [switch]$FullScan
+)
 
 $ProjectDir = $PSScriptRoot
 Set-Location $ProjectDir
 
-& "$ProjectDir\run_scrape.ps1"
+Write-Host ""
+Write-Host "=== CG TENDER TRACKER — SCRAPE + PUSH ==="
+
+if ($FullScan) {
+    & "$ProjectDir\run_scrape.ps1" -FullScan
+} else {
+    & "$ProjectDir\run_scrape.ps1"
+}
+
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Scrape failed or had errors. Not pushing."
+    Write-Host ""
+    Write-Host "Scrape failed. Not pushing."
     exit $LASTEXITCODE
 }
 
-Write-Host ""
-$response = Read-Host "Push to GitHub now? (y/N)"
-if ($response -match '^[yY]') {
-    & "$ProjectDir\run_push.ps1"
-} else {
-    Write-Host "Skipped push. Run .\run_push.ps1 when ready."
-}
+& "$ProjectDir\run_push.ps1"
+exit $LASTEXITCODE

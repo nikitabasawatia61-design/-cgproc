@@ -1,62 +1,82 @@
-# Step 2: Push tender data to GitHub after a successful scrape.
-# Run only after .\run_scrape.ps1 shows a good FINAL SUMMARY.
+# Push tender data to GitHub Pages after a successful scrape.
 
 $ProjectDir = $PSScriptRoot
 Set-Location $ProjectDir
 
 $JsonPath = Join-Path $ProjectDir "docs\data\tenders.json"
-
-Write-Host ""
-Write-Host "=== STEP 2: PUSH TO GITHUB ==="
-
-if (Test-Path ".git/rebase-merge") {
-    Write-Host "Stuck git rebase detected. Aborting..."
-    git rebase --abort
-    git checkout main 2>$null
+$PythonExe = Join-Path $ProjectDir ".venv\Scripts\python.exe"
+if (-not (Test-Path $PythonExe)) {
+    $PythonExe = "python"
 }
 
-Write-Host "Checking tenders.json..."
-& python -c "import json; json.load(open(r'$JsonPath', encoding='utf-8')); print('JSON OK')"
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "ERROR: tenders.json is invalid. Run .\run_scrape.ps1 first."
+function Clear-StuckGit {
+    if (Test-Path ".git/rebase-merge") {
+        Write-Host "Aborting stuck rebase..."
+        git rebase --abort
+    }
+    if (Test-Path ".git/rebase-apply") {
+        Write-Host "Aborting stuck rebase..."
+        git rebase --abort
+    }
+    if (Test-Path ".git/MERGE_HEAD") {
+        Write-Host "Aborting stuck merge..."
+        git merge --abort
+    }
+}
+
+function Export-FromDb {
+    & $PythonExe -c "import database as db; db.init_db(); db.repair_tenders_json(); db.export_to_json(); print('Exported', db.tender_count(), 'tenders from local DB')"
+    return $LASTEXITCODE -eq 0
+}
+
+Write-Host ""
+Write-Host "=== PUSH TO WEB ==="
+
+Clear-StuckGit
+
+if (-not (Export-FromDb)) {
+    Write-Host "ERROR: could not export tenders.json. Run scrape first."
     exit 1
 }
 
-$status = git status --porcelain docs/data/tenders.json
-if (-not $status) {
-    Write-Host "No changes in docs/data/tenders.json to push."
-    exit 0
-}
-
-git add docs/data/tenders.json
-git commit -m "chore: update tender data from local scraper"
+& $PythonExe -c "import json; json.load(open(r'$JsonPath', encoding='utf-8')); print('JSON OK')"
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Nothing to commit."
-    exit 0
+    Write-Host "ERROR: tenders.json is invalid."
+    exit 1
 }
 
 Write-Host "Syncing with GitHub..."
-git fetch origin main
-$behind = git rev-list --count HEAD..origin/main
-if ([int]$behind -gt 0) {
-    Write-Host "Pulling $behind remote commit(s)..."
-    git pull --rebase origin main
+git fetch origin main 2>$null
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "WARNING: could not fetch from GitHub. Pushing local commit only..."
+}
+
+$behind = 0
+try { $behind = [int](git rev-list --count HEAD..origin/main 2>$null) } catch { $behind = 0 }
+
+if ($behind -gt 0) {
+    Write-Host "Merging $behind remote commit(s) (keeping local tender data)..."
+    git merge origin/main -X ours --no-edit
     if ($LASTEXITCODE -ne 0) {
-        Write-Host ""
-        Write-Host "PUSH BLOCKED: merge conflict in tenders.json."
-        Write-Host "Fix: git checkout --ours docs/data/tenders.json"
-        Write-Host "      git add docs/data/tenders.json"
-        Write-Host "      git rebase --continue"
-        Write-Host "      git push origin main"
+        Write-Host "Merge failed. Aborting..."
+        git merge --abort 2>$null
         exit 1
     }
+    Export-FromDb | Out-Null
+}
+
+$status = git status --porcelain docs/data/tenders.json
+if ($status) {
+    git add docs/data/tenders.json
+    git commit -m "chore: update tender data from local scraper"
 }
 
 git push origin main
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "PUSH FAILED."
+    Write-Host "PUSH FAILED. Check internet / GitHub login."
     exit 1
 }
 
 Write-Host ""
-Write-Host "Done. Hard refresh the dashboard: Ctrl+F5"
+Write-Host "Done. Dashboard: https://nikitabasawatia61-design.github.io/-cgproc/"
+Write-Host "Hard refresh: Ctrl+F5"

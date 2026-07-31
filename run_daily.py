@@ -2,10 +2,10 @@
 Daily tender fetch script.
 
 Manual scrape (visible browser — recommended):
-    python run_daily.py --import-json --export-json
+    python run_daily.py --export-json
 
 Scheduled / background:
-    python run_daily.py --headless --import-json --export-json
+    python run_daily.py --headless --export-json
 """
 
 import argparse
@@ -32,7 +32,11 @@ def main():
     parser = argparse.ArgumentParser(description="Fetch new tenders from CG e-procurement")
     parser.add_argument("--headless", action="store_true", help="Run browser headless (for scheduled tasks)")
     parser.add_argument("--import-excel", action="store_true", help="Import existing Excel data first")
-    parser.add_argument("--import-json", action="store_true", help="Import existing JSON data first")
+    parser.add_argument(
+        "--import-json",
+        action="store_true",
+        help="Force import from JSON (normally only seeds an empty DB)",
+    )
     parser.add_argument("--export-json", action="store_true", help="Export results to docs/data/tenders.json")
     parser.add_argument(
         "--full-scan",
@@ -43,13 +47,20 @@ def main():
 
     db.init_db()
 
-    if args.import_json:
+    if args.export_json:
         try:
-            count = db.import_from_json()
-            print(f"Imported {count} tenders from JSON")
+            db.repair_tenders_json()
         except ValueError as error:
             print(f"ERROR: {error}")
             sys.exit(1)
+
+    if args.import_json:
+        count = db.import_from_json()
+        print(f"Imported {count} tenders from JSON")
+    else:
+        count = db.seed_db_if_empty()
+        if count:
+            print(f"Seeded {count} tenders from JSON into empty database")
 
     if args.import_excel and EXCEL_FILE.exists():
         count = db.import_from_excel(EXCEL_FILE)

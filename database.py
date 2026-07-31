@@ -10,6 +10,66 @@ DB_PATH = Path(__file__).parent / "tenders.db"
 DATA_JSON = Path(__file__).parent / "docs" / "data" / "tenders.json"
 
 
+def tender_count():
+    with get_connection() as conn:
+        return conn.execute("SELECT COUNT(*) FROM tenders").fetchone()[0]
+
+
+def json_has_conflict_markers(path=None):
+    path = Path(path or DATA_JSON)
+    if not path.exists():
+        return False
+    text = path.read_text(encoding="utf-8")
+    return "<<<<<<<" in text or ">>>>>>>" in text
+
+
+def json_is_valid(path=None):
+    path = Path(path or DATA_JSON)
+    if not path.exists():
+        return False
+    if json_has_conflict_markers(path):
+        return False
+    try:
+        json.loads(path.read_text(encoding="utf-8"))
+        return True
+    except json.JSONDecodeError:
+        return False
+
+
+def repair_tenders_json(json_path=None):
+    """Rebuild tenders.json from SQLite when git left conflict markers."""
+    path = Path(json_path or DATA_JSON)
+    if json_is_valid(path):
+        return False
+
+    init_db()
+    if DB_PATH.exists() and tender_count() > 0:
+        export_to_json(path)
+        print(f"Repaired {path} from local database ({tender_count()} tenders)")
+        return True
+
+    raise ValueError(
+        f"{path} is invalid and tenders.db is empty. "
+        "Restore from git: git checkout HEAD -- docs/data/tenders.json"
+    )
+
+
+def seed_db_if_empty(json_path=None):
+    """Import JSON only when the local database has no tenders yet."""
+    init_db()
+    if tender_count() > 0:
+        return 0
+
+    path = Path(json_path or DATA_JSON)
+    if not path.exists():
+        return 0
+
+    if not json_is_valid(path):
+        repair_tenders_json(path)
+
+    return import_from_json(path)
+
+
 def get_connection():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -187,17 +247,19 @@ def import_from_json(json_path=None):
     if not path.exists():
         return 0
 
-    try:
-        with open(path, encoding="utf-8") as f:
-            payload = json.load(f)
-    except json.JSONDecodeError as error:
-        text = path.read_text(encoding="utf-8")
-        if "<<<<<<<" in text or "=======" in text or ">>>>>>>" in text:
-            raise ValueError(
-                f"{path} has unresolved git merge conflict markers. "
-                "Fix the file or restore it from git before running the scraper."
-            ) from error
-        raise
+    if not json_is_valid(path):
+        if DB_PATH.exists() and tender_count() > 0:
+            print(
+                f"Skipping JSON import: {path} is broken but local DB has "
+                f"{tender_count()} tenders"
+            )
+            repair_tenders_json(path)
+            return 0
+
+        repair_tenders_json(path)
+
+    with open(path, encoding="utf-8") as f:
+        payload = json.load(f)
 
     imported = 0
     for tender in payload.get("tenders", []):
